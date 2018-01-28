@@ -702,10 +702,10 @@
 				> .m-menu__submenu {
 					.m-menu__subnav {
 						// item link paddings
-						> .m-menu__content {
+						.m-menu__content {
 							.m-menu__heading {
 								padding: $item-submenu-link-padding;
-								padding-left: 2 * $item-submenu-indent;  
+								padding-left: $item-submenu-padding-left + (2 * $item-submenu-section-indent); 
 							}
 
 							.m-menu__inner {
@@ -714,7 +714,7 @@
 											
 								.m-menu__link {
 									padding: $item-submenu-link-padding;
-									padding-left: 3 * $item-submenu-indent; 
+									padding-left: $item-submenu-padding-left + (3 * $item-submenu-section-indent);  
 								}
 							}	
 						}								
@@ -764,7 +764,7 @@
 
 									> .m-menu__section {
 										padding: $item-submenu-section-padding;
-										padding-left:$item-submenu-padding-left + (2 * $item-submenu-section-indent); 
+										padding-left: $item-submenu-padding-left + (2 * $item-submenu-section-indent); 
 									}   
 
 									> .m-menu__item {

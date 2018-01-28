@@ -1344,9 +1344,9 @@ var Dashboard = function() {
                         url: 'inc/api/datatables/demos/default.php'
                     }
                 },
-                pageSize: 20,
+                pageSize: 10,
                 saveState: {
-                    cookie: true,
+                    cookie: false,
                     webstorage: true
                 },
                 serverPaging: true,

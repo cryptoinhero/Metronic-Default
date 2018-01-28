@@ -105,31 +105,6 @@ var mLayout = function() {
         };
 
         asideMenu = menu.mMenu(menuOptions);
-
-        // handle fixed aside menu
-        if (menu.data('menu-scrollable-')) {
-            function initScrollableMenu(obj) {    
-                if (mUtil.isInResponsiveRange('tablet-and-mobile')) {
-                    // destroy if the instance was previously created
-                    mApp.destroyScroller(obj);
-                    return;
-                }
-
-                var height = mUtil.getViewPort().height - $('.m-header').outerHeight()
-                    - ($('.m-aside-left .m-aside__header').length != 0 ? $('.m-aside-left .m-aside__header').outerHeight() : 0)
-                    - ($('.m-aside-left .m-aside__footer').length != 0 ? $('.m-aside-left .m-aside__footer').outerHeight() : 0);
-                    //- $('.m-footer').outerHeight(); 
-
-                // create/re-create a new instance
-                mApp.initScroller(obj, {height: height});
-            }
-
-            initScrollableMenu(asideMenu);
-            
-            mUtil.addResizeHandler(function() {            
-                initScrollableMenu(asideMenu);
-            });   
-        }      
     }
 
     // handle vertical menu
@@ -159,7 +134,7 @@ var mLayout = function() {
             var height = mUtil.getViewPort().height;
 
             // create/re-create a new instance
-            mApp.initScroller(obj, {height: height});
+            mApp.initScroller(obj, {height: height}, true);
         });   
     }
 

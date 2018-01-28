@@ -157,8 +157,6 @@ var DatatableRemoteAjaxDemo = function() {
         }],
     });
 
-    var query = datatable.getDataSourceQuery();
-
     $('#m_form_status').on('change', function() {
       datatable.search($(this).val().toLowerCase(), 'Status');
     });

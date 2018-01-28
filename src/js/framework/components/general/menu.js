@@ -18,7 +18,7 @@
                 } else {
                     // reset menu
                     Plugin.init(options);
-
+                    
                     // reset menu
                     Plugin.reset();
 
@@ -50,8 +50,7 @@
              * @returns {mMenu}
              */
             build: function() {
-                element.on('click', '.m-menu__toggle', Plugin.handleSubmenuAccordion);
-                
+                element.on('click', '.m-menu__toggle', Plugin.handleSubmenuAccordion);                
 
                 // dropdown mode(hoverable)
                 if (Plugin.getSubmenuMode() === 'dropdown' || Plugin.isConditionalSubmenuDropdown()) {   
@@ -59,10 +58,11 @@
 	                element.on({mouseenter: Plugin.handleSubmenuDrodownHoverEnter, mouseleave: Plugin.handleSubmenuDrodownHoverExit}, '[data-menu-submenu-toggle="hover"]');
 
 	                // dropdown submenu - click toggle
-	                element.on('click', '[data-menu-submenu-toggle="click"] .m-menu__toggle', Plugin.handleSubmenuDropdownClick);
+	                element.on('click', '[data-menu-submenu-toggle="click"] > .m-menu__toggle, [data-menu-submenu-toggle="click"] > .m-menu__link .m-menu__toggle', Plugin.handleSubmenuDropdownClick);
+                    element.on('click', '[data-menu-submenu-toggle="tab"] > .m-menu__toggle, [data-menu-submenu-toggle="tab"] > .m-menu__link .m-menu__toggle', Plugin.handleSubmenuDropdownTabClick);
                 }
 
-                element.find('.m-menu__item:not(.m-menu__item--submenu) > .m-menu__link:not(.m-menu__toggle)').click(Plugin.handleLinkClick);             
+                element.find('.m-menu__item:not(.m-menu__item--submenu) > .m-menu__link:not(.m-menu__toggle):not(.m-menu__link--toggle-skip)').click(Plugin.handleLinkClick);             
             },
 
             /**
@@ -75,11 +75,14 @@
 
             	// remove dropdown handlers
             	element.off({mouseenter: Plugin.handleSubmenuDrodownHoverEnter, mouseleave: Plugin.handleSubmenuDrodownHoverExit}, '[data-menu-submenu-toggle="hover"]');
-            	element.off('click', '[data-menu-submenu-toggle="click"] .m-menu__toggle', Plugin.handleSubmenuDropdownClick);
+
+                // dropdown submenu - click toggle
+                element.off('click', '[data-menu-submenu-toggle="click"] > .m-menu__toggle, [data-menu-submenu-toggle="click"] > .m-menu__link .m-menu__toggle', Plugin.handleSubmenuDropdownClick);
+                element.off('click', '[data-menu-submenu-toggle="tab"] > .m-menu__toggle, [data-menu-submenu-toggle="tab"] > .m-menu__link .m-menu__toggle', Plugin.handleSubmenuDropdownTabClick);
 
                 // reset mobile menu attributes
                 menu.find('.m-menu__submenu, .m-menu__inner').css('display', '');
-                menu.find('.m-menu__item--hover').removeClass('m-menu__item--hover');
+                menu.find('.m-menu__item--hover:not(.m-menu__item--tabs)').removeClass('m-menu__item--hover');
                 menu.find('.m-menu__item--open:not(.m-menu__item--expanded)').removeClass('m-menu__item--open');
             },
 
@@ -124,7 +127,6 @@
              * @returns {mMenu}
              */
             handleLinkClick: function(e) {    
-
                 if (Plugin.eventTrigger('linkClick', $(this)) === false) {
                     e.preventDefault();
                 };
@@ -209,6 +211,29 @@
             },
 
             /**
+             * Handles tab click toggle
+             * @returns {mMenu}
+             */
+            handleSubmenuDropdownTabClick: function(e) {
+                if (Plugin.getSubmenuMode() === 'accordion') {
+                    return;
+                }
+
+                var item = $(this).closest('.m-menu__item');
+
+                if (item.data('menu-submenu-mode') == 'accordion') {
+                    return;   
+                }
+
+                if (item.hasClass('m-menu__item--hover') == false) {
+                    item.addClass('m-menu__item--open-dropdown');
+                    Plugin.showSubmenuDropdown(item);
+                } 
+
+                e.preventDefault();
+            },
+
+            /**
              * Handles submenu dropdown close on link click
              * @returns {mMenu}
              */
@@ -218,7 +243,7 @@
                     return;
                 }
 
-                var shown = element.find('.m-menu__item.m-menu__item--submenu.m-menu__item--hover');
+                var shown = element.find('.m-menu__item.m-menu__item--submenu.m-menu__item--hover:not(.m-menu__item--tabs)');
 
                 // check if currently clicked link's parent item ha
                 if (shown.length > 0 && el.hasClass('m-menu__toggle') === false && el.find('.m-menu__toggle').length === 0) {
@@ -308,6 +333,7 @@
                 // remove submenu activation class
                 if (classAlso) {
                     item.removeClass('m-menu__item--hover');
+                    item.removeClass('m-menu__item--active-tab');
                 }
                 // clear timeout
                 item.removeData('hover');
@@ -325,7 +351,7 @@
              */
             showSubmenuDropdown: function(item) {
                 // close active submenus
-                element.find('.m-menu__item--submenu.m-menu__item--hover').each(function() {
+                element.find('.m-menu__item--submenu.m-menu__item--hover, .m-menu__item--submenu.m-menu__item--active-tab').each(function() {
                     var el = $(this);
                     if (item.is(el) || el.find(item).length > 0 || item.find(el).length > 0) {
                         return;
@@ -446,8 +472,6 @@
                     e.stopPropagation();
                     e.preventDefault();
                     $(this).remove();
-
-                    alert(1);
                     Plugin.hideSubmenuDropdown(el, true);                    
                 });
             },
@@ -722,16 +746,16 @@
 
     // Plugin global lazy initialization
     $(document).on('click', function(e) {
-        $('.m-menu__nav .m-menu__item.m-menu__item--submenu.m-menu__item--hover[data-menu-submenu-toggle="click"]').each(function() {
-            var  element = $(this).parent('.m-menu__nav').parent();
+        $('.m-menu__nav .m-menu__item.m-menu__item--submenu.m-menu__item--hover:not(.m-menu__item--tabs)[data-menu-submenu-toggle="click"]').each(function() {
+            var  element = $(this).closest('.m-menu__nav').parent();
             menu = element.mMenu(); 
-            
+
             if (menu.getSubmenuMode() !== 'dropdown') { 
                 return;
-            }
+            }            
 
             if ($(e.target).is(element) == false && element.find($(e.target)).length == 0) {
-                var items = element.find('.m-menu__item--submenu.m-menu__item--hover[data-menu-submenu-toggle="click"]');
+                var items = element.find('.m-menu__item--submenu.m-menu__item--hover:not(.m-menu__item--tabs)[data-menu-submenu-toggle="click"]');
                 items.each(function() {
                     menu.hideDropdown($(this));
                 });

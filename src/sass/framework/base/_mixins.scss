@@ -339,6 +339,11 @@
     -ms-animation: #{$animation};
     -o-animation: #{$animation};
     animation: #{$animation};
+
+
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        animation: none !important;        
+    }
 }
 
 //== Animation FIll Mode

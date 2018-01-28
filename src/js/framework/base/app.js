@@ -156,12 +156,12 @@ var mApp = function() {
                 var tab = $(this);
                 var tabs = tab.closest('[data-tabs="true"]');
                 var contents = $( tabs.data('tabs-contents') );
-                var content = $( $(this).data('tab-target') );
+                var content = $( tab.data('tab-target') );
 
                 tabs.find('.m-tabs__item.m-tabs__item--active').removeClass('m-tabs__item--active');
                 tab.addClass('m-tabs__item--active');
 
-                contents.find('>.m-tabs-content__item.m-tabs-content__item--active').removeClass('m-tabs-content__item--active');
+                contents.find('.m-tabs-content__item.m-tabs-content__item--active').removeClass('m-tabs-content__item--active');
                 content.addClass('m-tabs-content__item--active');         
             });
 
@@ -339,11 +339,13 @@ var mApp = function() {
         * @param {object} el jQuery element object
         * @param {object} options mCustomScrollbar plugin options(refer: http://manos.malihu.gr/jquery-custom-content-scroller/)
         */
-        initScroller: function(el, options) {
+        initScroller: function(el, options, doNotDestroy) {
             if (mUtil.isMobileDevice()) {
                 el.css('overflow', 'auto');
             } else {
-                //el.mCustomScrollbar("destroy");
+                if (doNotDestroy !== true) {
+                     mApp.destroyScroller(el); 
+                }               
                 el.mCustomScrollbar({
                     scrollInertia: 0,
                     autoDraggerLength: true,
@@ -367,6 +369,7 @@ var mApp = function() {
         */
         destroyScroller: function(el) {
             el.mCustomScrollbar("destroy");
+            el.removeClass('mCS_destroyed');
         },
 
         /**

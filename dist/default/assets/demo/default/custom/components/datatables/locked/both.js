@@ -25,7 +25,7 @@ var DefaultDatatableDemo = function () {
 				class: '',
 				scroll: true,
 				height: 550,
-				footer: false
+				footer: true
 			},
 
 			sortable: true,

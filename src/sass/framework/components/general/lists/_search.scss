@@ -185,7 +185,7 @@
 
         	// message
         	.m-list-search__result-message {
-        		color: get-color($skin, regular, '+');
+        		color: get-color($skin, regular, '--');
         	}
 
         	// category
@@ -202,7 +202,7 @@
 
         		// item text
         		.m-list-search__result-item-text {								
-    				color: get-color($skin, regular, '+');
+    				color: get-color($skin, regular, '--');
     			}
 
     			// item hover
