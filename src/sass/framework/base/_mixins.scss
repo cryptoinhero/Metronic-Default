@@ -403,7 +403,7 @@ xl: 1200px
 
 //== Media Query - Min Desktop Mode
 @mixin minimal-desktop {
- 	@media (min-width: #{map-get($m--layout-breakpoints, lg)} + 1px) and (max-width: #{map-get($m--layout-breakpoints, xl)}) {
+ 	@media (min-width: #{map-get($m--layout-breakpoints, lg) + 1px}) and (max-width: #{map-get($m--layout-breakpoints, xl)}) {
     	@content;
   	}
 }
@@ -417,21 +417,21 @@ xl: 1200px
 
 //== Media Query - Desktop Mode
 @mixin desktop {
-  	@media (min-width: #{map-get($m--layout-breakpoints, lg)} + 1px) {
+  	@media (min-width: #{map-get($m--layout-breakpoints, lg) + 1px}) {
     	@content;
   	}
 }
 
 //== Media Query - Desktop & Tablet Modes
 @mixin desktop-and-tablet {
-  	@media (min-width: #{map-get($m--layout-breakpoints, md)} + 1px) {
+  	@media (min-width: #{map-get($m--layout-breakpoints, md) + 1px}) {
     	@content;
   	}
 }
 
 //== Media Query - Tablet Mode
 @mixin tablet {
-  	@media (min-width: #{map-get($m--layout-breakpoints, md)} + 1px) and (max-width: #{map-get($m--layout-breakpoints, lg)}) {
+  	@media (min-width: #{map-get($m--layout-breakpoints, md) + 1px}) and (max-width: #{map-get($m--layout-breakpoints, lg)}) {
     	@content;
   	}
 }

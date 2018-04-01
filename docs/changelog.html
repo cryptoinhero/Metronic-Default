@@ -115,13 +115,102 @@
 				<div class="contents__box contents__box--left"><!-- contents__box -->
 					<ul id="changelog" class="accordion">
 						<li class="card accordion__item">
-							<a class="collapsed" data-toggle="collapse" data-parent="#changelog" href="#v5-0-8" aria-expanded="false">
+							<a class="collapsed" data-toggle="collapse" data-parent="#changelog" href="#v5-1.5" aria-expanded="false">
+								<div class="accordion__item_top">
+									<h5>Metronic v5.1.5 - 1 April, 2018</h5>
+									<i class="accordion__item_top_icon"></i>
+								</div>
+							</a>
+							<div id="v5-1.5" class="collapse show" role="tabpanel">
+								<p>New</p>
+								<ul>
+									<li>New widget - <a href="http://keenthemes.com/metronic/preview/?page=components/widgets/general&demo=default" target="_blank">Personal Income</a></li>
+									<li>New widget - <a href="http://keenthemes.com/metronic/preview/?page=components/widgets/general&demo=default" target="_blank">Finance Stats</a></li>
+									<li>New widget - <a href="http://keenthemes.com/metronic/preview/?page=components/widgets/general&demo=default" target="_blank">Packages</a></li>
+									<li>New widget - <a href="http://keenthemes.com/metronic/preview/?page=components/widgets/general&demo=default" target="_blank">Earnings</a></li>
+								</ul>
+								<div class="space"></div>
+								<p>Updates &amp; Improvements</p>
+								<ul>
+									<li>IE10 support officially dropped.</li>
+									<li>
+										All Metronic's custom plugins have been rewritten in pure Javascript in order to use theme in native Angular, VueJS and ReactJS versions in the near future:
+										<ul>
+											<li><code>mMenu</code></li>
+											<li><code>mDropdown</code></li>
+											<li><code>mHeader</code></li>
+											<li><code>mOffcanvas</code></li>
+											<li><code>mPortlet</code></li>
+											<li><code>mQuicksearch</code></li>
+											<li><code>mScrolltop</code></li>
+											<li><code>mToggle</code></li>
+											<li><code>mWizard</code></li>
+										</ul>
+									</li>
+									<li>Metronic's custom plugins HTML attribute prefix changed from <code>data</code> to <code>m</code>. Eg: <code>m-dropdown-toggle="hover"</code>, <code>m-dropdown-persistent="hover"</code>.</li>
+									<li>Update <code>Bootstrap Select</code> to the latest version <code>v1.13.0-beta</code>.</li>
+									<li>Update <code>Lineawesome</code> to the latest version.</li>
+									<li><code>mDatatable</code> local data source <code>search</code> method now support multi values by passing array: <code>datatable.search(['search', 'values'], ColumnName);</code>.</li>
+									<li><code>mDatatable</code> add <code>class</code> option to the individual column.</li>
+									<li><code>mDatatable</code> inherit row <code>&#60;tr&#62;</code> properties from HTML table.</li>
+									<li><code>mDatatable</code> add option for remote data request timeout.</li>
+									<li>Angular conf file <code>tools/conf/angular.json</code> has been renamed to <code>tools/conf/angular-jquery.json.</code></li>									
+									<li>Added <code>manualStepForward</code> parameter for <code>mWizard</code> plugin to control step forward on step number click.</li>
+									<li>Footer menu optimizations on mobile view for all demos.</li>
+									<li>Enable ajax request fire timeout parameter <code>requestTimeout</code> for <code>mQuicksearch</code> plugin.</li>
+								</ul>
+								<div class="space"></div>
+								<p>Fixes</p>
+								<ul>
+									<li><code>mDatatable</code> width overflow issue for <code>demo 2</code>, <code>demo 5</code>, <code>demo 8</code> and <code>demo 10</code></li>
+									<li><code>mDatatable</code> fix local sort not working at initial load.</li>
+									<li><code>mDatatable</code> fix getPageSize API returning not correct selected value.</li>
+									<li><code>mDatatable</code> fix hidden locked columns.</li>
+									<li><code>mDatatable</code> fix resize after hide columns.</li>
+									<li><code>mDatatable</code> fix sort API, missing param sort type.</li>
+									<li><code>mDatatable</code> fix from calling remote when server filtering is disabled.</li>
+									<li><code>mDatatable</code> fix sort arrow not displayed for right aligned column.</li>
+									<li><code>mDatatable</code> fix auto hide column with wrong header title.</li>
+									<li>Fix left aside menu collapse/expand event to fix redraw <code>mDatatable</code> layout.</li>
+									<li><code>gulp</code> fix jquery-ui to include missing assets in the bundle.</li>
+
+									<li>Metronic custom alert close icon padding fix.</li>
+									<li>Metronic custom dropdown navigation section margin improvement.</li>
+									<li>Enable document scrolling when Sweetalert2 launched.</li>
+									<li>The page title and breadcrumbs are not shown on mobile when fluid page layout is activated for all demos.</li>
+									<li>Form Wizard 2 demo's progress bar issue.</li>
+									<li>Modal z-index issue when page loader(splash) is activated.</li>
+									<li><code>Bootstrap Select</code>'s <code>data-size</code> HTML parameter issue.</li>
+									<li>Metronic custom alert close icon padding fix.</li>
+									<li>Mobile mode breakpoint changed from 992px to 1024px to enable mobile view for ipad portrait mode.</li>
+								</ul>
+								<div class="space"></div>
+							</div>
+						</li>
+						<li class="card accordion__item">
+							<a class="collapsed" data-toggle="collapse" data-parent="#changelog" href="#v5-1.1" aria-expanded="false">
+								<div class="accordion__item_top">
+									<h5>Metronic v5.1.1 - 28 February, 2018</h5>
+									<i class="accordion__item_top_icon"></i>
+								</div>
+							</a>
+							<div id="v5-1.1" class="collapse show" role="tabpanel">
+								<p>New</p>
+								<ul>
+									<li>New <code>PSD</code> files</li>
+									<li>New <code>Sketch</code> files</li>
+								</ul>
+								<div class="space"></div>
+							</div>
+						</li>
+						<li class="card accordion__item">
+							<a class="collapsed" data-toggle="collapse" data-parent="#changelog" href="#v5-1" aria-expanded="false">
 								<div class="accordion__item_top">
 									<h5>Metronic v5.1 - 29 January, 2018</h5>
 									<i class="accordion__item_top_icon"></i>
 								</div>
 							</a>
-							<div id="v5-0-8" class="collapse show" role="tabpanel">
+							<div id="v5-1" class="collapse show" role="tabpanel">
 								<p>New</p>
 								<ul>
 									<li>New <code>Demo 8</code>. Preview <a href="https://keenthemes.com/metronic/preview/?demo=demo8" target="_blank">here</a>.</li>
@@ -166,7 +255,7 @@
 									<i class="accordion__item_top_icon"></i>
 								</div>
 							</a>
-							<div id="v5-0-7-1" class="collapse show" role="tabpanel">
+							<div id="v5-0-7-1" class="collapse" role="tabpanel">
 								<p>New</p>
 								<ul>
 									<li>Github access to the Metronic's repositories. To register please click <a href="https://keenthemes.com/metronic/github">here</a>.</li>

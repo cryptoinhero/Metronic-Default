@@ -553,6 +553,24 @@
                 } 
             }
         } 
+
+        //== Head overlay
+        &.m-portlet--head-overlay {  
+            overlay: hidden;
+
+            .m-portlet__head  {
+                position: relative;
+                border: 0;
+                z-index: 2;
+            }
+
+            .m-portlet__body  {  
+                position: relative;
+                z-index: 1;
+                margin-top: -($height);
+                padding-top: 0;
+            }
+        }
     }
 
     @include desktop() {

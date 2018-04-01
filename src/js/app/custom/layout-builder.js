@@ -33,7 +33,8 @@ var LayoutBuilder = function() {
 		exportHtml: function() {
 			$('#builder_export_html').click(function(e) {
 				e.preventDefault();
-				if (!envato.isVerified()) return;
+				var purchaseCode = $('#purchase-code').val();
+				if (!purchaseCode) return;
 
 				var _self = $(this);
 
@@ -48,6 +49,7 @@ var LayoutBuilder = function() {
 						builder_export: 1,
 						export_type: 'partial',
 						demo: $(_self).data('demo'),
+						purchase_code: purchaseCode,
 					},
 				}).done(function(r) {
 					var result = JSON.parse(r);
@@ -56,6 +58,7 @@ var LayoutBuilder = function() {
 						return;
 					}
 
+					envato.setItem('purchase_code', purchaseCode);
 					var timer = setInterval(function() {
 						$.ajax('index.php', {
 							method: 'POST',
@@ -90,7 +93,8 @@ var LayoutBuilder = function() {
 		exportHtmlStatic: function() {
 			$('#builder_export_html_static').click(function(e) {
 				e.preventDefault();
-				if (!envato.isVerified()) return;
+				var purchaseCode = $('#purchase-code').val();
+				if (!purchaseCode) return;
 
 				var _self = $(this);
 
@@ -105,6 +109,7 @@ var LayoutBuilder = function() {
 						builder_export: 1,
 						export_type: 'html',
 						demo: $(_self).data('demo'),
+						purchase_code: purchaseCode,
 					},
 				}).done(function(r) {
 					var result = JSON.parse(r);
@@ -113,6 +118,7 @@ var LayoutBuilder = function() {
 						return;
 					}
 
+					envato.setItem('purchase_code', purchaseCode);
 					var timer = setInterval(function() {
 						$.ajax('index.php', {
 							method: 'POST',
@@ -148,7 +154,8 @@ var LayoutBuilder = function() {
 		exportAngular: function() {
 			$('#builder_export_angular').click(function(e) {
 				e.preventDefault();
-				if (!envato.isVerified()) return;
+				var purchaseCode = $('#purchase-code').val();
+				if (!purchaseCode) return;
 
 				var _self = $(this);
 
@@ -163,6 +170,7 @@ var LayoutBuilder = function() {
 						builder_export: 1,
 						export_type: 'angular',
 						demo: $(_self).data('demo'),
+						purchase_code: purchaseCode,
 					},
 				}).done(function(r) {
 					var result = JSON.parse(r);
@@ -171,6 +179,7 @@ var LayoutBuilder = function() {
 						return;
 					}
 
+					envato.setItem('purchase_code', purchaseCode);
 					var timer = setInterval(function() {
 						$.ajax('index.php', {
 							method: 'POST',
@@ -296,15 +305,13 @@ var LayoutBuilder = function() {
 
 	// localStorage.removeItem('envato');
 	window.envato = {
-		apiKey: '05kxpfkxwymzzczjm75d9s3li4spg0j1',
-		expires_in: '3600', // seconds
+		expires_in: 3600,
 		isVerified: function() {
-			// console.log(envato.getItem());
 			// check token is not expired and verified
-			return !envato.tokenIsExpired() && envato.getItem('verified');
+			return localStorage.getItem('envato');
 		},
 		reCaptchaVerified: function() {
-			return $.ajax('https://keenthemes.com/metronic/preview/inc/api/envato.php?recaptcha', {
+			return $.ajax('inc/api/envato.php?recaptcha', {
 				method: 'POST',
 				data: {
 					response: $('#g-recaptcha-response').val(),
@@ -318,22 +325,29 @@ var LayoutBuilder = function() {
 			});
 		},
 		verifyEvent: function() {
+			$('#purchase-code').keyup(function() {
+				$('#alert-message').addClass('m--hide');
+			}).val(envato.getItem('purchase_code'));
+
+			var exportReadyTrigger;
 			// click event
-			$('#builder_export').click(function(e) {
+			$('#builder_export').closest('.dropdown').find('.dropdown-item').click(function(e) {
 				e.preventDefault();
+				exportReadyTrigger = $(this);
+
 				if (envato.isVerified()) return;
-				grecaptcha.reset();
+
 				$('#m-modal-purchase').modal('show');
 				$('#alert-message').addClass('m--hide');
+				grecaptcha.reset();
 			});
 
 			$('#submit-verify').click(function(e) {
 				e.preventDefault();
 				envato.reCaptchaVerified().done(function(response) {
 					if (response.success) {
-						var purchaseCode = $('#purchase-code').val();
-						envato.setItem('purchase_code', purchaseCode);
-						envato.verifyPurchase(purchaseCode);
+						$('[data-dismiss="modal"]').trigger('click');
+						$(exportReadyTrigger).trigger('click');
 					} else {
 						grecaptcha.reset();
 						$('#alert-message').
@@ -342,45 +356,6 @@ var LayoutBuilder = function() {
 							html('Invalid reCaptcha validation');
 					}
 				});
-			});
-
-			$('#purchase-code').keyup(function() {
-				$('#alert-message').addClass('m--hide');
-			});
-		},
-		verifyPurchase: function(purchaseCode) {
-			return $.ajax('https://marketplace.envato.com/api/edge/keenthemes/' +
-				envato.apiKey + '/verify-purchase:' +
-				purchaseCode + '.json', {
-				method: 'GET',
-			}).done(function(response) {
-				if (!$.isEmptyObject(response['verify-purchase'])) {
-					envato.setItems(response['verify-purchase']);
-					envato.setItem('verified', true);
-
-					// keep session is php
-					$.ajax('inc/api/envato.php', {
-						method: 'POST',
-						data: envato.getItem(),
-					});
-
-					$('#alert-message').
-						removeClass('alert-danger m--hide').
-						addClass('alert-success').
-						html('Purchase code is successfully verified');
-				} else {
-					grecaptcha.reset();
-					$('#alert-message').
-						removeClass('alert-success m--hide').
-						addClass('alert-danger').
-						html('Invalid purchase code');
-				}
-			}).fail(function(e) {
-				grecaptcha.reset();
-				$('#alert-message').
-					removeClass('alert-success m--hide').
-					addClass('alert-danger').
-					html('Invalid purchase code');
 			});
 		},
 		setItems: function(object) {

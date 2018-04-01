@@ -13,6 +13,7 @@
 
 	//== Fix fluid flex box item hor overflow issue
 	.m-wrapper {
+		overflow: hidden;
 		width: 100%;
 	}
 }
@@ -29,21 +30,28 @@
 
 		// body wrapper
 		.m-wrapper {
+			padding-right: array-get($m-config-base, body, wrapper, space);
+			margin-right: -(array-get($m-config-base, body, wrapper, space));
+			padding-left: array-get($m-config-base, body, wrapper, space);
+			margin-left: -(array-get($m-config-base, body, wrapper, space));
+
+			.m-aside-left--enabled & {
+				@include shadow(array-get($m-config-base, body, wrapper, shadow));
+				margin-left: 0;
+				padding-left: array-get($m-config-base, body, wrapper, space);
+			}
+
+			.m-aside-right--enabled & {
+				margin-right: 0;
+				padding-right: array-get($m-config-base, body, wrapper, space);
+			}
+
 			.m-aside-left--fixed & {
 				margin-left: $m-aside-left-width;
 			}		
 
 			.m-page--fluid.m-aside-left--fixed & { 
 				margin-left: 0;
-			}
-
-			.m-aside-left--enabled & {
-				@include shadow(array-get($m-config-base, body, wrapper, shadow));
-				padding-left: array-get($m-config-base, body, wrapper, space);
-			}
-
-			.m-aside-right--enabled & {
-				padding-right: array-get($m-config-base, body, wrapper, space);
 			}
 		}
 
@@ -60,9 +68,11 @@
 // Tablet & Mobile Mode
 @include tablet-and-mobile {
 	.m-body {
+		padding: 0 !important;
+
 		// fixed header mode
 		.m-header--fixed-mobile & { 
-			padding-top: array-get($m-config-header, header, self, height, mobile);  
+			padding-top: array-get($m-config-header, header, self, height, mobile) !important;  
 		}
 
 		// body content

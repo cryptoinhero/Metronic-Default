@@ -4,8 +4,9 @@
 
 //== Mixins
 @mixin m-build-component--sweetalert-base() {
-    body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown) {
-    	overflow-y: visible;
+	body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown), 
+	html.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown) {
+		overflow-y: auto;
 	}
 
 	.swal2-popup {	   	

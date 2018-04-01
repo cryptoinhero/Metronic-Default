@@ -175,7 +175,7 @@
                 margin: 0;
                 vertical-align: middle;
                 font-weight: get-font-weight(boldest);   
-                font-size: get-font-size(regular, '-');
+                font-size: get-font-size(regular, '--');
                 text-transform: uppercase;
             }
 
@@ -184,9 +184,12 @@
                 text-align: center;
                 vertical-align: middle;
                 font-size: get-font-size(icon);
-            }
- 
-        }       
+            } 
+        }    
+
+        .m-nav__item + .m-nav__section {
+            margin-top: array-get($layout, section, self, margin, separator);
+        }
 
         //== Nav separator
         .m-nav__separator {

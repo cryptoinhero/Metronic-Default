@@ -40,7 +40,7 @@ body {
 		// fixed header
 		.m-header--fixed-mobile & {
 			@include transition(padding-top array-get($m-config-header, header, fixed, transition));  
-			padding-top: array-get($m-config-header, header, default, height, mobile);   
+			padding-top: array-get($m-config-header, header, default, height, mobile) !important;   
 		}
 
 		// fixed and minimized header

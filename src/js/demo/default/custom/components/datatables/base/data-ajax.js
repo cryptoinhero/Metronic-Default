@@ -12,8 +12,6 @@ var DatatableRemoteAjaxDemo = function() {
         type: 'remote',
         source: {
           read: {
-            // sample GET method
-            method: 'GET',
             url: 'inc/api/datatables/demos/default.php',
             map: function(raw) {
               // sample data mapping
@@ -158,11 +156,11 @@ var DatatableRemoteAjaxDemo = function() {
     });
 
     $('#m_form_status').on('change', function() {
-      datatable.search($(this).val().toLowerCase(), 'Status');
+      datatable.search($(this).val(), 'Status');
     });
 
     $('#m_form_type').on('change', function() {
-      datatable.search($(this).val().toLowerCase(), 'Type');
+      datatable.search($(this).val(), 'Type');
     });
 
     $('#m_form_status, #m_form_type').selectpicker();

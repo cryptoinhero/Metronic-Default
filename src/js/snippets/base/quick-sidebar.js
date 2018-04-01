@@ -1,8 +1,6 @@
 var mQuickSidebar = function() {
     var topbarAside = $('#m_quick_sidebar');
     var topbarAsideTabs = $('#m_quick_sidebar_tabs');    
-    var topbarAsideClose = $('#m_quick_sidebar_close');
-    var topbarAsideToggle = $('#m_quick_sidebar_toggle');
     var topbarAsideContent = topbarAside.find('.m-quick-sidebar__content');
 
     var initMessages = function() {
@@ -81,15 +79,15 @@ var mQuickSidebar = function() {
     }
 
     var initOffcanvas = function() {
-        topbarAside.mOffcanvas({
-            class: 'm-quick-sidebar',
+        var topbarAsideObj = new mOffcanvas('m_quick_sidebar', {
             overlay: true,  
-            close: topbarAsideClose,
-            toggle: topbarAsideToggle
+            baseClass: 'm-quick-sidebar',
+            closeBy: 'm_quick_sidebar_close',
+            toggleBy: 'm_quick_sidebar_toggle'
         });   
 
         // run once on first time dropdown shown
-        topbarAside.mOffcanvas().one('afterShow', function() {
+        topbarAsideObj.one('afterShow', function() {
             mApp.block(topbarAside);
 
             setTimeout(function() {

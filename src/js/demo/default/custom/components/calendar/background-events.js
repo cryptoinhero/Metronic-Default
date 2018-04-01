@@ -49,7 +49,7 @@ var CalendarBackgroundEvents = function() {
                         end: YM + '-05',
                         className: "m-fc-event--primary",
                         rendering: 'background',
-                        color: mUtil.getColor('accent')
+                        color: mApp.getColor('accent')
                     },
                     {
                         title: 'Dinner',
@@ -57,7 +57,7 @@ var CalendarBackgroundEvents = function() {
                         description: 'Lorem ipsum dolor sit amet, conse ctetur',
                         end: YM + '-10',
                         rendering: 'background',
-                        color: mUtil.getColor('info')
+                        color: mApp.getColor('info')
                     },
                     {
                         id: 999,
@@ -65,7 +65,7 @@ var CalendarBackgroundEvents = function() {
                         start: YM + '-09T16:00:00',
                         description: 'Lorem ipsum dolor sit ncididunt ut labore',
                         className: "m-fc-event--danger",
-                        color: mUtil.getColor('primary')
+                        color: mApp.getColor('primary')
                     },
                     {
                         id: 1000,
@@ -80,7 +80,7 @@ var CalendarBackgroundEvents = function() {
                         description: 'Lorem ipsum dolor eius mod tempor labore',
                         className: "m-fc-event--accent",
                         rendering: 'background',
-                        color: mUtil.getColor('metal')
+                        color: mApp.getColor('metal')
                     },
                     {
                         title: 'Meeting',
@@ -100,7 +100,7 @@ var CalendarBackgroundEvents = function() {
                         className: "m-fc-event--warning",
                         description: 'Lorem ipsum conse ctetur adipi scing',
                         rendering: 'background',
-                        color: mUtil.getColor('warning')
+                        color: mApp.getColor('warning')
                     },
                     {
                         title: 'Happy Hour',
@@ -119,7 +119,7 @@ var CalendarBackgroundEvents = function() {
                         className: "m-fc-event--primary",
                         description: 'Lorem ipsum dolor sit amet, scing',
                         rendering: 'background',
-                        color: mUtil.getColor('focus')
+                        color: mApp.getColor('focus')
                     },
                     {
                         title: 'Click for Google',

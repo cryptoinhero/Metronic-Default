@@ -168,7 +168,7 @@ $m-config-header: (
 							color:	(
 								default: (
 									defualt: $bg-base-font-color,
-									hover: $m-secondary-brand-color 
+									hover: #fff
 								),
 								fixed: $bg-base-inverse-font-color
 							), 
@@ -177,7 +177,7 @@ $m-config-header: (
 								fixed: rgba($bg-base-inverse-font-color, 0.5)
 							),
 							bg-color: (
-								hover: #fff
+								hover: $m-secondary-brand-color
 							)
 						),
 

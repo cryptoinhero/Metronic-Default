@@ -40,11 +40,11 @@ License: You must have a valid license purchased only from themeforest(the above
 	</head>
 	<!-- end::Head -->
     <!-- end::Body -->
-	<body class="m-page--fluid m--skin- m-content--skin-light2 m-header--fixed m-header--fixed-mobile m-aside-left--enabled m-aside-left--skin-dark m-aside-left--offcanvas m-footer--push m-aside--offcanvas-default"  >
+	<body  class="m-page--fluid m--skin- m-content--skin-light2 m-header--fixed m-header--fixed-mobile m-aside-left--enabled m-aside-left--skin-dark m-aside-left--offcanvas m-footer--push m-aside--offcanvas-default"  >
 		<!-- begin:: Page -->
 		<div class="m-grid m-grid--hor m-grid--root m-page">
 			<!-- BEGIN: Header -->
-			<header class="m-grid__item    m-header "  data-minimize-offset="200" data-minimize-mobile-offset="200" >
+			<header id="m_header" class="m-grid__item    m-header "  m-minimize-offset="200" m-minimize-mobile-offset="200" >
 				<div class="m-container m-container--fluid m-container--full-height">
 					<div class="m-stack m-stack--ver m-stack--desktop">
 						<!-- BEGIN: Brand -->
@@ -88,8 +88,8 @@ License: You must have a valid license purchased only from themeforest(the above
 							</button>
 							<div id="m_header_menu" class="m-header-menu m-aside-header-menu-mobile m-aside-header-menu-mobile--offcanvas  m-header-menu--skin-light m-header-menu--submenu-skin-light m-aside-header-menu-mobile--skin-dark m-aside-header-menu-mobile--submenu-skin-dark "  >
 								<ul class="m-menu__nav  m-menu__nav--submenu-arrow ">
-									<li class="m-menu__item  m-menu__item--submenu m-menu__item--rel"  data-menu-submenu-toggle="click" data-redirect="true" aria-haspopup="true">
-										<a  href="#" class="m-menu__link m-menu__toggle">
+									<li class="m-menu__item  m-menu__item--submenu m-menu__item--rel"  m-menu-submenu-toggle="click" m-menu-link-redirect="1" aria-haspopup="true">
+										<a  href="javascript:;" class="m-menu__link m-menu__toggle">
 											<i class="m-menu__link-icon flaticon-add"></i>
 											<span class="m-menu__link-text">
 												Actions
@@ -108,7 +108,7 @@ License: You must have a valid license purchased only from themeforest(the above
 														</span>
 													</a>
 												</li>
-												<li class="m-menu__item "  data-redirect="true" aria-haspopup="true">
+												<li class="m-menu__item "  m-menu-link-redirect="1" aria-haspopup="true">
 													<a  href="../../header/actions.html" class="m-menu__link ">
 														<i class="m-menu__link-icon flaticon-diagram"></i>
 														<span class="m-menu__link-title">
@@ -125,8 +125,8 @@ License: You must have a valid license purchased only from themeforest(the above
 														</span>
 													</a>
 												</li>
-												<li class="m-menu__item  m-menu__item--submenu"  data-menu-submenu-toggle="hover" data-redirect="true" aria-haspopup="true">
-													<a  href="#" class="m-menu__link m-menu__toggle">
+												<li class="m-menu__item  m-menu__item--submenu"  m-menu-submenu-toggle="hover" m-menu-link-redirect="1" aria-haspopup="true">
+													<a  href="javascript:;" class="m-menu__link m-menu__toggle">
 														<i class="m-menu__link-icon flaticon-business"></i>
 														<span class="m-menu__link-text">
 															Manage Orders
@@ -137,42 +137,42 @@ License: You must have a valid license purchased only from themeforest(the above
 													<div class="m-menu__submenu m-menu__submenu--classic m-menu__submenu--right">
 														<span class="m-menu__arrow "></span>
 														<ul class="m-menu__subnav">
-															<li class="m-menu__item "  data-redirect="true" aria-haspopup="true">
+															<li class="m-menu__item "  m-menu-link-redirect="1" aria-haspopup="true">
 																<a  href="../../header/actions.html" class="m-menu__link ">
 																	<span class="m-menu__link-text">
 																		Latest Orders
 																	</span>
 																</a>
 															</li>
-															<li class="m-menu__item "  data-redirect="true" aria-haspopup="true">
+															<li class="m-menu__item "  m-menu-link-redirect="1" aria-haspopup="true">
 																<a  href="../../header/actions.html" class="m-menu__link ">
 																	<span class="m-menu__link-text">
 																		Pending Orders
 																	</span>
 																</a>
 															</li>
-															<li class="m-menu__item "  data-redirect="true" aria-haspopup="true">
+															<li class="m-menu__item "  m-menu-link-redirect="1" aria-haspopup="true">
 																<a  href="../../header/actions.html" class="m-menu__link ">
 																	<span class="m-menu__link-text">
 																		Processed Orders
 																	</span>
 																</a>
 															</li>
-															<li class="m-menu__item "  data-redirect="true" aria-haspopup="true">
+															<li class="m-menu__item "  m-menu-link-redirect="1" aria-haspopup="true">
 																<a  href="../../header/actions.html" class="m-menu__link ">
 																	<span class="m-menu__link-text">
 																		Delivery Reports
 																	</span>
 																</a>
 															</li>
-															<li class="m-menu__item "  data-redirect="true" aria-haspopup="true">
+															<li class="m-menu__item "  m-menu-link-redirect="1" aria-haspopup="true">
 																<a  href="../../header/actions.html" class="m-menu__link ">
 																	<span class="m-menu__link-text">
 																		Payments
 																	</span>
 																</a>
 															</li>
-															<li class="m-menu__item "  data-redirect="true" aria-haspopup="true">
+															<li class="m-menu__item "  m-menu-link-redirect="1" aria-haspopup="true">
 																<a  href="../../header/actions.html" class="m-menu__link ">
 																	<span class="m-menu__link-text">
 																		Customers
@@ -182,7 +182,7 @@ License: You must have a valid license purchased only from themeforest(the above
 														</ul>
 													</div>
 												</li>
-												<li class="m-menu__item  m-menu__item--submenu"  data-menu-submenu-toggle="hover" data-redirect="true" aria-haspopup="true">
+												<li class="m-menu__item  m-menu__item--submenu"  m-menu-submenu-toggle="hover" m-menu-link-redirect="1" aria-haspopup="true">
 													<a  href="#" class="m-menu__link m-menu__toggle">
 														<i class="m-menu__link-icon flaticon-chat-1"></i>
 														<span class="m-menu__link-text">
@@ -194,35 +194,35 @@ License: You must have a valid license purchased only from themeforest(the above
 													<div class="m-menu__submenu m-menu__submenu--classic m-menu__submenu--right">
 														<span class="m-menu__arrow "></span>
 														<ul class="m-menu__subnav">
-															<li class="m-menu__item "  data-redirect="true" aria-haspopup="true">
+															<li class="m-menu__item "  m-menu-link-redirect="1" aria-haspopup="true">
 																<a  href="../../header/actions.html" class="m-menu__link ">
 																	<span class="m-menu__link-text">
 																		Customer Feedbacks
 																	</span>
 																</a>
 															</li>
-															<li class="m-menu__item "  data-redirect="true" aria-haspopup="true">
+															<li class="m-menu__item "  m-menu-link-redirect="1" aria-haspopup="true">
 																<a  href="../../header/actions.html" class="m-menu__link ">
 																	<span class="m-menu__link-text">
 																		Supplier Feedbacks
 																	</span>
 																</a>
 															</li>
-															<li class="m-menu__item "  data-redirect="true" aria-haspopup="true">
+															<li class="m-menu__item "  m-menu-link-redirect="1" aria-haspopup="true">
 																<a  href="../../header/actions.html" class="m-menu__link ">
 																	<span class="m-menu__link-text">
 																		Reviewed Feedbacks
 																	</span>
 																</a>
 															</li>
-															<li class="m-menu__item "  data-redirect="true" aria-haspopup="true">
+															<li class="m-menu__item "  m-menu-link-redirect="1" aria-haspopup="true">
 																<a  href="../../header/actions.html" class="m-menu__link ">
 																	<span class="m-menu__link-text">
 																		Resolved Feedbacks
 																	</span>
 																</a>
 															</li>
-															<li class="m-menu__item "  data-redirect="true" aria-haspopup="true">
+															<li class="m-menu__item "  m-menu-link-redirect="1" aria-haspopup="true">
 																<a  href="../../header/actions.html" class="m-menu__link ">
 																	<span class="m-menu__link-text">
 																		Feedback Reports
@@ -232,7 +232,7 @@ License: You must have a valid license purchased only from themeforest(the above
 														</ul>
 													</div>
 												</li>
-												<li class="m-menu__item "  data-redirect="true" aria-haspopup="true">
+												<li class="m-menu__item "  m-menu-link-redirect="1" aria-haspopup="true">
 													<a  href="../../header/actions.html" class="m-menu__link ">
 														<i class="m-menu__link-icon flaticon-users"></i>
 														<span class="m-menu__link-text">
@@ -243,8 +243,8 @@ License: You must have a valid license purchased only from themeforest(the above
 											</ul>
 										</div>
 									</li>
-									<li class="m-menu__item  m-menu__item--submenu m-menu__item--rel"  data-menu-submenu-toggle="click" data-redirect="true" aria-haspopup="true">
-										<a  href="#" class="m-menu__link m-menu__toggle">
+									<li class="m-menu__item  m-menu__item--submenu m-menu__item--rel"  m-menu-submenu-toggle="click" m-menu-link-redirect="1" aria-haspopup="true">
+										<a  href="javascript:;" class="m-menu__link m-menu__toggle">
 											<i class="m-menu__link-icon flaticon-line-graph"></i>
 											<span class="m-menu__link-text">
 												Reports
@@ -264,7 +264,7 @@ License: You must have a valid license purchased only from themeforest(the above
 															<i class="m-menu__ver-arrow la la-angle-right"></i>
 														</h3>
 														<ul class="m-menu__inner">
-															<li class="m-menu__item "  data-redirect="true" aria-haspopup="true">
+															<li class="m-menu__item "  m-menu-link-redirect="1" aria-haspopup="true">
 																<a  href="../../header/actions.html" class="m-menu__link ">
 																	<i class="m-menu__link-icon flaticon-map"></i>
 																	<span class="m-menu__link-text">
@@ -272,7 +272,7 @@ License: You must have a valid license purchased only from themeforest(the above
 																	</span>
 																</a>
 															</li>
-															<li class="m-menu__item "  data-redirect="true" aria-haspopup="true">
+															<li class="m-menu__item "  m-menu-link-redirect="1" aria-haspopup="true">
 																<a  href="../../header/actions.html" class="m-menu__link ">
 																	<i class="m-menu__link-icon flaticon-user"></i>
 																	<span class="m-menu__link-text">
@@ -280,7 +280,7 @@ License: You must have a valid license purchased only from themeforest(the above
 																	</span>
 																</a>
 															</li>
-															<li class="m-menu__item "  data-redirect="true" aria-haspopup="true">
+															<li class="m-menu__item "  m-menu-link-redirect="1" aria-haspopup="true">
 																<a  href="../../header/actions.html" class="m-menu__link ">
 																	<i class="m-menu__link-icon flaticon-clipboard"></i>
 																	<span class="m-menu__link-text">
@@ -288,7 +288,7 @@ License: You must have a valid license purchased only from themeforest(the above
 																	</span>
 																</a>
 															</li>
-															<li class="m-menu__item "  data-redirect="true" aria-haspopup="true">
+															<li class="m-menu__item "  m-menu-link-redirect="1" aria-haspopup="true">
 																<a  href="../../header/actions.html" class="m-menu__link ">
 																	<i class="m-menu__link-icon flaticon-graphic-1"></i>
 																	<span class="m-menu__link-text">
@@ -296,7 +296,7 @@ License: You must have a valid license purchased only from themeforest(the above
 																	</span>
 																</a>
 															</li>
-															<li class="m-menu__item "  data-redirect="true" aria-haspopup="true">
+															<li class="m-menu__item "  m-menu-link-redirect="1" aria-haspopup="true">
 																<a  href="../../header/actions.html" class="m-menu__link ">
 																	<i class="m-menu__link-icon flaticon-graphic-2"></i>
 																	<span class="m-menu__link-text">
@@ -314,7 +314,7 @@ License: You must have a valid license purchased only from themeforest(the above
 															<i class="m-menu__ver-arrow la la-angle-right"></i>
 														</h3>
 														<ul class="m-menu__inner">
-															<li class="m-menu__item "  data-redirect="true" aria-haspopup="true">
+															<li class="m-menu__item "  m-menu-link-redirect="1" aria-haspopup="true">
 																<a  href="../../header/actions.html" class="m-menu__link ">
 																	<i class="m-menu__link-bullet m-menu__link-bullet--line">
 																		<span></span>
@@ -324,7 +324,7 @@ License: You must have a valid license purchased only from themeforest(the above
 																	</span>
 																</a>
 															</li>
-															<li class="m-menu__item "  data-redirect="true" aria-haspopup="true">
+															<li class="m-menu__item "  m-menu-link-redirect="1" aria-haspopup="true">
 																<a  href="../../header/actions.html" class="m-menu__link ">
 																	<i class="m-menu__link-bullet m-menu__link-bullet--line">
 																		<span></span>
@@ -334,7 +334,7 @@ License: You must have a valid license purchased only from themeforest(the above
 																	</span>
 																</a>
 															</li>
-															<li class="m-menu__item "  data-redirect="true" aria-haspopup="true">
+															<li class="m-menu__item "  m-menu-link-redirect="1" aria-haspopup="true">
 																<a  href="../../header/actions.html" class="m-menu__link ">
 																	<i class="m-menu__link-bullet m-menu__link-bullet--line">
 																		<span></span>
@@ -344,7 +344,7 @@ License: You must have a valid license purchased only from themeforest(the above
 																	</span>
 																</a>
 															</li>
-															<li class="m-menu__item "  data-redirect="true" aria-haspopup="true">
+															<li class="m-menu__item "  m-menu-link-redirect="1" aria-haspopup="true">
 																<a  href="../../header/actions.html" class="m-menu__link ">
 																	<i class="m-menu__link-bullet m-menu__link-bullet--line">
 																		<span></span>
@@ -354,7 +354,7 @@ License: You must have a valid license purchased only from themeforest(the above
 																	</span>
 																</a>
 															</li>
-															<li class="m-menu__item "  data-redirect="true" aria-haspopup="true">
+															<li class="m-menu__item "  m-menu-link-redirect="1" aria-haspopup="true">
 																<a  href="../../header/actions.html" class="m-menu__link ">
 																	<i class="m-menu__link-bullet m-menu__link-bullet--line">
 																		<span></span>
@@ -364,7 +364,7 @@ License: You must have a valid license purchased only from themeforest(the above
 																	</span>
 																</a>
 															</li>
-															<li class="m-menu__item "  data-redirect="true" aria-haspopup="true">
+															<li class="m-menu__item "  m-menu-link-redirect="1" aria-haspopup="true">
 																<a  href="../../header/actions.html" class="m-menu__link ">
 																	<i class="m-menu__link-bullet m-menu__link-bullet--line">
 																		<span></span>
@@ -384,7 +384,7 @@ License: You must have a valid license purchased only from themeforest(the above
 															<i class="m-menu__ver-arrow la la-angle-right"></i>
 														</h3>
 														<ul class="m-menu__inner">
-															<li class="m-menu__item "  data-redirect="true" aria-haspopup="true">
+															<li class="m-menu__item "  m-menu-link-redirect="1" aria-haspopup="true">
 																<a  href="../../header/actions.html" class="m-menu__link ">
 																	<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 																		<span></span>
@@ -394,7 +394,7 @@ License: You must have a valid license purchased only from themeforest(the above
 																	</span>
 																</a>
 															</li>
-															<li class="m-menu__item "  data-redirect="true" aria-haspopup="true">
+															<li class="m-menu__item "  m-menu-link-redirect="1" aria-haspopup="true">
 																<a  href="../../header/actions.html" class="m-menu__link ">
 																	<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 																		<span></span>
@@ -404,7 +404,7 @@ License: You must have a valid license purchased only from themeforest(the above
 																	</span>
 																</a>
 															</li>
-															<li class="m-menu__item "  data-redirect="true" aria-haspopup="true">
+															<li class="m-menu__item "  m-menu-link-redirect="1" aria-haspopup="true">
 																<a  href="../../header/actions.html" class="m-menu__link ">
 																	<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 																		<span></span>
@@ -414,7 +414,7 @@ License: You must have a valid license purchased only from themeforest(the above
 																	</span>
 																</a>
 															</li>
-															<li class="m-menu__item "  data-redirect="true" aria-haspopup="true">
+															<li class="m-menu__item "  m-menu-link-redirect="1" aria-haspopup="true">
 																<a  href="../../header/actions.html" class="m-menu__link ">
 																	<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 																		<span></span>
@@ -424,7 +424,7 @@ License: You must have a valid license purchased only from themeforest(the above
 																	</span>
 																</a>
 															</li>
-															<li class="m-menu__item "  data-redirect="true" aria-haspopup="true">
+															<li class="m-menu__item "  m-menu-link-redirect="1" aria-haspopup="true">
 																<a  href="../../header/actions.html" class="m-menu__link ">
 																	<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 																		<span></span>
@@ -434,7 +434,7 @@ License: You must have a valid license purchased only from themeforest(the above
 																	</span>
 																</a>
 															</li>
-															<li class="m-menu__item "  data-redirect="true" aria-haspopup="true">
+															<li class="m-menu__item "  m-menu-link-redirect="1" aria-haspopup="true">
 																<a  href="../../header/actions.html" class="m-menu__link ">
 																	<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 																		<span></span>
@@ -454,42 +454,42 @@ License: You must have a valid license purchased only from themeforest(the above
 															<i class="m-menu__ver-arrow la la-angle-right"></i>
 														</h3>
 														<ul class="m-menu__inner">
-															<li class="m-menu__item "  data-redirect="true" aria-haspopup="true">
+															<li class="m-menu__item "  m-menu-link-redirect="1" aria-haspopup="true">
 																<a  href="../../header/actions.html" class="m-menu__link ">
 																	<span class="m-menu__link-text">
 																		Report Adjusments
 																	</span>
 																</a>
 															</li>
-															<li class="m-menu__item "  data-redirect="true" aria-haspopup="true">
+															<li class="m-menu__item "  m-menu-link-redirect="1" aria-haspopup="true">
 																<a  href="../../header/actions.html" class="m-menu__link ">
 																	<span class="m-menu__link-text">
 																		Sources & Mediums
 																	</span>
 																</a>
 															</li>
-															<li class="m-menu__item "  data-redirect="true" aria-haspopup="true">
+															<li class="m-menu__item "  m-menu-link-redirect="1" aria-haspopup="true">
 																<a  href="../../header/actions.html" class="m-menu__link ">
 																	<span class="m-menu__link-text">
 																		Reporting Settings
 																	</span>
 																</a>
 															</li>
-															<li class="m-menu__item "  data-redirect="true" aria-haspopup="true">
+															<li class="m-menu__item "  m-menu-link-redirect="1" aria-haspopup="true">
 																<a  href="../../header/actions.html" class="m-menu__link ">
 																	<span class="m-menu__link-text">
 																		Conversions
 																	</span>
 																</a>
 															</li>
-															<li class="m-menu__item "  data-redirect="true" aria-haspopup="true">
+															<li class="m-menu__item "  m-menu-link-redirect="1" aria-haspopup="true">
 																<a  href="../../header/actions.html" class="m-menu__link ">
 																	<span class="m-menu__link-text">
 																		Report Flows
 																	</span>
 																</a>
 															</li>
-															<li class="m-menu__item "  data-redirect="true" aria-haspopup="true">
+															<li class="m-menu__item "  m-menu-link-redirect="1" aria-haspopup="true">
 																<a  href="../../header/actions.html" class="m-menu__link ">
 																	<span class="m-menu__link-text">
 																		Audit & Logs
@@ -502,8 +502,8 @@ License: You must have a valid license purchased only from themeforest(the above
 											</div>
 										</div>
 									</li>
-									<li class="m-menu__item  m-menu__item--submenu m-menu__item--rel"  data-menu-submenu-toggle="click" data-redirect="true" aria-haspopup="true">
-										<a  href="#" class="m-menu__link m-menu__toggle">
+									<li class="m-menu__item  m-menu__item--submenu m-menu__item--rel"  m-menu-submenu-toggle="click" m-menu-link-redirect="1" aria-haspopup="true">
+										<a  href="javascript:;" class="m-menu__link m-menu__toggle">
 											<i class="m-menu__link-icon flaticon-paper-plane"></i>
 											<span class="m-menu__link-title">
 												<span class="m-menu__link-wrap">
@@ -523,7 +523,7 @@ License: You must have a valid license purchased only from themeforest(the above
 										<div class="m-menu__submenu m-menu__submenu--classic m-menu__submenu--left">
 											<span class="m-menu__arrow m-menu__arrow--adjust"></span>
 											<ul class="m-menu__subnav">
-												<li class="m-menu__item "  data-redirect="true" aria-haspopup="true">
+												<li class="m-menu__item "  m-menu-link-redirect="1" aria-haspopup="true">
 													<a  href="../../header/actions.html" class="m-menu__link ">
 														<i class="m-menu__link-icon flaticon-business"></i>
 														<span class="m-menu__link-text">
@@ -531,7 +531,7 @@ License: You must have a valid license purchased only from themeforest(the above
 														</span>
 													</a>
 												</li>
-												<li class="m-menu__item  m-menu__item--submenu"  data-menu-submenu-toggle="hover" data-redirect="true" aria-haspopup="true">
+												<li class="m-menu__item  m-menu__item--submenu"  m-menu-submenu-toggle="hover" m-menu-link-redirect="1" aria-haspopup="true">
 													<a  href="../../crud/datatable_v1.html" class="m-menu__link m-menu__toggle">
 														<i class="m-menu__link-icon flaticon-computer"></i>
 														<span class="m-menu__link-text">
@@ -543,7 +543,7 @@ License: You must have a valid license purchased only from themeforest(the above
 													<div class="m-menu__submenu m-menu__submenu--classic m-menu__submenu--right">
 														<span class="m-menu__arrow "></span>
 														<ul class="m-menu__subnav">
-															<li class="m-menu__item "  data-redirect="true" aria-haspopup="true">
+															<li class="m-menu__item "  m-menu-link-redirect="1" aria-haspopup="true">
 																<a  href="../../header/actions.html" class="m-menu__link ">
 																	<i class="m-menu__link-icon flaticon-users"></i>
 																	<span class="m-menu__link-text">
@@ -551,7 +551,7 @@ License: You must have a valid license purchased only from themeforest(the above
 																	</span>
 																</a>
 															</li>
-															<li class="m-menu__item "  data-redirect="true" aria-haspopup="true">
+															<li class="m-menu__item "  m-menu-link-redirect="1" aria-haspopup="true">
 																<a  href="../../header/actions.html" class="m-menu__link ">
 																	<i class="m-menu__link-icon flaticon-interface-1"></i>
 																	<span class="m-menu__link-text">
@@ -559,7 +559,7 @@ License: You must have a valid license purchased only from themeforest(the above
 																	</span>
 																</a>
 															</li>
-															<li class="m-menu__item "  data-redirect="true" aria-haspopup="true">
+															<li class="m-menu__item "  m-menu-link-redirect="1" aria-haspopup="true">
 																<a  href="../../header/actions.html" class="m-menu__link ">
 																	<i class="m-menu__link-icon flaticon-lifebuoy"></i>
 																	<span class="m-menu__link-text">
@@ -567,7 +567,7 @@ License: You must have a valid license purchased only from themeforest(the above
 																	</span>
 																</a>
 															</li>
-															<li class="m-menu__item "  data-redirect="true" aria-haspopup="true">
+															<li class="m-menu__item "  m-menu-link-redirect="1" aria-haspopup="true">
 																<a  href="../../header/actions.html" class="m-menu__link ">
 																	<i class="m-menu__link-icon flaticon-graphic-1"></i>
 																	<span class="m-menu__link-text">
@@ -575,7 +575,7 @@ License: You must have a valid license purchased only from themeforest(the above
 																	</span>
 																</a>
 															</li>
-															<li class="m-menu__item "  data-redirect="true" aria-haspopup="true">
+															<li class="m-menu__item "  m-menu-link-redirect="1" aria-haspopup="true">
 																<a  href="../../header/actions.html" class="m-menu__link ">
 																	<i class="m-menu__link-icon flaticon-graphic"></i>
 																	<span class="m-menu__link-text">
@@ -586,7 +586,7 @@ License: You must have a valid license purchased only from themeforest(the above
 														</ul>
 													</div>
 												</li>
-												<li class="m-menu__item "  data-redirect="true" aria-haspopup="true">
+												<li class="m-menu__item "  m-menu-link-redirect="1" aria-haspopup="true">
 													<a  href="../../header/actions.html" class="m-menu__link ">
 														<i class="m-menu__link-icon flaticon-map"></i>
 														<span class="m-menu__link-text">
@@ -594,7 +594,7 @@ License: You must have a valid license purchased only from themeforest(the above
 														</span>
 													</a>
 												</li>
-												<li class="m-menu__item "  data-redirect="true" aria-haspopup="true">
+												<li class="m-menu__item "  m-menu-link-redirect="1" aria-haspopup="true">
 													<a  href="../../header/actions.html" class="m-menu__link ">
 														<i class="m-menu__link-icon flaticon-graphic-2"></i>
 														<span class="m-menu__link-title">
@@ -611,8 +611,8 @@ License: You must have a valid license purchased only from themeforest(the above
 														</span>
 													</a>
 												</li>
-												<li class="m-menu__item  m-menu__item--submenu"  data-menu-submenu-toggle="hover" data-redirect="true" aria-haspopup="true">
-													<a  href="#" class="m-menu__link m-menu__toggle">
+												<li class="m-menu__item  m-menu__item--submenu"  m-menu-submenu-toggle="hover" m-menu-link-redirect="1" aria-haspopup="true">
+													<a  href="javascript:;" class="m-menu__link m-menu__toggle">
 														<i class="m-menu__link-icon flaticon-infinity"></i>
 														<span class="m-menu__link-text">
 															Cloud Manager
@@ -623,7 +623,7 @@ License: You must have a valid license purchased only from themeforest(the above
 													<div class="m-menu__submenu m-menu__submenu--classic m-menu__submenu--left">
 														<span class="m-menu__arrow "></span>
 														<ul class="m-menu__subnav">
-															<li class="m-menu__item "  data-redirect="true" aria-haspopup="true">
+															<li class="m-menu__item "  m-menu-link-redirect="1" aria-haspopup="true">
 																<a  href="../../header/actions.html" class="m-menu__link ">
 																	<i class="m-menu__link-icon flaticon-add"></i>
 																	<span class="m-menu__link-title">
@@ -640,7 +640,7 @@ License: You must have a valid license purchased only from themeforest(the above
 																	</span>
 																</a>
 															</li>
-															<li class="m-menu__item "  data-redirect="true" aria-haspopup="true">
+															<li class="m-menu__item "  m-menu-link-redirect="1" aria-haspopup="true">
 																<a  href="../../header/actions.html" class="m-menu__link ">
 																	<i class="m-menu__link-icon flaticon-signs-1"></i>
 																	<span class="m-menu__link-text">
@@ -648,7 +648,7 @@ License: You must have a valid license purchased only from themeforest(the above
 																	</span>
 																</a>
 															</li>
-															<li class="m-menu__item "  data-redirect="true" aria-haspopup="true">
+															<li class="m-menu__item "  m-menu-link-redirect="1" aria-haspopup="true">
 																<a  href="../../header/actions.html" class="m-menu__link ">
 																	<i class="m-menu__link-icon flaticon-folder"></i>
 																	<span class="m-menu__link-text">
@@ -656,7 +656,7 @@ License: You must have a valid license purchased only from themeforest(the above
 																	</span>
 																</a>
 															</li>
-															<li class="m-menu__item "  data-redirect="true" aria-haspopup="true">
+															<li class="m-menu__item "  m-menu-link-redirect="1" aria-haspopup="true">
 																<a  href="../../header/actions.html" class="m-menu__link ">
 																	<i class="m-menu__link-icon flaticon-cogwheel-2"></i>
 																	<span class="m-menu__link-text">
@@ -678,7 +678,7 @@ License: You must have a valid license purchased only from themeforest(the above
 									<ul class="m-topbar__nav m-nav m-nav--inline">
 										<li class="
 	m-nav__item m-dropdown m-dropdown--large m-dropdown--arrow m-dropdown--align-center m-dropdown--mobile-full-width m-dropdown--skin-light	m-list-search m-list-search--skin-light" 
-	data-dropdown-toggle="click" data-dropdown-persistent="true" id="m_quicksearch" data-search-type="dropdown">
+	m-dropdown-toggle="click" id="m_quicksearch" m-quicksearch-mode="dropdown" m-dropdown-persistent="1">
 											<a href="#" class="m-nav__link m-dropdown__toggle">
 												<span class="m-nav__link-icon">
 													<i class="flaticon-search-1"></i>
@@ -700,14 +700,14 @@ License: You must have a valid license purchased only from themeforest(the above
 														</form>
 													</div>
 													<div class="m-dropdown__body">
-														<div class="m-dropdown__scrollable m-scrollable" data-max-height="300" data-mobile-max-height="200">
+														<div class="m-dropdown__scrollable m-scrollable" data-scrollable="true" data-max-height="300" data-mobile-max-height="200">
 															<div class="m-dropdown__content"></div>
 														</div>
 													</div>
 												</div>
 											</div>
 										</li>
-										<li class="m-nav__item m-topbar__notifications m-topbar__notifications--img m-dropdown m-dropdown--large m-dropdown--header-bg-fill m-dropdown--arrow m-dropdown--align-center 	m-dropdown--mobile-full-width" data-dropdown-toggle="click" data-dropdown-persistent="true">
+										<li class="m-nav__item m-topbar__notifications m-topbar__notifications--img m-dropdown m-dropdown--large m-dropdown--header-bg-fill m-dropdown--arrow m-dropdown--align-center 	m-dropdown--mobile-full-width" m-dropdown-toggle="click" m-dropdown-persistent="1">
 											<a href="#" class="m-nav__link m-dropdown__toggle" id="m_topbar_notification_icon">
 												<span class="m-nav__link-badge m-badge m-badge--dot m-badge--dot-small m-badge--danger"></span>
 												<span class="m-nav__link-icon">
@@ -838,7 +838,7 @@ License: You must have a valid license purchased only from themeforest(the above
 																	</div>
 																</div>
 																<div class="tab-pane" id="topbar_notifications_events" role="tabpanel">
-																	<div class="m-scrollable" data-max-height="250" data-mobile-max-height="200">
+																	<div class="m-scrollable" data-scrollable="true" data-max-height="250" data-mobile-max-height="200">
 																		<div class="m-list-timeline m-list-timeline--skin-light">
 																			<div class="m-list-timeline__items">
 																				<div class="m-list-timeline__item">
@@ -916,7 +916,7 @@ License: You must have a valid license purchased only from themeforest(the above
 												</div>
 											</div>
 										</li>
-										<li class="m-nav__item m-topbar__quick-actions m-topbar__quick-actions--img m-dropdown m-dropdown--large m-dropdown--header-bg-fill m-dropdown--arrow m-dropdown--align-right m-dropdown--align-push m-dropdown--mobile-full-width m-dropdown--skin-light"  data-dropdown-toggle="click">
+										<li class="m-nav__item m-topbar__quick-actions m-topbar__quick-actions--img m-dropdown m-dropdown--large m-dropdown--header-bg-fill m-dropdown--arrow m-dropdown--align-right m-dropdown--align-push m-dropdown--mobile-full-width m-dropdown--skin-light"  m-dropdown-toggle="click">
 											<a href="#" class="m-nav__link m-dropdown__toggle">
 												<span class="m-nav__link-badge m-badge m-badge--dot m-badge--info m--hide"></span>
 												<span class="m-nav__link-icon">
@@ -936,7 +936,7 @@ License: You must have a valid license purchased only from themeforest(the above
 													</div>
 													<div class="m-dropdown__body m-dropdown__body--paddingless">
 														<div class="m-dropdown__content">
-															<div class="m-scrollable" data-scrollable="false" data-max-height="380" data-mobile-max-height="200">
+															<div class="data" data="false" data-max-height="380" data-mobile-max-height="200">
 																<div class="m-nav-grid m-nav-grid--skin-light">
 																	<div class="m-nav-grid__row">
 																		<a href="#" class="m-nav-grid__item">
@@ -973,7 +973,7 @@ License: You must have a valid license purchased only from themeforest(the above
 												</div>
 											</div>
 										</li>
-										<li class="m-nav__item m-topbar__user-profile m-topbar__user-profile--img  m-dropdown m-dropdown--medium m-dropdown--arrow m-dropdown--header-bg-fill m-dropdown--align-right m-dropdown--mobile-full-width m-dropdown--skin-light" data-dropdown-toggle="click">
+										<li class="m-nav__item m-topbar__user-profile m-topbar__user-profile--img  m-dropdown m-dropdown--medium m-dropdown--arrow m-dropdown--header-bg-fill m-dropdown--align-right m-dropdown--mobile-full-width m-dropdown--skin-light" m-dropdown-toggle="click">
 											<a href="#" class="m-nav__link m-dropdown__toggle">
 												<span class="m-topbar__userpic">
 													<img src="../../assets/app/media/img/users/user4.jpg" class="m--img-rounded m--marginless m--img-centered" alt=""/>
@@ -1097,8 +1097,8 @@ License: You must have a valid license purchased only from themeforest(the above
 	<div 
 		id="m_ver_menu" 
 		class="m-aside-menu  m-aside-menu--skin-dark m-aside-menu--submenu-skin-dark " 
-		data-menu-vertical="true"
-		 data-menu-scrollable="false" data-menu-dropdown-timeout="500"  
+		m-menu-vertical="1"
+		 m-menu-scrollable="0" m-menu-dropdown-timeout="500"  
 		>
 						<ul class="m-menu__nav  m-menu__nav--dropdown-submenu-arrow ">
 							<li class="m-menu__item " aria-haspopup="true" >
@@ -1124,8 +1124,8 @@ License: You must have a valid license purchased only from themeforest(the above
 								</h4>
 								<i class="m-menu__section-icon flaticon-more-v3"></i>
 							</li>
-							<li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true"  data-menu-submenu-toggle="hover">
-								<a  href="#" class="m-menu__link m-menu__toggle">
+							<li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true"  m-menu-submenu-toggle="hover">
+								<a  href="javascript:;" class="m-menu__link m-menu__toggle">
 									<i class="m-menu__link-icon flaticon-layers"></i>
 									<span class="m-menu__link-text">
 										Base
@@ -1272,8 +1272,8 @@ License: You must have a valid license purchased only from themeforest(the above
 												</span>
 											</a>
 										</li>
-										<li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true"  data-menu-submenu-toggle="hover">
-											<a  href="#" class="m-menu__link m-menu__toggle">
+										<li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true"  m-menu-submenu-toggle="hover">
+											<a  href="javascript:;" class="m-menu__link m-menu__toggle">
 												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 													<span></span>
 												</i>
@@ -1381,8 +1381,8 @@ License: You must have a valid license purchased only from themeforest(the above
 									</ul>
 								</div>
 							</li>
-							<li class="m-menu__item  m-menu__item--submenu m-menu__item--open m-menu__item--expanded" aria-haspopup="true"  data-menu-submenu-toggle="hover">
-								<a  href="#" class="m-menu__link m-menu__toggle">
+							<li class="m-menu__item  m-menu__item--submenu m-menu__item--open m-menu__item--expanded" aria-haspopup="true"  m-menu-submenu-toggle="hover">
+								<a  href="javascript:;" class="m-menu__link m-menu__toggle">
 									<i class="m-menu__link-icon flaticon-share"></i>
 									<span class="m-menu__link-text">
 										Icons
@@ -1435,8 +1435,8 @@ License: You must have a valid license purchased only from themeforest(the above
 									</ul>
 								</div>
 							</li>
-							<li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true"  data-menu-submenu-toggle="hover">
-								<a  href="#" class="m-menu__link m-menu__toggle">
+							<li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true"  m-menu-submenu-toggle="hover">
+								<a  href="javascript:;" class="m-menu__link m-menu__toggle">
 									<i class="m-menu__link-icon flaticon-multimedia-1"></i>
 									<span class="m-menu__link-text">
 										Buttons
@@ -1453,8 +1453,8 @@ License: You must have a valid license purchased only from themeforest(the above
 												</span>
 											</span>
 										</li>
-										<li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true"  data-menu-submenu-toggle="hover">
-											<a  href="#" class="m-menu__link m-menu__toggle">
+										<li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true"  m-menu-submenu-toggle="hover">
+											<a  href="javascript:;" class="m-menu__link m-menu__toggle">
 												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 													<span></span>
 												</i>
@@ -1529,8 +1529,8 @@ License: You must have a valid license purchased only from themeforest(the above
 												</span>
 											</a>
 										</li>
-										<li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true"  data-menu-submenu-toggle="hover">
-											<a  href="#" class="m-menu__link m-menu__toggle">
+										<li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true"  m-menu-submenu-toggle="hover">
+											<a  href="javascript:;" class="m-menu__link m-menu__toggle">
 												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 													<span></span>
 												</i>
@@ -1578,8 +1578,8 @@ License: You must have a valid license purchased only from themeforest(the above
 									</ul>
 								</div>
 							</li>
-							<li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true"  data-menu-submenu-toggle="hover">
-								<a  href="#" class="m-menu__link m-menu__toggle">
+							<li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true"  m-menu-submenu-toggle="hover">
+								<a  href="javascript:;" class="m-menu__link m-menu__toggle">
 									<i class="m-menu__link-icon flaticon-interface-7"></i>
 									<span class="m-menu__link-text">
 										Forms
@@ -1596,8 +1596,8 @@ License: You must have a valid license purchased only from themeforest(the above
 												</span>
 											</span>
 										</li>
-										<li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true"  data-menu-submenu-toggle="hover">
-											<a  href="#" class="m-menu__link m-menu__toggle">
+										<li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true"  m-menu-submenu-toggle="hover">
+											<a  href="javascript:;" class="m-menu__link m-menu__toggle">
 												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 													<span></span>
 												</i>
@@ -1662,8 +1662,8 @@ License: You must have a valid license purchased only from themeforest(the above
 												</ul>
 											</div>
 										</li>
-										<li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true"  data-menu-submenu-toggle="hover">
-											<a  href="#" class="m-menu__link m-menu__toggle">
+										<li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true"  m-menu-submenu-toggle="hover">
+											<a  href="javascript:;" class="m-menu__link m-menu__toggle">
 												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 													<span></span>
 												</i>
@@ -1888,8 +1888,8 @@ License: You must have a valid license purchased only from themeforest(the above
 												</ul>
 											</div>
 										</li>
-										<li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true"  data-menu-submenu-toggle="hover">
-											<a  href="#" class="m-menu__link m-menu__toggle">
+										<li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true"  m-menu-submenu-toggle="hover">
+											<a  href="javascript:;" class="m-menu__link m-menu__toggle">
 												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 													<span></span>
 												</i>
@@ -1934,8 +1934,8 @@ License: You must have a valid license purchased only from themeforest(the above
 												</ul>
 											</div>
 										</li>
-										<li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true"  data-menu-submenu-toggle="hover">
-											<a  href="#" class="m-menu__link m-menu__toggle">
+										<li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true"  m-menu-submenu-toggle="hover">
+											<a  href="javascript:;" class="m-menu__link m-menu__toggle">
 												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 													<span></span>
 												</i>
@@ -1980,8 +1980,8 @@ License: You must have a valid license purchased only from themeforest(the above
 												</ul>
 											</div>
 										</li>
-										<li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true"  data-menu-submenu-toggle="hover">
-											<a  href="#" class="m-menu__link m-menu__toggle">
+										<li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true"  m-menu-submenu-toggle="hover">
+											<a  href="javascript:;" class="m-menu__link m-menu__toggle">
 												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 													<span></span>
 												</i>
@@ -2049,8 +2049,8 @@ License: You must have a valid license purchased only from themeforest(the above
 									</ul>
 								</div>
 							</li>
-							<li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true"  data-menu-submenu-toggle="hover">
-								<a  href="#" class="m-menu__link m-menu__toggle">
+							<li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true"  m-menu-submenu-toggle="hover">
+								<a  href="javascript:;" class="m-menu__link m-menu__toggle">
 									<i class="m-menu__link-icon flaticon-tabs"></i>
 									<span class="m-menu__link-text">
 										Datatables
@@ -2067,8 +2067,8 @@ License: You must have a valid license purchased only from themeforest(the above
 												</span>
 											</span>
 										</li>
-										<li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true"  data-menu-submenu-toggle="hover">
-											<a  href="#" class="m-menu__link m-menu__toggle">
+										<li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true"  m-menu-submenu-toggle="hover">
+											<a  href="javascript:;" class="m-menu__link m-menu__toggle">
 												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 													<span></span>
 												</i>
@@ -2193,8 +2193,8 @@ License: You must have a valid license purchased only from themeforest(the above
 												</ul>
 											</div>
 										</li>
-										<li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true"  data-menu-submenu-toggle="hover">
-											<a  href="#" class="m-menu__link m-menu__toggle">
+										<li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true"  m-menu-submenu-toggle="hover">
+											<a  href="javascript:;" class="m-menu__link m-menu__toggle">
 												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 													<span></span>
 												</i>
@@ -2239,8 +2239,8 @@ License: You must have a valid license purchased only from themeforest(the above
 												</ul>
 											</div>
 										</li>
-										<li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true"  data-menu-submenu-toggle="hover">
-											<a  href="#" class="m-menu__link m-menu__toggle">
+										<li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true"  m-menu-submenu-toggle="hover">
+											<a  href="javascript:;" class="m-menu__link m-menu__toggle">
 												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 													<span></span>
 												</i>
@@ -2295,8 +2295,8 @@ License: You must have a valid license purchased only from themeforest(the above
 												</ul>
 											</div>
 										</li>
-										<li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true"  data-menu-submenu-toggle="hover">
-											<a  href="#" class="m-menu__link m-menu__toggle">
+										<li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true"  m-menu-submenu-toggle="hover">
+											<a  href="javascript:;" class="m-menu__link m-menu__toggle">
 												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 													<span></span>
 												</i>
@@ -2331,8 +2331,8 @@ License: You must have a valid license purchased only from themeforest(the above
 												</ul>
 											</div>
 										</li>
-										<li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true"  data-menu-submenu-toggle="hover">
-											<a  href="#" class="m-menu__link m-menu__toggle">
+										<li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true"  m-menu-submenu-toggle="hover">
+											<a  href="javascript:;" class="m-menu__link m-menu__toggle">
 												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 													<span></span>
 												</i>
@@ -2370,8 +2370,8 @@ License: You must have a valid license purchased only from themeforest(the above
 									</ul>
 								</div>
 							</li>
-							<li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true"  data-menu-submenu-toggle="hover">
-								<a  href="#" class="m-menu__link m-menu__toggle">
+							<li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true"  m-menu-submenu-toggle="hover">
+								<a  href="javascript:;" class="m-menu__link m-menu__toggle">
 									<i class="m-menu__link-icon flaticon-interface-1"></i>
 									<span class="m-menu__link-text">
 										Portlets
@@ -2451,8 +2451,8 @@ License: You must have a valid license purchased only from themeforest(the above
 									</ul>
 								</div>
 							</li>
-							<li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true"  data-menu-submenu-toggle="hover">
-								<a  href="#" class="m-menu__link m-menu__toggle">
+							<li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true"  m-menu-submenu-toggle="hover">
+								<a  href="javascript:;" class="m-menu__link m-menu__toggle">
 									<i class="m-menu__link-icon flaticon-interface-6"></i>
 									<span class="m-menu__link-text">
 										Timeline
@@ -2492,8 +2492,8 @@ License: You must have a valid license purchased only from themeforest(the above
 									</ul>
 								</div>
 							</li>
-							<li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true"  data-menu-submenu-toggle="hover">
-								<a  href="#" class="m-menu__link m-menu__toggle">
+							<li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true"  m-menu-submenu-toggle="hover">
+								<a  href="javascript:;" class="m-menu__link m-menu__toggle">
 									<i class="m-menu__link-icon flaticon-network"></i>
 									<span class="m-menu__link-text">
 										Widgets
@@ -2533,8 +2533,8 @@ License: You must have a valid license purchased only from themeforest(the above
 									</ul>
 								</div>
 							</li>
-							<li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true"  data-menu-submenu-toggle="hover">
-								<a  href="#" class="m-menu__link m-menu__toggle">
+							<li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true"  m-menu-submenu-toggle="hover">
+								<a  href="javascript:;" class="m-menu__link m-menu__toggle">
 									<i class="m-menu__link-icon flaticon-calendar"></i>
 									<span class="m-menu__link-text">
 										Calendar
@@ -2604,8 +2604,8 @@ License: You must have a valid license purchased only from themeforest(the above
 									</ul>
 								</div>
 							</li>
-							<li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true"  data-menu-submenu-toggle="hover">
-								<a  href="#" class="m-menu__link m-menu__toggle">
+							<li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true"  m-menu-submenu-toggle="hover">
+								<a  href="javascript:;" class="m-menu__link m-menu__toggle">
 									<i class="m-menu__link-icon flaticon-diagram"></i>
 									<span class="m-menu__link-text">
 										Charts
@@ -2622,8 +2622,8 @@ License: You must have a valid license purchased only from themeforest(the above
 												</span>
 											</span>
 										</li>
-										<li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true"  data-menu-submenu-toggle="hover">
-											<a  href="#" class="m-menu__link m-menu__toggle">
+										<li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true"  m-menu-submenu-toggle="hover">
+											<a  href="javascript:;" class="m-menu__link m-menu__toggle">
 												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 													<span></span>
 												</i>
@@ -2701,8 +2701,8 @@ License: You must have a valid license purchased only from themeforest(the above
 									</ul>
 								</div>
 							</li>
-							<li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true"  data-menu-submenu-toggle="hover">
-								<a  href="#" class="m-menu__link m-menu__toggle">
+							<li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true"  m-menu-submenu-toggle="hover">
+								<a  href="javascript:;" class="m-menu__link m-menu__toggle">
 									<i class="m-menu__link-icon flaticon-placeholder-1"></i>
 									<span class="m-menu__link-text">
 										Maps
@@ -2742,8 +2742,8 @@ License: You must have a valid license purchased only from themeforest(the above
 									</ul>
 								</div>
 							</li>
-							<li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true"  data-menu-submenu-toggle="hover">
-								<a  href="#" class="m-menu__link m-menu__toggle">
+							<li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true"  m-menu-submenu-toggle="hover">
+								<a  href="javascript:;" class="m-menu__link m-menu__toggle">
 									<i class="m-menu__link-icon flaticon-signs-2"></i>
 									<span class="m-menu__link-text">
 										Utils
@@ -2789,8 +2789,8 @@ License: You must have a valid license purchased only from themeforest(the above
 								</h4>
 								<i class="m-menu__section-icon flaticon-more-v3"></i>
 							</li>
-							<li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true"  data-menu-submenu-toggle="hover">
-								<a  href="#" class="m-menu__link m-menu__toggle">
+							<li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true"  m-menu-submenu-toggle="hover">
+								<a  href="javascript:;" class="m-menu__link m-menu__toggle">
 									<i class="m-menu__link-icon flaticon-interface-9"></i>
 									<span class="m-menu__link-text">
 										Pricing Tables
@@ -2850,8 +2850,8 @@ License: You must have a valid license purchased only from themeforest(the above
 									</ul>
 								</div>
 							</li>
-							<li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true"  data-menu-submenu-toggle="hover">
-								<a  href="#" class="m-menu__link m-menu__toggle">
+							<li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true"  m-menu-submenu-toggle="hover">
+								<a  href="javascript:;" class="m-menu__link m-menu__toggle">
 									<i class="m-menu__link-icon flaticon-piggy-bank"></i>
 									<span class="m-menu__link-text">
 										Invoices
@@ -2891,8 +2891,8 @@ License: You must have a valid license purchased only from themeforest(the above
 									</ul>
 								</div>
 							</li>
-							<li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true"  data-menu-submenu-toggle="hover">
-								<a  href="#" class="m-menu__link m-menu__toggle">
+							<li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true"  m-menu-submenu-toggle="hover">
+								<a  href="javascript:;" class="m-menu__link m-menu__toggle">
 									<i class="m-menu__link-icon flaticon-exclamation"></i>
 									<span class="m-menu__link-text">
 										FAQS
@@ -2922,8 +2922,8 @@ License: You must have a valid license purchased only from themeforest(the above
 									</ul>
 								</div>
 							</li>
-							<li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true"  data-menu-submenu-toggle="hover">
-								<a  href="#" class="m-menu__link m-menu__toggle">
+							<li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true"  m-menu-submenu-toggle="hover">
+								<a  href="javascript:;" class="m-menu__link m-menu__toggle">
 									<i class="m-menu__link-icon flaticon-suitcase"></i>
 									<span class="m-menu__link-text">
 										Custom Pages
@@ -2940,8 +2940,8 @@ License: You must have a valid license purchased only from themeforest(the above
 												</span>
 											</span>
 										</li>
-										<li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true"  data-menu-submenu-toggle="hover">
-											<a  href="#" class="m-menu__link m-menu__toggle">
+										<li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true"  m-menu-submenu-toggle="hover">
+											<a  href="javascript:;" class="m-menu__link m-menu__toggle">
 												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 													<span></span>
 												</i>
@@ -3006,8 +3006,8 @@ License: You must have a valid license purchased only from themeforest(the above
 												</ul>
 											</div>
 										</li>
-										<li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true"  data-menu-submenu-toggle="hover">
-											<a  href="#" class="m-menu__link m-menu__toggle">
+										<li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true"  m-menu-submenu-toggle="hover">
+											<a  href="javascript:;" class="m-menu__link m-menu__toggle">
 												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 													<span></span>
 												</i>
@@ -3127,7 +3127,7 @@ License: You must have a valid license purchased only from themeforest(the above
 								</ul>
 							</div>
 							<div>
-								<div class="m-dropdown m-dropdown--inline m-dropdown--arrow m-dropdown--align-right m-dropdown--align-push" data-dropdown-toggle="hover" aria-expanded="true">
+								<div class="m-dropdown m-dropdown--inline m-dropdown--arrow m-dropdown--align-right m-dropdown--align-push" m-dropdown-toggle="hover" aria-expanded="true">
 									<a href="#" class="m-portlet__nav-link btn btn-lg btn-secondary  m-btn m-btn--outline-2x m-btn--air m-btn--icon m-btn--icon-only m-btn--pill  m-dropdown__toggle">
 										<i class="la la-plus m--hide"></i>
 										<i class="la la-ellipsis-h"></i>
@@ -3213,122 +3213,60 @@ License: You must have a valid license purchased only from themeforest(the above
 											<div class="col-md-2">
 												<div class="m-demo-icon">
 													<div class="m-demo-icon__preview">
-														<i class="flaticon-alarm-1"></i>
+														<i class="flaticon-multimedia-5"></i>
 													</div>
 													<div class="m-demo-icon__class">
-														flaticon-alarm-1
+														flaticon-multimedia-5
 													</div>
 												</div>
 											</div>
 											<div class="col-md-2">
 												<div class="m-demo-icon">
 													<div class="m-demo-icon__preview">
-														<i class="flaticon-music-2"></i>
+														<i class="flaticon-multimedia-3"></i>
 													</div>
 													<div class="m-demo-icon__class">
-														flaticon-music-2
+														flaticon-multimedia-3
 													</div>
 												</div>
 											</div>
 											<div class="col-md-2">
 												<div class="m-demo-icon">
 													<div class="m-demo-icon__preview">
-														<i class="flaticon-support"></i>
+														<i class="flaticon-mail-1"></i>
 													</div>
 													<div class="m-demo-icon__class">
-														flaticon-support
+														flaticon-mail-1
 													</div>
 												</div>
 											</div>
 											<div class="col-md-2">
 												<div class="m-demo-icon">
 													<div class="m-demo-icon__preview">
-														<i class="flaticon-stopwatch"></i>
+														<i class="flaticon-email"></i>
 													</div>
 													<div class="m-demo-icon__class">
-														flaticon-stopwatch
+														flaticon-email
 													</div>
 												</div>
 											</div>
 											<div class="col-md-2">
 												<div class="m-demo-icon">
 													<div class="m-demo-icon__preview">
-														<i class="flaticon-puzzle"></i>
+														<i class="flaticon-mail"></i>
 													</div>
 													<div class="m-demo-icon__class">
-														flaticon-puzzle
+														flaticon-mail
 													</div>
 												</div>
 											</div>
 											<div class="col-md-2">
 												<div class="m-demo-icon">
 													<div class="m-demo-icon__preview">
-														<i class="flaticon-settings-1"></i>
+														<i class="flaticon-like"></i>
 													</div>
 													<div class="m-demo-icon__class">
-														flaticon-settings-1
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="row">
-											<div class="col-md-2">
-												<div class="m-demo-icon">
-													<div class="m-demo-icon__preview">
-														<i class="flaticon-calendar-3"></i>
-													</div>
-													<div class="m-demo-icon__class">
-														flaticon-calendar-3
-													</div>
-												</div>
-											</div>
-											<div class="col-md-2">
-												<div class="m-demo-icon">
-													<div class="m-demo-icon__preview">
-														<i class="flaticon-add-circular-button"></i>
-													</div>
-													<div class="m-demo-icon__class">
-														flaticon-add-circular-button
-													</div>
-												</div>
-											</div>
-											<div class="col-md-2">
-												<div class="m-demo-icon">
-													<div class="m-demo-icon__preview">
-														<i class="flaticon-plus"></i>
-													</div>
-													<div class="m-demo-icon__class">
-														flaticon-plus
-													</div>
-												</div>
-											</div>
-											<div class="col-md-2">
-												<div class="m-demo-icon">
-													<div class="m-demo-icon__preview">
-														<i class="flaticon-menu-1"></i>
-													</div>
-													<div class="m-demo-icon__class">
-														flaticon-menu-1
-													</div>
-												</div>
-											</div>
-											<div class="col-md-2">
-												<div class="m-demo-icon">
-													<div class="m-demo-icon__preview">
-														<i class="flaticon-menu"></i>
-													</div>
-													<div class="m-demo-icon__class">
-														flaticon-menu
-													</div>
-												</div>
-											</div>
-											<div class="col-md-2">
-												<div class="m-demo-icon">
-													<div class="m-demo-icon__preview">
-														<i class="flaticon-piggy-bank"></i>
-													</div>
-													<div class="m-demo-icon__class">
-														flaticon-piggy-bank
+														flaticon-like
 													</div>
 												</div>
 											</div>
@@ -3337,60 +3275,60 @@ License: You must have a valid license purchased only from themeforest(the above
 											<div class="col-md-2">
 												<div class="m-demo-icon">
 													<div class="m-demo-icon__preview">
-														<i class="flaticon-confetti"></i>
+														<i class="flaticon-clock-2"></i>
 													</div>
 													<div class="m-demo-icon__class">
-														flaticon-confetti
+														flaticon-clock-2
 													</div>
 												</div>
 											</div>
 											<div class="col-md-2">
 												<div class="m-demo-icon">
 													<div class="m-demo-icon__preview">
-														<i class="flaticon-rocket"></i>
+														<i class="flaticon-delete-2"></i>
 													</div>
 													<div class="m-demo-icon__class">
-														flaticon-rocket
+														flaticon-delete-2
 													</div>
 												</div>
 											</div>
 											<div class="col-md-2">
 												<div class="m-demo-icon">
 													<div class="m-demo-icon__preview">
-														<i class="flaticon-gift"></i>
+														<i class="flaticon-add-label-button"></i>
 													</div>
 													<div class="m-demo-icon__class">
-														flaticon-gift
+														flaticon-add-label-button
 													</div>
 												</div>
 											</div>
 											<div class="col-md-2">
 												<div class="m-demo-icon">
 													<div class="m-demo-icon__preview">
-														<i class="flaticon-truck"></i>
+														<i class="flaticon-arrows"></i>
 													</div>
 													<div class="m-demo-icon__class">
-														flaticon-truck
+														flaticon-arrows
 													</div>
 												</div>
 											</div>
 											<div class="col-md-2">
 												<div class="m-demo-icon">
 													<div class="m-demo-icon__preview">
-														<i class="flaticon-user-settings"></i>
+														<i class="flaticon-eye"></i>
 													</div>
 													<div class="m-demo-icon__class">
-														flaticon-user-settings
+														flaticon-eye
 													</div>
 												</div>
 											</div>
 											<div class="col-md-2">
 												<div class="m-demo-icon">
 													<div class="m-demo-icon__preview">
-														<i class="flaticon-user-add"></i>
+														<i class="flaticon-reply"></i>
 													</div>
 													<div class="m-demo-icon__class">
-														flaticon-user-add
+														flaticon-reply
 													</div>
 												</div>
 											</div>
@@ -3399,529 +3337,65 @@ License: You must have a valid license purchased only from themeforest(the above
 											<div class="col-md-2">
 												<div class="m-demo-icon">
 													<div class="m-demo-icon__preview">
-														<i class="flaticon-user-ok"></i>
+														<i class="flaticon-interface-11"></i>
 													</div>
 													<div class="m-demo-icon__class">
-														flaticon-user-ok
+														flaticon-interface-11
 													</div>
 												</div>
 											</div>
 											<div class="col-md-2">
 												<div class="m-demo-icon">
 													<div class="m-demo-icon__preview">
-														<i class="flaticon-internet"></i>
+														<i class="flaticon-technology-2"></i>
 													</div>
 													<div class="m-demo-icon__class">
-														flaticon-internet
+														flaticon-technology-2
 													</div>
 												</div>
 											</div>
 											<div class="col-md-2">
 												<div class="m-demo-icon">
 													<div class="m-demo-icon__preview">
-														<i class="flaticon-alert-2"></i>
+														<i class="flaticon-avatar"></i>
 													</div>
 													<div class="m-demo-icon__class">
-														flaticon-alert-2
+														flaticon-avatar
 													</div>
 												</div>
 											</div>
 											<div class="col-md-2">
 												<div class="m-demo-icon">
 													<div class="m-demo-icon__preview">
-														<i class="flaticon-alarm"></i>
+														<i class="flaticon-star"></i>
 													</div>
 													<div class="m-demo-icon__class">
-														flaticon-alarm
+														flaticon-star
 													</div>
 												</div>
 											</div>
 											<div class="col-md-2">
 												<div class="m-demo-icon">
 													<div class="m-demo-icon__preview">
-														<i class="flaticon-grid-menu"></i>
+														<i class="flaticon-delete-1"></i>
 													</div>
 													<div class="m-demo-icon__class">
-														flaticon-grid-menu
+														flaticon-delete-1
 													</div>
 												</div>
 											</div>
 											<div class="col-md-2">
 												<div class="m-demo-icon">
 													<div class="m-demo-icon__preview">
-														<i class="flaticon-up-arrow-1"></i>
+														<i class="flaticon-interface-10"></i>
 													</div>
 													<div class="m-demo-icon__class">
-														flaticon-up-arrow-1
+														flaticon-interface-10
 													</div>
 												</div>
 											</div>
 										</div>
 										<div class="row">
-											<div class="col-md-2">
-												<div class="m-demo-icon">
-													<div class="m-demo-icon__preview">
-														<i class="flaticon-more-1"></i>
-													</div>
-													<div class="m-demo-icon__class">
-														flaticon-more-1
-													</div>
-												</div>
-											</div>
-											<div class="col-md-2">
-												<div class="m-demo-icon">
-													<div class="m-demo-icon__preview">
-														<i class="flaticon-more-v3"></i>
-													</div>
-													<div class="m-demo-icon__class">
-														flaticon-more-v3
-													</div>
-												</div>
-											</div>
-											<div class="col-md-2">
-												<div class="m-demo-icon">
-													<div class="m-demo-icon__preview">
-														<i class="flaticon-lock-1"></i>
-													</div>
-													<div class="m-demo-icon__class">
-														flaticon-lock-1
-													</div>
-												</div>
-											</div>
-											<div class="col-md-2">
-												<div class="m-demo-icon">
-													<div class="m-demo-icon__preview">
-														<i class="flaticon-profile-1"></i>
-													</div>
-													<div class="m-demo-icon__class">
-														flaticon-profile-1
-													</div>
-												</div>
-											</div>
-											<div class="col-md-2">
-												<div class="m-demo-icon">
-													<div class="m-demo-icon__preview">
-														<i class="flaticon-users"></i>
-													</div>
-													<div class="m-demo-icon__class">
-														flaticon-users
-													</div>
-												</div>
-											</div>
-											<div class="col-md-2">
-												<div class="m-demo-icon">
-													<div class="m-demo-icon__preview">
-														<i class="flaticon-map-location"></i>
-													</div>
-													<div class="m-demo-icon__class">
-														flaticon-map-location
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="row">
-											<div class="col-md-2">
-												<div class="m-demo-icon">
-													<div class="m-demo-icon__preview">
-														<i class="flaticon-placeholder-2"></i>
-													</div>
-													<div class="m-demo-icon__class">
-														flaticon-placeholder-2
-													</div>
-												</div>
-											</div>
-											<div class="col-md-2">
-												<div class="m-demo-icon">
-													<div class="m-demo-icon__preview">
-														<i class="flaticon-route"></i>
-													</div>
-													<div class="m-demo-icon__class">
-														flaticon-route
-													</div>
-												</div>
-											</div>
-											<div class="col-md-2">
-												<div class="m-demo-icon">
-													<div class="m-demo-icon__preview">
-														<i class="flaticon-more-v4"></i>
-													</div>
-													<div class="m-demo-icon__class">
-														flaticon-more-v4
-													</div>
-												</div>
-											</div>
-											<div class="col-md-2">
-												<div class="m-demo-icon">
-													<div class="m-demo-icon__preview">
-														<i class="flaticon-lock"></i>
-													</div>
-													<div class="m-demo-icon__class">
-														flaticon-lock
-													</div>
-												</div>
-											</div>
-											<div class="col-md-2">
-												<div class="m-demo-icon">
-													<div class="m-demo-icon__preview">
-														<i class="flaticon-multimedia-2"></i>
-													</div>
-													<div class="m-demo-icon__class">
-														flaticon-multimedia-2
-													</div>
-												</div>
-											</div>
-											<div class="col-md-2">
-												<div class="m-demo-icon">
-													<div class="m-demo-icon__preview">
-														<i class="flaticon-add"></i>
-													</div>
-													<div class="m-demo-icon__class">
-														flaticon-add
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="row">
-											<div class="col-md-2">
-												<div class="m-demo-icon">
-													<div class="m-demo-icon__preview">
-														<i class="flaticon-more-v5"></i>
-													</div>
-													<div class="m-demo-icon__class">
-														flaticon-more-v5
-													</div>
-												</div>
-											</div>
-											<div class="col-md-2">
-												<div class="m-demo-icon">
-													<div class="m-demo-icon__preview">
-														<i class="flaticon-more-v6"></i>
-													</div>
-													<div class="m-demo-icon__class">
-														flaticon-more-v6
-													</div>
-												</div>
-											</div>
-											<div class="col-md-2">
-												<div class="m-demo-icon">
-													<div class="m-demo-icon__preview">
-														<i class="flaticon-grid-menu-v2"></i>
-													</div>
-													<div class="m-demo-icon__class">
-														flaticon-grid-menu-v2
-													</div>
-												</div>
-											</div>
-											<div class="col-md-2">
-												<div class="m-demo-icon">
-													<div class="m-demo-icon__preview">
-														<i class="flaticon-suitcase"></i>
-													</div>
-													<div class="m-demo-icon__class">
-														flaticon-suitcase
-													</div>
-												</div>
-											</div>
-											<div class="col-md-2">
-												<div class="m-demo-icon">
-													<div class="m-demo-icon__preview">
-														<i class="flaticon-app"></i>
-													</div>
-													<div class="m-demo-icon__class">
-														flaticon-app
-													</div>
-												</div>
-											</div>
-											<div class="col-md-2">
-												<div class="m-demo-icon">
-													<div class="m-demo-icon__preview">
-														<i class="flaticon-interface-9"></i>
-													</div>
-													<div class="m-demo-icon__class">
-														flaticon-interface-9
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="row">
-											<div class="col-md-2">
-												<div class="m-demo-icon">
-													<div class="m-demo-icon__preview">
-														<i class="flaticon-time-3"></i>
-													</div>
-													<div class="m-demo-icon__class">
-														flaticon-time-3
-													</div>
-												</div>
-											</div>
-											<div class="col-md-2">
-												<div class="m-demo-icon">
-													<div class="m-demo-icon__preview">
-														<i class="flaticon-list-3"></i>
-													</div>
-													<div class="m-demo-icon__class">
-														flaticon-list-3
-													</div>
-												</div>
-											</div>
-											<div class="col-md-2">
-												<div class="m-demo-icon">
-													<div class="m-demo-icon__preview">
-														<i class="flaticon-list-2"></i>
-													</div>
-													<div class="m-demo-icon__class">
-														flaticon-list-2
-													</div>
-												</div>
-											</div>
-											<div class="col-md-2">
-												<div class="m-demo-icon">
-													<div class="m-demo-icon__preview">
-														<i class="flaticon-file-1"></i>
-													</div>
-													<div class="m-demo-icon__class">
-														flaticon-file-1
-													</div>
-												</div>
-											</div>
-											<div class="col-md-2">
-												<div class="m-demo-icon">
-													<div class="m-demo-icon__preview">
-														<i class="flaticon-folder-4"></i>
-													</div>
-													<div class="m-demo-icon__class">
-														flaticon-folder-4
-													</div>
-												</div>
-											</div>
-											<div class="col-md-2">
-												<div class="m-demo-icon">
-													<div class="m-demo-icon__preview">
-														<i class="flaticon-folder-3"></i>
-													</div>
-													<div class="m-demo-icon__class">
-														flaticon-folder-3
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="row">
-											<div class="col-md-2">
-												<div class="m-demo-icon">
-													<div class="m-demo-icon__preview">
-														<i class="flaticon-folder-2"></i>
-													</div>
-													<div class="m-demo-icon__class">
-														flaticon-folder-2
-													</div>
-												</div>
-											</div>
-											<div class="col-md-2">
-												<div class="m-demo-icon">
-													<div class="m-demo-icon__preview">
-														<i class="flaticon-folder-1"></i>
-													</div>
-													<div class="m-demo-icon__class">
-														flaticon-folder-1
-													</div>
-												</div>
-											</div>
-											<div class="col-md-2">
-												<div class="m-demo-icon">
-													<div class="m-demo-icon__preview">
-														<i class="flaticon-time-2"></i>
-													</div>
-													<div class="m-demo-icon__class">
-														flaticon-time-2
-													</div>
-												</div>
-											</div>
-											<div class="col-md-2">
-												<div class="m-demo-icon">
-													<div class="m-demo-icon__preview">
-														<i class="flaticon-search-1"></i>
-													</div>
-													<div class="m-demo-icon__class">
-														flaticon-search-1
-													</div>
-												</div>
-											</div>
-											<div class="col-md-2">
-												<div class="m-demo-icon">
-													<div class="m-demo-icon__preview">
-														<i class="flaticon-tool-1"></i>
-													</div>
-													<div class="m-demo-icon__class">
-														flaticon-tool-1
-													</div>
-												</div>
-											</div>
-											<div class="col-md-2">
-												<div class="m-demo-icon">
-													<div class="m-demo-icon__preview">
-														<i class="flaticon-security"></i>
-													</div>
-													<div class="m-demo-icon__class">
-														flaticon-security
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="row">
-											<div class="col-md-2">
-												<div class="m-demo-icon">
-													<div class="m-demo-icon__preview">
-														<i class="flaticon-interface-8"></i>
-													</div>
-													<div class="m-demo-icon__class">
-														flaticon-interface-8
-													</div>
-												</div>
-											</div>
-											<div class="col-md-2">
-												<div class="m-demo-icon">
-													<div class="m-demo-icon__preview">
-														<i class="flaticon-interface-7"></i>
-													</div>
-													<div class="m-demo-icon__class">
-														flaticon-interface-7
-													</div>
-												</div>
-											</div>
-											<div class="col-md-2">
-												<div class="m-demo-icon">
-													<div class="m-demo-icon__preview">
-														<i class="flaticon-interface-6"></i>
-													</div>
-													<div class="m-demo-icon__class">
-														flaticon-interface-6
-													</div>
-												</div>
-											</div>
-											<div class="col-md-2">
-												<div class="m-demo-icon">
-													<div class="m-demo-icon__preview">
-														<i class="flaticon-placeholder-1"></i>
-													</div>
-													<div class="m-demo-icon__class">
-														flaticon-placeholder-1
-													</div>
-												</div>
-											</div>
-											<div class="col-md-2">
-												<div class="m-demo-icon">
-													<div class="m-demo-icon__preview">
-														<i class="flaticon-placeholder"></i>
-													</div>
-													<div class="m-demo-icon__class">
-														flaticon-placeholder
-													</div>
-												</div>
-											</div>
-											<div class="col-md-2">
-												<div class="m-demo-icon">
-													<div class="m-demo-icon__preview">
-														<i class="flaticon-web"></i>
-													</div>
-													<div class="m-demo-icon__class">
-														flaticon-web
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="row">
-											<div class="col-md-2">
-												<div class="m-demo-icon">
-													<div class="m-demo-icon__preview">
-														<i class="flaticon-multimedia-1"></i>
-													</div>
-													<div class="m-demo-icon__class">
-														flaticon-multimedia-1
-													</div>
-												</div>
-											</div>
-											<div class="col-md-2">
-												<div class="m-demo-icon">
-													<div class="m-demo-icon__preview">
-														<i class="flaticon-tabs"></i>
-													</div>
-													<div class="m-demo-icon__class">
-														flaticon-tabs
-													</div>
-												</div>
-											</div>
-											<div class="col-md-2">
-												<div class="m-demo-icon">
-													<div class="m-demo-icon__preview">
-														<i class="flaticon-signs-2"></i>
-													</div>
-													<div class="m-demo-icon__class">
-														flaticon-signs-2
-													</div>
-												</div>
-											</div>
-											<div class="col-md-2">
-												<div class="m-demo-icon">
-													<div class="m-demo-icon__preview">
-														<i class="flaticon-interface-5"></i>
-													</div>
-													<div class="m-demo-icon__class">
-														flaticon-interface-5
-													</div>
-												</div>
-											</div>
-											<div class="col-md-2">
-												<div class="m-demo-icon">
-													<div class="m-demo-icon__preview">
-														<i class="flaticon-network"></i>
-													</div>
-													<div class="m-demo-icon__class">
-														flaticon-network
-													</div>
-												</div>
-											</div>
-											<div class="col-md-2">
-												<div class="m-demo-icon">
-													<div class="m-demo-icon__preview">
-														<i class="flaticon-share"></i>
-													</div>
-													<div class="m-demo-icon__class">
-														flaticon-share
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="row">
-											<div class="col-md-2">
-												<div class="m-demo-icon">
-													<div class="m-demo-icon__preview">
-														<i class="flaticon-info"></i>
-													</div>
-													<div class="m-demo-icon__class">
-														flaticon-info
-													</div>
-												</div>
-											</div>
-											<div class="col-md-2">
-												<div class="m-demo-icon">
-													<div class="m-demo-icon__preview">
-														<i class="flaticon-exclamation-2"></i>
-													</div>
-													<div class="m-demo-icon__class">
-														flaticon-exclamation-2
-													</div>
-												</div>
-											</div>
-											<div class="col-md-2">
-												<div class="m-demo-icon">
-													<div class="m-demo-icon__preview">
-														<i class="flaticon-music"></i>
-													</div>
-													<div class="m-demo-icon__class">
-														flaticon-music
-													</div>
-												</div>
-											</div>
 											<div class="col-md-2">
 												<div class="m-demo-icon">
 													<div class="m-demo-icon__preview">
@@ -3945,10 +3419,40 @@ License: You must have a valid license purchased only from themeforest(the above
 											<div class="col-md-2">
 												<div class="m-demo-icon">
 													<div class="m-demo-icon__preview">
-														<i class="flaticon-profile"></i>
+														<i class="flaticon-profile-1"></i>
 													</div>
 													<div class="m-demo-icon__class">
-														flaticon-profile
+														flaticon-profile-1
+													</div>
+												</div>
+											</div>
+											<div class="col-md-2">
+												<div class="m-demo-icon">
+													<div class="m-demo-icon__preview">
+														<i class="flaticon-time-3"></i>
+													</div>
+													<div class="m-demo-icon__class">
+														flaticon-time-3
+													</div>
+												</div>
+											</div>
+											<div class="col-md-2">
+												<div class="m-demo-icon">
+													<div class="m-demo-icon__preview">
+														<i class="flaticon-list-3"></i>
+													</div>
+													<div class="m-demo-icon__class">
+														flaticon-list-3
+													</div>
+												</div>
+											</div>
+											<div class="col-md-2">
+												<div class="m-demo-icon">
+													<div class="m-demo-icon__preview">
+														<i class="flaticon-multimedia-2"></i>
+													</div>
+													<div class="m-demo-icon__class">
+														flaticon-multimedia-2
 													</div>
 												</div>
 											</div>
@@ -3957,50 +3461,20 @@ License: You must have a valid license purchased only from themeforest(the above
 											<div class="col-md-2">
 												<div class="m-demo-icon">
 													<div class="m-demo-icon__preview">
-														<i class="flaticon-time-1"></i>
+														<i class="flaticon-interface-9"></i>
 													</div>
 													<div class="m-demo-icon__class">
-														flaticon-time-1
+														flaticon-interface-9
 													</div>
 												</div>
 											</div>
 											<div class="col-md-2">
 												<div class="m-demo-icon">
 													<div class="m-demo-icon__preview">
-														<i class="flaticon-list-1"></i>
+														<i class="flaticon-file-1"></i>
 													</div>
 													<div class="m-demo-icon__class">
-														flaticon-list-1
-													</div>
-												</div>
-											</div>
-											<div class="col-md-2">
-												<div class="m-demo-icon">
-													<div class="m-demo-icon__preview">
-														<i class="flaticon-multimedia"></i>
-													</div>
-													<div class="m-demo-icon__class">
-														flaticon-multimedia
-													</div>
-												</div>
-											</div>
-											<div class="col-md-2">
-												<div class="m-demo-icon">
-													<div class="m-demo-icon__preview">
-														<i class="flaticon-interface-4"></i>
-													</div>
-													<div class="m-demo-icon__class">
-														flaticon-interface-4
-													</div>
-												</div>
-											</div>
-											<div class="col-md-2">
-												<div class="m-demo-icon">
-													<div class="m-demo-icon__preview">
-														<i class="flaticon-file"></i>
-													</div>
-													<div class="m-demo-icon__class">
-														flaticon-file
+														flaticon-file-1
 													</div>
 												</div>
 											</div>
@@ -4014,8 +3488,6 @@ License: You must have a valid license purchased only from themeforest(the above
 													</div>
 												</div>
 											</div>
-										</div>
-										<div class="row">
 											<div class="col-md-2">
 												<div class="m-demo-icon">
 													<div class="m-demo-icon__preview">
@@ -4046,6 +3518,8 @@ License: You must have a valid license purchased only from themeforest(the above
 													</div>
 												</div>
 											</div>
+										</div>
+										<div class="row">
 											<div class="col-md-2">
 												<div class="m-demo-icon">
 													<div class="m-demo-icon__preview">
@@ -4076,8 +3550,6 @@ License: You must have a valid license purchased only from themeforest(the above
 													</div>
 												</div>
 											</div>
-										</div>
-										<div class="row">
 											<div class="col-md-2">
 												<div class="m-demo-icon">
 													<div class="m-demo-icon__preview">
@@ -4108,6 +3580,8 @@ License: You must have a valid license purchased only from themeforest(the above
 													</div>
 												</div>
 											</div>
+										</div>
+										<div class="row">
 											<div class="col-md-2">
 												<div class="m-demo-icon">
 													<div class="m-demo-icon__preview">
@@ -4121,16 +3595,6 @@ License: You must have a valid license purchased only from themeforest(the above
 											<div class="col-md-2">
 												<div class="m-demo-icon">
 													<div class="m-demo-icon__preview">
-														<i class="flaticon-browser"></i>
-													</div>
-													<div class="m-demo-icon__class">
-														flaticon-browser
-													</div>
-												</div>
-											</div>
-											<div class="col-md-2">
-												<div class="m-demo-icon">
-													<div class="m-demo-icon__preview">
 														<i class="flaticon-statistics"></i>
 													</div>
 													<div class="m-demo-icon__class">
@@ -4138,8 +3602,6 @@ License: You must have a valid license purchased only from themeforest(the above
 													</div>
 												</div>
 											</div>
-										</div>
-										<div class="row">
 											<div class="col-md-2">
 												<div class="m-demo-icon">
 													<div class="m-demo-icon__preview">
@@ -4173,13 +3635,15 @@ License: You must have a valid license purchased only from themeforest(the above
 											<div class="col-md-2">
 												<div class="m-demo-icon">
 													<div class="m-demo-icon__preview">
-														<i class="flaticon-settings"></i>
+														<i class="flaticon-settings-1"></i>
 													</div>
 													<div class="m-demo-icon__class">
-														flaticon-settings
+														flaticon-settings-1
 													</div>
 												</div>
 											</div>
+										</div>
+										<div class="row">
 											<div class="col-md-2">
 												<div class="m-demo-icon">
 													<div class="m-demo-icon__preview">
@@ -4200,8 +3664,6 @@ License: You must have a valid license purchased only from themeforest(the above
 													</div>
 												</div>
 											</div>
-										</div>
-										<div class="row">
 											<div class="col-md-2">
 												<div class="m-demo-icon">
 													<div class="m-demo-icon__preview">
@@ -4242,6 +3704,8 @@ License: You must have a valid license purchased only from themeforest(the above
 													</div>
 												</div>
 											</div>
+										</div>
+										<div class="row">
 											<div class="col-md-2">
 												<div class="m-demo-icon">
 													<div class="m-demo-icon__preview">
@@ -4255,15 +3719,13 @@ License: You must have a valid license purchased only from themeforest(the above
 											<div class="col-md-2">
 												<div class="m-demo-icon">
 													<div class="m-demo-icon__preview">
-														<i class="flaticon-interface-3"></i>
+														<i class="flaticon-interface-8"></i>
 													</div>
 													<div class="m-demo-icon__class">
-														flaticon-interface-3
+														flaticon-interface-8
 													</div>
 												</div>
 											</div>
-										</div>
-										<div class="row">
 											<div class="col-md-2">
 												<div class="m-demo-icon">
 													<div class="m-demo-icon__preview">
@@ -4304,13 +3766,15 @@ License: You must have a valid license purchased only from themeforest(the above
 													</div>
 												</div>
 											</div>
+										</div>
+										<div class="row">
 											<div class="col-md-2">
 												<div class="m-demo-icon">
 													<div class="m-demo-icon__preview">
-														<i class="flaticon-calendar-2"></i>
+														<i class="flaticon-calendar-3"></i>
 													</div>
 													<div class="m-demo-icon__class">
-														flaticon-calendar-2
+														flaticon-calendar-3
 													</div>
 												</div>
 											</div>
@@ -4324,25 +3788,23 @@ License: You must have a valid license purchased only from themeforest(the above
 													</div>
 												</div>
 											</div>
-										</div>
-										<div class="row">
 											<div class="col-md-2">
 												<div class="m-demo-icon">
 													<div class="m-demo-icon__preview">
-														<i class="flaticon-more"></i>
+														<i class="flaticon-more-1"></i>
 													</div>
 													<div class="m-demo-icon__class">
-														flaticon-more
+														flaticon-more-1
 													</div>
 												</div>
 											</div>
 											<div class="col-md-2">
 												<div class="m-demo-icon">
 													<div class="m-demo-icon__preview">
-														<i class="flaticon-exclamation-1"></i>
+														<i class="flaticon-exclamation-2"></i>
 													</div>
 													<div class="m-demo-icon__class">
-														flaticon-exclamation-1
+														flaticon-exclamation-2
 													</div>
 												</div>
 											</div>
@@ -4366,16 +3828,132 @@ License: You must have a valid license purchased only from themeforest(the above
 													</div>
 												</div>
 											</div>
+										</div>
+										<div class="row">
 											<div class="col-md-2">
 												<div class="m-demo-icon">
 													<div class="m-demo-icon__preview">
-														<i class="flaticon-up-arrow"></i>
+														<i class="flaticon-add-circular-button"></i>
 													</div>
 													<div class="m-demo-icon__class">
-														flaticon-up-arrow
+														flaticon-add-circular-button
 													</div>
 												</div>
 											</div>
+											<div class="col-md-2">
+												<div class="m-demo-icon">
+													<div class="m-demo-icon__preview">
+														<i class="flaticon-facebook-letter-logo"></i>
+													</div>
+													<div class="m-demo-icon__class">
+														flaticon-facebook-letter-logo
+													</div>
+												</div>
+											</div>
+											<div class="col-md-2">
+												<div class="m-demo-icon">
+													<div class="m-demo-icon__preview">
+														<i class="flaticon-twitter-logo"></i>
+													</div>
+													<div class="m-demo-icon__class">
+														flaticon-twitter-logo
+													</div>
+												</div>
+											</div>
+											<div class="col-md-2">
+												<div class="m-demo-icon">
+													<div class="m-demo-icon__preview">
+														<i class="flaticon-linkedin-logo"></i>
+													</div>
+													<div class="m-demo-icon__class">
+														flaticon-linkedin-logo
+													</div>
+												</div>
+											</div>
+											<div class="col-md-2">
+												<div class="m-demo-icon">
+													<div class="m-demo-icon__preview">
+														<i class="flaticon-skype-logo"></i>
+													</div>
+													<div class="m-demo-icon__class">
+														flaticon-skype-logo
+													</div>
+												</div>
+											</div>
+											<div class="col-md-2">
+												<div class="m-demo-icon">
+													<div class="m-demo-icon__preview">
+														<i class="flaticon-up-arrow-1"></i>
+													</div>
+													<div class="m-demo-icon__class">
+														flaticon-up-arrow-1
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-md-2">
+												<div class="m-demo-icon">
+													<div class="m-demo-icon__preview">
+														<i class="flaticon-support"></i>
+													</div>
+													<div class="m-demo-icon__class">
+														flaticon-support
+													</div>
+												</div>
+											</div>
+											<div class="col-md-2">
+												<div class="m-demo-icon">
+													<div class="m-demo-icon__preview">
+														<i class="flaticon-piggy-bank"></i>
+													</div>
+													<div class="m-demo-icon__class">
+														flaticon-piggy-bank
+													</div>
+												</div>
+											</div>
+											<div class="col-md-2">
+												<div class="m-demo-icon">
+													<div class="m-demo-icon__preview">
+														<i class="flaticon-confetti"></i>
+													</div>
+													<div class="m-demo-icon__class">
+														flaticon-confetti
+													</div>
+												</div>
+											</div>
+											<div class="col-md-2">
+												<div class="m-demo-icon">
+													<div class="m-demo-icon__preview">
+														<i class="flaticon-gift"></i>
+													</div>
+													<div class="m-demo-icon__class">
+														flaticon-gift
+													</div>
+												</div>
+											</div>
+											<div class="col-md-2">
+												<div class="m-demo-icon">
+													<div class="m-demo-icon__preview">
+														<i class="flaticon-rocket"></i>
+													</div>
+													<div class="m-demo-icon__class">
+														flaticon-rocket
+													</div>
+												</div>
+											</div>
+											<div class="col-md-2">
+												<div class="m-demo-icon">
+													<div class="m-demo-icon__preview">
+														<i class="flaticon-puzzle"></i>
+													</div>
+													<div class="m-demo-icon__class">
+														flaticon-puzzle
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="row">
 											<div class="col-md-2">
 												<div class="m-demo-icon">
 													<div class="m-demo-icon__preview">
@@ -4386,15 +3964,13 @@ License: You must have a valid license purchased only from themeforest(the above
 													</div>
 												</div>
 											</div>
-										</div>
-										<div class="row">
 											<div class="col-md-2">
 												<div class="m-demo-icon">
 													<div class="m-demo-icon__preview">
-														<i class="flaticon-alert-1"></i>
+														<i class="flaticon-alert-2"></i>
 													</div>
 													<div class="m-demo-icon__class">
-														flaticon-alert-1
+														flaticon-alert-2
 													</div>
 												</div>
 											</div>
@@ -4421,10 +3997,10 @@ License: You must have a valid license purchased only from themeforest(the above
 											<div class="col-md-2">
 												<div class="m-demo-icon">
 													<div class="m-demo-icon__preview">
-														<i class="flaticon-interface-2"></i>
+														<i class="flaticon-interface-7"></i>
 													</div>
 													<div class="m-demo-icon__class">
-														flaticon-interface-2
+														flaticon-interface-7
 													</div>
 												</div>
 											</div>
@@ -4438,6 +4014,8 @@ License: You must have a valid license purchased only from themeforest(the above
 													</div>
 												</div>
 											</div>
+										</div>
+										<div class="row">
 											<div class="col-md-2">
 												<div class="m-demo-icon">
 													<div class="m-demo-icon__preview">
@@ -4448,45 +4026,75 @@ License: You must have a valid license purchased only from themeforest(the above
 													</div>
 												</div>
 											</div>
+											<div class="col-md-2">
+												<div class="m-demo-icon">
+													<div class="m-demo-icon__preview">
+														<i class="flaticon-alert-1"></i>
+													</div>
+													<div class="m-demo-icon__class">
+														flaticon-alert-1
+													</div>
+												</div>
+											</div>
+											<div class="col-md-2">
+												<div class="m-demo-icon">
+													<div class="m-demo-icon__preview">
+														<i class="flaticon-folder-4"></i>
+													</div>
+													<div class="m-demo-icon__class">
+														flaticon-folder-4
+													</div>
+												</div>
+											</div>
+											<div class="col-md-2">
+												<div class="m-demo-icon">
+													<div class="m-demo-icon__preview">
+														<i class="flaticon-interface-6"></i>
+													</div>
+													<div class="m-demo-icon__class">
+														flaticon-interface-6
+													</div>
+												</div>
+											</div>
+											<div class="col-md-2">
+												<div class="m-demo-icon">
+													<div class="m-demo-icon__preview">
+														<i class="flaticon-interface-5"></i>
+													</div>
+													<div class="m-demo-icon__class">
+														flaticon-interface-5
+													</div>
+												</div>
+											</div>
+											<div class="col-md-2">
+												<div class="m-demo-icon">
+													<div class="m-demo-icon__preview">
+														<i class="flaticon-calendar-2"></i>
+													</div>
+													<div class="m-demo-icon__class">
+														flaticon-calendar-2
+													</div>
+												</div>
+											</div>
 										</div>
 										<div class="row">
 											<div class="col-md-2">
 												<div class="m-demo-icon">
 													<div class="m-demo-icon__preview">
-														<i class="flaticon-alert"></i>
+														<i class="flaticon-time-2"></i>
 													</div>
 													<div class="m-demo-icon__class">
-														flaticon-alert
+														flaticon-time-2
 													</div>
 												</div>
 											</div>
 											<div class="col-md-2">
 												<div class="m-demo-icon">
 													<div class="m-demo-icon__preview">
-														<i class="flaticon-folder"></i>
+														<i class="flaticon-signs-2"></i>
 													</div>
 													<div class="m-demo-icon__class">
-														flaticon-folder
-													</div>
-												</div>
-											</div>
-											<div class="col-md-2">
-												<div class="m-demo-icon">
-													<div class="m-demo-icon__preview">
-														<i class="flaticon-interface-1"></i>
-													</div>
-													<div class="m-demo-icon__class">
-														flaticon-interface-1
-													</div>
-												</div>
-											</div>
-											<div class="col-md-2">
-												<div class="m-demo-icon">
-													<div class="m-demo-icon__preview">
-														<i class="flaticon-interface"></i>
-													</div>
-													<div class="m-demo-icon__class">
-														flaticon-interface
+														flaticon-signs-2
 													</div>
 												</div>
 											</div>
@@ -4497,38 +4105,6 @@ License: You must have a valid license purchased only from themeforest(the above
 													</div>
 													<div class="m-demo-icon__class">
 														flaticon-calendar-1
-													</div>
-												</div>
-											</div>
-											<div class="col-md-2">
-												<div class="m-demo-icon">
-													<div class="m-demo-icon__preview">
-														<i class="flaticon-time"></i>
-													</div>
-													<div class="m-demo-icon__class">
-														flaticon-time
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="row">
-											<div class="col-md-2">
-												<div class="m-demo-icon">
-													<div class="m-demo-icon__preview">
-														<i class="flaticon-signs-1"></i>
-													</div>
-													<div class="m-demo-icon__class">
-														flaticon-signs-1
-													</div>
-												</div>
-											</div>
-											<div class="col-md-2">
-												<div class="m-demo-icon">
-													<div class="m-demo-icon__preview">
-														<i class="flaticon-calendar"></i>
-													</div>
-													<div class="m-demo-icon__class">
-														flaticon-calendar
 													</div>
 												</div>
 											</div>
@@ -4555,13 +4131,15 @@ License: You must have a valid license purchased only from themeforest(the above
 											<div class="col-md-2">
 												<div class="m-demo-icon">
 													<div class="m-demo-icon__preview">
-														<i class="flaticon-list"></i>
+														<i class="flaticon-list-2"></i>
 													</div>
 													<div class="m-demo-icon__class">
-														flaticon-list
+														flaticon-list-2
 													</div>
 												</div>
 											</div>
+										</div>
+										<div class="row">
 											<div class="col-md-2">
 												<div class="m-demo-icon">
 													<div class="m-demo-icon__preview">
@@ -4572,8 +4150,6 @@ License: You must have a valid license purchased only from themeforest(the above
 													</div>
 												</div>
 											</div>
-										</div>
-										<div class="row">
 											<div class="col-md-2">
 												<div class="m-demo-icon">
 													<div class="m-demo-icon__preview">
@@ -4624,6 +4200,8 @@ License: You must have a valid license purchased only from themeforest(the above
 													</div>
 												</div>
 											</div>
+										</div>
+										<div class="row">
 											<div class="col-md-2">
 												<div class="m-demo-icon">
 													<div class="m-demo-icon__preview">
@@ -4634,8 +4212,6 @@ License: You must have a valid license purchased only from themeforest(the above
 													</div>
 												</div>
 											</div>
-										</div>
-										<div class="row">
 											<div class="col-md-2">
 												<div class="m-demo-icon">
 													<div class="m-demo-icon__preview">
@@ -4649,10 +4225,10 @@ License: You must have a valid license purchased only from themeforest(the above
 											<div class="col-md-2">
 												<div class="m-demo-icon">
 													<div class="m-demo-icon__preview">
-														<i class="flaticon-signs"></i>
+														<i class="flaticon-signs-1"></i>
 													</div>
 													<div class="m-demo-icon__class">
-														flaticon-signs
+														flaticon-signs-1
 													</div>
 												</div>
 											</div>
@@ -4679,6 +4255,18 @@ License: You must have a valid license purchased only from themeforest(the above
 											<div class="col-md-2">
 												<div class="m-demo-icon">
 													<div class="m-demo-icon__preview">
+														<i class="flaticon-browser"></i>
+													</div>
+													<div class="m-demo-icon__class">
+														flaticon-browser
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-md-2">
+												<div class="m-demo-icon">
+													<div class="m-demo-icon__preview">
 														<i class="flaticon-car"></i>
 													</div>
 													<div class="m-demo-icon__class">
@@ -4696,8 +4284,6 @@ License: You must have a valid license purchased only from themeforest(the above
 													</div>
 												</div>
 											</div>
-										</div>
-										<div class="row">
 											<div class="col-md-2">
 												<div class="m-demo-icon">
 													<div class="m-demo-icon__preview">
@@ -4738,6 +4324,8 @@ License: You must have a valid license purchased only from themeforest(the above
 													</div>
 												</div>
 											</div>
+										</div>
+										<div class="row">
 											<div class="col-md-2">
 												<div class="m-demo-icon">
 													<div class="m-demo-icon__preview">
@@ -4751,15 +4339,13 @@ License: You must have a valid license purchased only from themeforest(the above
 											<div class="col-md-2">
 												<div class="m-demo-icon">
 													<div class="m-demo-icon__preview">
-														<i class="flaticon-exclamation"></i>
+														<i class="flaticon-exclamation-1"></i>
 													</div>
 													<div class="m-demo-icon__class">
-														flaticon-exclamation
+														flaticon-exclamation-1
 													</div>
 												</div>
 											</div>
-										</div>
-										<div class="row">
 											<div class="col-md-2">
 												<div class="m-demo-icon">
 													<div class="m-demo-icon__preview">
@@ -4800,6 +4386,472 @@ License: You must have a valid license purchased only from themeforest(the above
 													</div>
 												</div>
 											</div>
+										</div>
+										<div class="row">
+											<div class="col-md-2">
+												<div class="m-demo-icon">
+													<div class="m-demo-icon__preview">
+														<i class="flaticon-truck"></i>
+													</div>
+													<div class="m-demo-icon__class">
+														flaticon-truck
+													</div>
+												</div>
+											</div>
+											<div class="col-md-2">
+												<div class="m-demo-icon">
+													<div class="m-demo-icon__preview">
+														<i class="flaticon-user-settings"></i>
+													</div>
+													<div class="m-demo-icon__class">
+														flaticon-user-settings
+													</div>
+												</div>
+											</div>
+											<div class="col-md-2">
+												<div class="m-demo-icon">
+													<div class="m-demo-icon__preview">
+														<i class="flaticon-user-add"></i>
+													</div>
+													<div class="m-demo-icon__class">
+														flaticon-user-add
+													</div>
+												</div>
+											</div>
+											<div class="col-md-2">
+												<div class="m-demo-icon">
+													<div class="m-demo-icon__preview">
+														<i class="flaticon-user-ok"></i>
+													</div>
+													<div class="m-demo-icon__class">
+														flaticon-user-ok
+													</div>
+												</div>
+											</div>
+											<div class="col-md-2">
+												<div class="m-demo-icon">
+													<div class="m-demo-icon__preview">
+														<i class="flaticon-internet"></i>
+													</div>
+													<div class="m-demo-icon__class">
+														flaticon-internet
+													</div>
+												</div>
+											</div>
+											<div class="col-md-2">
+												<div class="m-demo-icon">
+													<div class="m-demo-icon__preview">
+														<i class="flaticon-alert"></i>
+													</div>
+													<div class="m-demo-icon__class">
+														flaticon-alert
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-md-2">
+												<div class="m-demo-icon">
+													<div class="m-demo-icon__preview">
+														<i class="flaticon-alarm-1"></i>
+													</div>
+													<div class="m-demo-icon__class">
+														flaticon-alarm-1
+													</div>
+												</div>
+											</div>
+											<div class="col-md-2">
+												<div class="m-demo-icon">
+													<div class="m-demo-icon__preview">
+														<i class="flaticon-grid-menu"></i>
+													</div>
+													<div class="m-demo-icon__class">
+														flaticon-grid-menu
+													</div>
+												</div>
+											</div>
+											<div class="col-md-2">
+												<div class="m-demo-icon">
+													<div class="m-demo-icon__preview">
+														<i class="flaticon-up-arrow"></i>
+													</div>
+													<div class="m-demo-icon__class">
+														flaticon-up-arrow
+													</div>
+												</div>
+											</div>
+											<div class="col-md-2">
+												<div class="m-demo-icon">
+													<div class="m-demo-icon__preview">
+														<i class="flaticon-more"></i>
+													</div>
+													<div class="m-demo-icon__class">
+														flaticon-more
+													</div>
+												</div>
+											</div>
+											<div class="col-md-2">
+												<div class="m-demo-icon">
+													<div class="m-demo-icon__preview">
+														<i class="flaticon-lock-1"></i>
+													</div>
+													<div class="m-demo-icon__class">
+														flaticon-lock-1
+													</div>
+												</div>
+											</div>
+											<div class="col-md-2">
+												<div class="m-demo-icon">
+													<div class="m-demo-icon__preview">
+														<i class="flaticon-profile"></i>
+													</div>
+													<div class="m-demo-icon__class">
+														flaticon-profile
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-md-2">
+												<div class="m-demo-icon">
+													<div class="m-demo-icon__preview">
+														<i class="flaticon-users"></i>
+													</div>
+													<div class="m-demo-icon__class">
+														flaticon-users
+													</div>
+												</div>
+											</div>
+											<div class="col-md-2">
+												<div class="m-demo-icon">
+													<div class="m-demo-icon__preview">
+														<i class="flaticon-map-location"></i>
+													</div>
+													<div class="m-demo-icon__class">
+														flaticon-map-location
+													</div>
+												</div>
+											</div>
+											<div class="col-md-2">
+												<div class="m-demo-icon">
+													<div class="m-demo-icon__preview">
+														<i class="flaticon-placeholder-2"></i>
+													</div>
+													<div class="m-demo-icon__class">
+														flaticon-placeholder-2
+													</div>
+												</div>
+											</div>
+											<div class="col-md-2">
+												<div class="m-demo-icon">
+													<div class="m-demo-icon__preview">
+														<i class="flaticon-route"></i>
+													</div>
+													<div class="m-demo-icon__class">
+														flaticon-route
+													</div>
+												</div>
+											</div>
+											<div class="col-md-2">
+												<div class="m-demo-icon">
+													<div class="m-demo-icon__preview">
+														<i class="flaticon-more-v4"></i>
+													</div>
+													<div class="m-demo-icon__class">
+														flaticon-more-v4
+													</div>
+												</div>
+											</div>
+											<div class="col-md-2">
+												<div class="m-demo-icon">
+													<div class="m-demo-icon__preview">
+														<i class="flaticon-lock"></i>
+													</div>
+													<div class="m-demo-icon__class">
+														flaticon-lock
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-md-2">
+												<div class="m-demo-icon">
+													<div class="m-demo-icon__preview">
+														<i class="flaticon-multimedia-1"></i>
+													</div>
+													<div class="m-demo-icon__class">
+														flaticon-multimedia-1
+													</div>
+												</div>
+											</div>
+											<div class="col-md-2">
+												<div class="m-demo-icon">
+													<div class="m-demo-icon__preview">
+														<i class="flaticon-add"></i>
+													</div>
+													<div class="m-demo-icon__class">
+														flaticon-add
+													</div>
+												</div>
+											</div>
+											<div class="col-md-2">
+												<div class="m-demo-icon">
+													<div class="m-demo-icon__preview">
+														<i class="flaticon-more-v5"></i>
+													</div>
+													<div class="m-demo-icon__class">
+														flaticon-more-v5
+													</div>
+												</div>
+											</div>
+											<div class="col-md-2">
+												<div class="m-demo-icon">
+													<div class="m-demo-icon__preview">
+														<i class="flaticon-more-v6"></i>
+													</div>
+													<div class="m-demo-icon__class">
+														flaticon-more-v6
+													</div>
+												</div>
+											</div>
+											<div class="col-md-2">
+												<div class="m-demo-icon">
+													<div class="m-demo-icon__preview">
+														<i class="flaticon-grid-menu-v2"></i>
+													</div>
+													<div class="m-demo-icon__class">
+														flaticon-grid-menu-v2
+													</div>
+												</div>
+											</div>
+											<div class="col-md-2">
+												<div class="m-demo-icon">
+													<div class="m-demo-icon__preview">
+														<i class="flaticon-suitcase"></i>
+													</div>
+													<div class="m-demo-icon__class">
+														flaticon-suitcase
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-md-2">
+												<div class="m-demo-icon">
+													<div class="m-demo-icon__preview">
+														<i class="flaticon-app"></i>
+													</div>
+													<div class="m-demo-icon__class">
+														flaticon-app
+													</div>
+												</div>
+											</div>
+											<div class="col-md-2">
+												<div class="m-demo-icon">
+													<div class="m-demo-icon__preview">
+														<i class="flaticon-time-1"></i>
+													</div>
+													<div class="m-demo-icon__class">
+														flaticon-time-1
+													</div>
+												</div>
+											</div>
+											<div class="col-md-2">
+												<div class="m-demo-icon">
+													<div class="m-demo-icon__preview">
+														<i class="flaticon-calendar"></i>
+													</div>
+													<div class="m-demo-icon__class">
+														flaticon-calendar
+													</div>
+												</div>
+											</div>
+											<div class="col-md-2">
+												<div class="m-demo-icon">
+													<div class="m-demo-icon__preview">
+														<i class="flaticon-list-1"></i>
+													</div>
+													<div class="m-demo-icon__class">
+														flaticon-list-1
+													</div>
+												</div>
+											</div>
+											<div class="col-md-2">
+												<div class="m-demo-icon">
+													<div class="m-demo-icon__preview">
+														<i class="flaticon-list"></i>
+													</div>
+													<div class="m-demo-icon__class">
+														flaticon-list
+													</div>
+												</div>
+											</div>
+											<div class="col-md-2">
+												<div class="m-demo-icon">
+													<div class="m-demo-icon__preview">
+														<i class="flaticon-file"></i>
+													</div>
+													<div class="m-demo-icon__class">
+														flaticon-file
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-md-2">
+												<div class="m-demo-icon">
+													<div class="m-demo-icon__preview">
+														<i class="flaticon-folder-3"></i>
+													</div>
+													<div class="m-demo-icon__class">
+														flaticon-folder-3
+													</div>
+												</div>
+											</div>
+											<div class="col-md-2">
+												<div class="m-demo-icon">
+													<div class="m-demo-icon__preview">
+														<i class="flaticon-folder-2"></i>
+													</div>
+													<div class="m-demo-icon__class">
+														flaticon-folder-2
+													</div>
+												</div>
+											</div>
+											<div class="col-md-2">
+												<div class="m-demo-icon">
+													<div class="m-demo-icon__preview">
+														<i class="flaticon-folder-1"></i>
+													</div>
+													<div class="m-demo-icon__class">
+														flaticon-folder-1
+													</div>
+												</div>
+											</div>
+											<div class="col-md-2">
+												<div class="m-demo-icon">
+													<div class="m-demo-icon__preview">
+														<i class="flaticon-folder"></i>
+													</div>
+													<div class="m-demo-icon__class">
+														flaticon-folder
+													</div>
+												</div>
+											</div>
+											<div class="col-md-2">
+												<div class="m-demo-icon">
+													<div class="m-demo-icon__preview">
+														<i class="flaticon-stopwatch"></i>
+													</div>
+													<div class="m-demo-icon__class">
+														flaticon-stopwatch
+													</div>
+												</div>
+											</div>
+											<div class="col-md-2">
+												<div class="m-demo-icon">
+													<div class="m-demo-icon__preview">
+														<i class="flaticon-time"></i>
+													</div>
+													<div class="m-demo-icon__class">
+														flaticon-time
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-md-2">
+												<div class="m-demo-icon">
+													<div class="m-demo-icon__preview">
+														<i class="flaticon-search-1"></i>
+													</div>
+													<div class="m-demo-icon__class">
+														flaticon-search-1
+													</div>
+												</div>
+											</div>
+											<div class="col-md-2">
+												<div class="m-demo-icon">
+													<div class="m-demo-icon__preview">
+														<i class="flaticon-music-1"></i>
+													</div>
+													<div class="m-demo-icon__class">
+														flaticon-music-1
+													</div>
+												</div>
+											</div>
+											<div class="col-md-2">
+												<div class="m-demo-icon">
+													<div class="m-demo-icon__preview">
+														<i class="flaticon-music-2"></i>
+													</div>
+													<div class="m-demo-icon__class">
+														flaticon-music-2
+													</div>
+												</div>
+											</div>
+											<div class="col-md-2">
+												<div class="m-demo-icon">
+													<div class="m-demo-icon__preview">
+														<i class="flaticon-settings"></i>
+													</div>
+													<div class="m-demo-icon__class">
+														flaticon-settings
+													</div>
+												</div>
+											</div>
+											<div class="col-md-2">
+												<div class="m-demo-icon">
+													<div class="m-demo-icon__preview">
+														<i class="flaticon-tool-1"></i>
+													</div>
+													<div class="m-demo-icon__class">
+														flaticon-tool-1
+													</div>
+												</div>
+											</div>
+											<div class="col-md-2">
+												<div class="m-demo-icon">
+													<div class="m-demo-icon__preview">
+														<i class="flaticon-security"></i>
+													</div>
+													<div class="m-demo-icon__class">
+														flaticon-security
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-md-2">
+												<div class="m-demo-icon">
+													<div class="m-demo-icon__preview">
+														<i class="flaticon-interface-4"></i>
+													</div>
+													<div class="m-demo-icon__class">
+														flaticon-interface-4
+													</div>
+												</div>
+											</div>
+											<div class="col-md-2">
+												<div class="m-demo-icon">
+													<div class="m-demo-icon__preview">
+														<i class="flaticon-interface-3"></i>
+													</div>
+													<div class="m-demo-icon__class">
+														flaticon-interface-3
+													</div>
+												</div>
+											</div>
+											<div class="col-md-2">
+												<div class="m-demo-icon">
+													<div class="m-demo-icon__preview">
+														<i class="flaticon-interface-2"></i>
+													</div>
+													<div class="m-demo-icon__class">
+														flaticon-interface-2
+													</div>
+												</div>
+											</div>
 											<div class="col-md-2">
 												<div class="m-demo-icon">
 													<div class="m-demo-icon__preview">
@@ -4813,6 +4865,182 @@ License: You must have a valid license purchased only from themeforest(the above
 											<div class="col-md-2">
 												<div class="m-demo-icon">
 													<div class="m-demo-icon__preview">
+														<i class="flaticon-placeholder-1"></i>
+													</div>
+													<div class="m-demo-icon__class">
+														flaticon-placeholder-1
+													</div>
+												</div>
+											</div>
+											<div class="col-md-2">
+												<div class="m-demo-icon">
+													<div class="m-demo-icon__preview">
+														<i class="flaticon-placeholder"></i>
+													</div>
+													<div class="m-demo-icon__class">
+														flaticon-placeholder
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-md-2">
+												<div class="m-demo-icon">
+													<div class="m-demo-icon__preview">
+														<i class="flaticon-web"></i>
+													</div>
+													<div class="m-demo-icon__class">
+														flaticon-web
+													</div>
+												</div>
+											</div>
+											<div class="col-md-2">
+												<div class="m-demo-icon">
+													<div class="m-demo-icon__preview">
+														<i class="flaticon-multimedia"></i>
+													</div>
+													<div class="m-demo-icon__class">
+														flaticon-multimedia
+													</div>
+												</div>
+											</div>
+											<div class="col-md-2">
+												<div class="m-demo-icon">
+													<div class="m-demo-icon__preview">
+														<i class="flaticon-tabs"></i>
+													</div>
+													<div class="m-demo-icon__class">
+														flaticon-tabs
+													</div>
+												</div>
+											</div>
+											<div class="col-md-2">
+												<div class="m-demo-icon">
+													<div class="m-demo-icon__preview">
+														<i class="flaticon-signs"></i>
+													</div>
+													<div class="m-demo-icon__class">
+														flaticon-signs
+													</div>
+												</div>
+											</div>
+											<div class="col-md-2">
+												<div class="m-demo-icon">
+													<div class="m-demo-icon__preview">
+														<i class="flaticon-interface-1"></i>
+													</div>
+													<div class="m-demo-icon__class">
+														flaticon-interface-1
+													</div>
+												</div>
+											</div>
+											<div class="col-md-2">
+												<div class="m-demo-icon">
+													<div class="m-demo-icon__preview">
+														<i class="flaticon-network"></i>
+													</div>
+													<div class="m-demo-icon__class">
+														flaticon-network
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-md-2">
+												<div class="m-demo-icon">
+													<div class="m-demo-icon__preview">
+														<i class="flaticon-share"></i>
+													</div>
+													<div class="m-demo-icon__class">
+														flaticon-share
+													</div>
+												</div>
+											</div>
+											<div class="col-md-2">
+												<div class="m-demo-icon">
+													<div class="m-demo-icon__preview">
+														<i class="flaticon-menu-1"></i>
+													</div>
+													<div class="m-demo-icon__class">
+														flaticon-menu-1
+													</div>
+												</div>
+											</div>
+											<div class="col-md-2">
+												<div class="m-demo-icon">
+													<div class="m-demo-icon__preview">
+														<i class="flaticon-menu"></i>
+													</div>
+													<div class="m-demo-icon__class">
+														flaticon-menu
+													</div>
+												</div>
+											</div>
+											<div class="col-md-2">
+												<div class="m-demo-icon">
+													<div class="m-demo-icon__preview">
+														<i class="flaticon-info"></i>
+													</div>
+													<div class="m-demo-icon__class">
+														flaticon-info
+													</div>
+												</div>
+											</div>
+											<div class="col-md-2">
+												<div class="m-demo-icon">
+													<div class="m-demo-icon__preview">
+														<i class="flaticon-exclamation"></i>
+													</div>
+													<div class="m-demo-icon__class">
+														flaticon-exclamation
+													</div>
+												</div>
+											</div>
+											<div class="col-md-2">
+												<div class="m-demo-icon">
+													<div class="m-demo-icon__preview">
+														<i class="flaticon-plus"></i>
+													</div>
+													<div class="m-demo-icon__class">
+														flaticon-plus
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-md-2">
+												<div class="m-demo-icon">
+													<div class="m-demo-icon__preview">
+														<i class="flaticon-music"></i>
+													</div>
+													<div class="m-demo-icon__class">
+														flaticon-music
+													</div>
+												</div>
+											</div>
+											<div class="col-md-2">
+												<div class="m-demo-icon">
+													<div class="m-demo-icon__preview">
+														<i class="flaticon-interface"></i>
+													</div>
+													<div class="m-demo-icon__class">
+														flaticon-interface
+													</div>
+												</div>
+											</div>
+											<div class="col-md-2">
+												<div class="m-demo-icon">
+													<div class="m-demo-icon__preview">
+														<i class="flaticon-diagram"></i>
+													</div>
+													<div class="m-demo-icon__class">
+														flaticon-diagram
+													</div>
+												</div>
+											</div>
+											<div class="col-md-2">
+												<div class="m-demo-icon">
+													<div class="m-demo-icon__preview">
 														<i class="flaticon-book"></i>
 													</div>
 													<div class="m-demo-icon__class">
@@ -4820,8 +5048,16 @@ License: You must have a valid license purchased only from themeforest(the above
 													</div>
 												</div>
 											</div>
-										</div>
-										<div class="row">
+											<div class="col-md-2">
+												<div class="m-demo-icon">
+													<div class="m-demo-icon__preview">
+														<i class="flaticon-black"></i>
+													</div>
+													<div class="m-demo-icon__class">
+														flaticon-black
+													</div>
+												</div>
+											</div>
 											<div class="col-md-2">
 												<div class="m-demo-icon">
 													<div class="m-demo-icon__preview">
@@ -4832,6 +5068,8 @@ License: You must have a valid license purchased only from themeforest(the above
 													</div>
 												</div>
 											</div>
+										</div>
+										<div class="row">
 											<div class="col-md-2">
 												<div class="m-demo-icon">
 													<div class="m-demo-icon__preview">
@@ -4882,8 +5120,6 @@ License: You must have a valid license purchased only from themeforest(the above
 													</div>
 												</div>
 											</div>
-										</div>
-										<div class="row">
 											<div class="col-md-2">
 												<div class="m-demo-icon">
 													<div class="m-demo-icon__preview">
@@ -4894,6 +5130,8 @@ License: You must have a valid license purchased only from themeforest(the above
 													</div>
 												</div>
 											</div>
+										</div>
+										<div class="row">
 											<div class="col-md-2">
 												<div class="m-demo-icon">
 													<div class="m-demo-icon__preview">
@@ -4944,8 +5182,6 @@ License: You must have a valid license purchased only from themeforest(the above
 													</div>
 												</div>
 											</div>
-										</div>
-										<div class="row">
 											<div class="col-md-2">
 												<div class="m-demo-icon">
 													<div class="m-demo-icon__preview">
@@ -4956,6 +5192,8 @@ License: You must have a valid license purchased only from themeforest(the above
 													</div>
 												</div>
 											</div>
+										</div>
+										<div class="row">
 											<div class="col-md-2">
 												<div class="m-demo-icon">
 													<div class="m-demo-icon__preview">
@@ -5006,8 +5244,6 @@ License: You must have a valid license purchased only from themeforest(the above
 													</div>
 												</div>
 											</div>
-										</div>
-										<div class="row">
 											<div class="col-md-2">
 												<div class="m-demo-icon">
 													<div class="m-demo-icon__preview">
@@ -5015,16 +5251,6 @@ License: You must have a valid license purchased only from themeforest(the above
 													</div>
 													<div class="m-demo-icon__class">
 														flaticon-squares
-													</div>
-												</div>
-											</div>
-											<div class="col-md-2">
-												<div class="m-demo-icon">
-													<div class="m-demo-icon__preview">
-														<i class="flaticon-diagram"></i>
-													</div>
-													<div class="m-demo-icon__class">
-														flaticon-diagram
 													</div>
 												</div>
 											</div>
@@ -5697,7 +5923,7 @@ License: You must have a valid license purchased only from themeforest(the above
 		</div>
 		<!-- end::Quick Sidebar -->		    
 	    <!-- begin::Scroll Top -->
-		<div class="m-scroll-top m-scroll-top--skin-top" data-toggle="m-scroll-top" data-scroll-offset="500" data-scroll-speed="300">
+		<div id="m_scroll_top" class="m-scroll-top">
 			<i class="la la-arrow-up"></i>
 		</div>
 		<!-- end::Scroll Top -->		    <!-- begin::Quick Nav -->

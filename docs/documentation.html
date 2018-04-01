@@ -230,7 +230,6 @@
 								<li><a href="#sec73" class="nav-link">Installation</a></li>
 								<li><a href="#sec74" class="nav-link">Tools</a></li>
 								<li><a href="#sec75" class="nav-link">Sample Codes</a></li>
-								<li><a href="#sec76" class="nav-link">Blank Project</a></li>
 							</ul>
 						</li>
 						<li><a href="#sec10" class="nav-link">Layout Builder</a></li>
@@ -740,8 +739,7 @@
 							<p>The build config file is located at
 								<code>[root]/tools/conf/[version_package].json</code> and you can fully customize the build settings to meet your project requirements:
 							</p>
-							<p>Please make sure the dist output path <code>config.dist.angular</code> &
-								<code>config.dist.html</code> is set to true in <code>default.json</code> and
+							<p>Please make sure the dist output path <code>config.dist</code> is set to true in <code>default.json</code> and
 								<code>angular.json</code>, for the build tools to output the compilation.</p>
 
 							<div class="space"></div>
@@ -2807,13 +2805,11 @@ $brand-inverse-color: array-get($m--state-colors, brand, inverse); // #ffffff
                 // custom headers
                 headers: { 'x-my-custom-header': 'some value', 'x-test-header': 'the value'},
                 params: {
-                    // custom query params
-                    query: {
-                        generalSearch: '',
-                        EmployeeID: 1,
-                        someParam: 'someValue',
-                        token: 'token-value'
-                    }
+                    // custom parameters
+                    generalSearch: '',
+                    EmployeeID: 1,
+                    someParam: 'someValue',
+                    token: 'token-value'
                 },
                 map: function(raw) {
                     // sample data mapping
@@ -3138,11 +3134,9 @@ $brand-inverse-color: array-get($m--state-colors, brand, inverse); // #ffffff
 											<tbody>
 											<tr>
 												<td><pre><code class="js">params: {
-  query: {
-    generalSearch: '',
-    EmployeeID: 1
-    token: 'tokenvalue'
-  }
+  generalSearch: '',
+  EmployeeID: 1
+  token: 'tokenvalue'
 }</code></pre>
 												</td>
 											</tr>
@@ -3173,6 +3167,29 @@ $brand-inverse-color: array-get($m--state-colors, brand, inverse); // #ffffff
   }
   return dataSet;
 }</code></pre>
+												</td>
+											</tr>
+											</tbody>
+										</table>
+									</td>
+								</tr>
+								<tr>
+									<td nowrap><code>data.source.read.timeout</code></td>
+									<td nowrap><code>number</code></td>
+									<td>Number of milliseconds before the request ended. Default is 30000, equal to 30 seconds.
+
+										<div class="space"></div>
+
+										<table class="table-list">
+											<thead>
+											<tr>
+												<th class="force-border">Sample</th>
+											</tr>
+											</thead>
+											<tbody>
+											<tr>
+												<td>
+													<pre><code>timeout: 30000</code></pre>
 												</td>
 											</tr>
 											</tbody>
@@ -6446,20 +6463,6 @@ mApp.unblockPage();</code></pre>
 						</div>
 
 						<div class="space"></div>
-
-						<h3 id="sec76" class="section-title">Blank Project</h3>
-						<div class="section-content">
-							<h4 class="section-subtitle">Basic files/folders for Angular?</h4>
-							<p>Take one of the Angular demo. Eg.
-								<code>[root]/dist/default/</code>.<br>
-								Remove all files and folders under
-								<code>/src/app/theme/pages/</code>. This is where the pages is located.<br>
-								Please note that all files under
-								<code>/src/app/theme/layouts/</code> is required for the theme layout, like header, footer, menu templates, etc.<br>
-								Remove demo pages routes from routing file
-								<code>/src/app/theme/theme-routing.module.ts</code>.
-							</p>
-						</div>
 					</div>
 
 					<div class="separator"></div>
@@ -6518,6 +6521,26 @@ mApp.unblockPage();</code></pre>
 							<p>
 								For more info please check
 								<a href="https://aspnetzero.com/#features" target="_blanl">Full List Of Features</a>.
+							</p>
+
+							<br><br>
+
+							<h3 class="section-title">Mecons - .NET Tag Helpers Library For Metronic</h3>
+							<p>
+								<a href="https://www.brecons.net/Product/Mecons" target="_blank">Mecons</a> is the Most complete & trusted Tag Helper Library for Metronic.
+								Mecons comes with Metronic 5, the most completed & trusted Admin Theme and UI Framework:
+							<ul>
+								<li>30+ Components and Controls for Metronic</li>
+								<li>Validation States for Data Binding</li>
+								<li>Intellisense Support in Visual Studio</li>
+								<li>Provisioning over Bower and NuGet</li>
+								<li>Free and up-to-date Online Documentation</li>
+								<li>Full source code included</li>
+							</ul>
+							</p>
+							<p>
+								For more info please check
+								<a href="https://www.brecons.net/Product/Mecons" target="_blanl">Full List Of Features</a>.
 							</p>
 						</div>
 					</div>
@@ -6861,6 +6884,24 @@ mApp.unblockPage();</code></pre>
 										<a href="http://www.flotcharts.org/" target="_blank">http://www.flotcharts.org/</a>
 									</td>
 								</tr>
+								<tr>
+									<td>Owl Carousel 2</td>
+									<td>
+										<a href="https://owlcarousel2.github.io/OwlCarousel2/" target="_blank">https://owlcarousel2.github.io/OwlCarousel2/</a>
+									</td>
+								</tr>
+								<tr>
+									<td>Popper.js</td>
+									<td>
+										<a href="https://popper.js.org/popper-documentation.html" target="_blank">https://popper.js.org/popper-documentation.html</a>
+									</td>
+								</tr>
+								<tr>
+									<td>Tooltip.js</td>
+									<td>
+										<a href="https://popper.js.org/tooltip-examples.html" target="_blank">https://popper.js.org/tooltip-examples.html</a>
+									</td>
+								</tr>								
 								</tbody>
 							</table>
 						</div>

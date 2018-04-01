@@ -53,6 +53,16 @@
                             "scripts": [
                                 "{$config.path.node_modules}/wnumb/wNumb.js"
                             ]
+                        },
+                        "zenscroll": {
+                            "scripts": [
+                                "{$config.path.node_modules}/zenscroll/zenscroll.js"
+                            ]
+                        },
+                        "tooltip.js": {
+                            "scripts": [
+                                "{$config.path.node_modules}/tooltip.js/dist/umd/tooltip.min.js"
+                            ]
                         }
                     },
                     "optional": {
@@ -166,7 +176,7 @@
                                 "{$config.path.node_modules}/select2/dist/css/select2.css"
                             ],
                             "scripts": [
-                                "{$config.path.node_modules}/select2/dist/js/select2.js"
+                                "{$config.path.node_modules}/select2/dist/js/select2.full.js"
                             ]
                         },
                         "typeahead.js": {
@@ -189,6 +199,15 @@
                             ],
                             "scripts": [
                                 "{$config.path.node_modules}/nouislider/distribute/nouislider.js"
+                            ]
+                        },
+                        "owl.carousel": {
+                            "styles": [
+                                "{$config.path.node_modules}/owl.carousel/dist/assets/owl.carousel.css",
+                                "{$config.path.node_modules}/owl.carousel/dist/assets/owl.theme.default.css"
+                            ],
+                            "scripts": [
+                                "{$config.path.node_modules}/owl.carousel/dist/owl.carousel.js"
                             ]
                         },
                         "autosize": {
@@ -292,7 +311,7 @@
                         },
                         "chartist": {
                             "styles": [
-                                "{$config.path.node_modules}/chartist/dist/chartist.css"
+                                "{$config.path.node_modules}/chartist/dist/chartist.min.css"
                             ],
                             "scripts": [
                                 "{$config.path.node_modules}/chartist/dist/chartist.js"
@@ -366,7 +385,7 @@
                             ],
                             "scripts": [
                                 "{$config.path.node_modules}/es6-promise-polyfill/promise.min.js",
-                                "{$config.path.node_modules}/sweetalert2/dist/sweetalert2.min.js",                                
+                                "{$config.path.node_modules}/sweetalert2/dist/sweetalert2.min.js",
                                 "{$config.path.src}/js/framework/components/plugins/base/sweetalert2.init.js"
                             ]
                         }
@@ -387,11 +406,15 @@
                         ],
                         "scripts": [
                             "{$config.path.src}/vendors/jquery-ui/jquery-ui.min.js"
+                        ],
+                        "images": [
+                            "{$config.path.src}/vendors/jquery-ui/images/*"
                         ]
                     },
                     "bundle": {
                         "styles": "{$config.output}/vendors/custom/jquery-ui/jquery-ui.bundle.css",
-                        "scripts": "{$config.output}/vendors/custom/jquery-ui/jquery-ui.bundle.js"
+                        "scripts": "{$config.output}/vendors/custom/jquery-ui/jquery-ui.bundle.js",
+                        "images": "{$config.output}/vendors/custom/jquery-ui/images"
                     }
                 },
                 "fullcalendar": {
@@ -464,7 +487,8 @@
                             "{$config.path.src}/sass/demo/default/style.scss"
                         ],
                         "scripts": [
-                            "{$config.path.src}/js/framework/base/**/*.js",
+                            "{$config.path.src}/js/framework/base/util.js",
+                            "{$config.path.src}/js/framework/base/app.js",
                             "{$config.path.src}/js/framework/components/general/datatable/datatable.js",
                             "{$config.path.src}/js/framework/**/*.js",
                             "{$config.path.src}/js/demo/default/base/**/*.js",
@@ -809,13 +833,25 @@
             }
         },
         "snippets": {
-            "src": {
-                "scripts": [
-                    "{$config.path.src}/js/snippets/custom/**/*.js"
-                ]
+            "apps": {
+                "src": {
+                    "scripts": [
+                        "{$config.path.src}/js/snippets/apps/**/*.js"
+                    ]
+                },
+                "output": {
+                    "scripts": "{$config.output}/snippets/apps"
+                }
             },
-            "output": {
-                "scripts": "{$config.output}/snippets/"
+            "custom": {
+                "src": {
+                    "scripts": [
+                        "{$config.path.src}/js/snippets/custom/**/*.js"
+                    ]
+                },
+                "output": {
+                    "scripts": "{$config.output}/snippets/custom"
+                }
             }
         },
         "app": {

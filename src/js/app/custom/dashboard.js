@@ -20,7 +20,7 @@ var Dashboard = function() {
                     pointHoverBorderWidth: 12,
                     pointBackgroundColor: Chart.helpers.color('#000000').alpha(0).rgbString(),
                     pointBorderColor: Chart.helpers.color('#000000').alpha(0).rgbString(),
-                    pointHoverBackgroundColor: mUtil.getColor('danger'),
+                    pointHoverBackgroundColor: mApp.getColor('danger'),
                     pointHoverBorderColor: Chart.helpers.color('#000000').alpha(0.1).rgbString(),
                     fill: false,
                     data: data,
@@ -105,7 +105,7 @@ var Dashboard = function() {
             labels: ["Label 1", "Label 2", "Label 3", "Label 4", "Label 5", "Label 6", "Label 7", "Label 8", "Label 9", "Label 10", "Label 11", "Label 12", "Label 13", "Label 14", "Label 15", "Label 16"],
             datasets: [{
                 //label: 'Dataset 1',
-                backgroundColor: mUtil.getColor('success'),
+                backgroundColor: mApp.getColor('success'),
                 data: [
                     15, 20, 25, 30, 25, 20, 15, 20, 25, 30, 25, 20, 15, 10, 15, 20
                 ]
@@ -174,21 +174,21 @@ var Dashboard = function() {
                     value: 32,
                     className: 'custom',
                     meta: {
-                        color: mUtil.getColor('brand')
+                        color: mApp.getColor('brand')
                     }
                 },
                 {
                     value: 32,
                     className: 'custom',
                     meta: {
-                        color: mUtil.getColor('accent')
+                        color: mApp.getColor('accent')
                     }
                 },
                 {
                     value: 36,
                     className: 'custom',
                     meta: {
-                        color: mUtil.getColor('warning')
+                        color: mApp.getColor('warning')
                     }
                 }
             ],
@@ -266,14 +266,14 @@ var Dashboard = function() {
                 ],
                 datasets: [{
                     label: "Sales Stats",
-                    borderColor: mUtil.getColor('brand'),
+                    borderColor: mApp.getColor('brand'),
                     borderWidth: 2,
-                    pointBackgroundColor: mUtil.getColor('brand'),
+                    pointBackgroundColor: mApp.getColor('brand'),
 
-                    backgroundColor: mUtil.getColor('accent'),
+                    backgroundColor: mApp.getColor('accent'),
 
-                    pointHoverBackgroundColor: mUtil.getColor('danger'),
-                    pointHoverBorderColor: Chart.helpers.color(mUtil.getColor('danger')).alpha(0.2).rgbString(),
+                    pointHoverBackgroundColor: mApp.getColor('danger'),
+                    pointHoverBorderColor: Chart.helpers.color(mApp.getColor('danger')).alpha(0.2).rgbString(),
                     data: [
                         10, 20, 16,
                         18, 12, 40,
@@ -344,15 +344,15 @@ var Dashboard = function() {
     //** Based on Chartjs plugin - http://www.chartjs.org/
     var salesByApps = function() {
         // Init chart instances
-        _initSparklineChart($('#m_chart_sales_by_apps_1_1'), [10, 20, -5, 8, -20, -2, -4, 15, 5, 8], mUtil.getColor('accent'), 2);
-        _initSparklineChart($('#m_chart_sales_by_apps_1_2'), [2, 16, 0, 12, 22, 5, -10, 5, 15, 2], mUtil.getColor('danger'), 2);
-        _initSparklineChart($('#m_chart_sales_by_apps_1_3'), [15, 5, -10, 5, 16, 22, 6, -6, -12, 5], mUtil.getColor('success'), 2);
-        _initSparklineChart($('#m_chart_sales_by_apps_1_4'), [8, 18, -12, 12, 22, -2, -14, 16, 18, 2], mUtil.getColor('warning'), 2);
+        _initSparklineChart($('#m_chart_sales_by_apps_1_1'), [10, 20, -5, 8, -20, -2, -4, 15, 5, 8], mApp.getColor('accent'), 2);
+        _initSparklineChart($('#m_chart_sales_by_apps_1_2'), [2, 16, 0, 12, 22, 5, -10, 5, 15, 2], mApp.getColor('danger'), 2);
+        _initSparklineChart($('#m_chart_sales_by_apps_1_3'), [15, 5, -10, 5, 16, 22, 6, -6, -12, 5], mApp.getColor('success'), 2);
+        _initSparklineChart($('#m_chart_sales_by_apps_1_4'), [8, 18, -12, 12, 22, -2, -14, 16, 18, 2], mApp.getColor('warning'), 2);
 
-        _initSparklineChart($('#m_chart_sales_by_apps_2_1'), [10, 20, -5, 8, -20, -2, -4, 15, 5, 8], mUtil.getColor('danger'), 2);
-        _initSparklineChart($('#m_chart_sales_by_apps_2_2'), [2, 16, 0, 12, 22, 5, -10, 5, 15, 2], mUtil.getColor('metal'), 2);
-        _initSparklineChart($('#m_chart_sales_by_apps_2_3'), [15, 5, -10, 5, 16, 22, 6, -6, -12, 5], mUtil.getColor('brand'), 2);
-        _initSparklineChart($('#m_chart_sales_by_apps_2_4'), [8, 18, -12, 12, 22, -2, -14, 16, 18, 2], mUtil.getColor('info'), 2);
+        _initSparklineChart($('#m_chart_sales_by_apps_2_1'), [10, 20, -5, 8, -20, -2, -4, 15, 5, 8], mApp.getColor('danger'), 2);
+        _initSparklineChart($('#m_chart_sales_by_apps_2_2'), [2, 16, 0, 12, 22, 5, -10, 5, 15, 2], mApp.getColor('metal'), 2);
+        _initSparklineChart($('#m_chart_sales_by_apps_2_3'), [15, 5, -10, 5, 16, 22, 6, -6, -12, 5], mApp.getColor('brand'), 2);
+        _initSparklineChart($('#m_chart_sales_by_apps_2_4'), [8, 18, -12, 12, 22, -2, -14, 16, 18, 2], mApp.getColor('info'), 2);
     }
 
     //== Latest Updates.
@@ -370,11 +370,11 @@ var Dashboard = function() {
                 labels: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October"],
                 datasets: [{
                     label: "Sales Stats",
-                    backgroundColor: mUtil.getColor('danger'), // Put the gradient here as a fill color
-                    borderColor: mUtil.getColor('danger'),
+                    backgroundColor: mApp.getColor('danger'), // Put the gradient here as a fill color
+                    borderColor: mApp.getColor('danger'),
                     pointBackgroundColor: Chart.helpers.color('#000000').alpha(0).rgbString(),
                     pointBorderColor: Chart.helpers.color('#000000').alpha(0).rgbString(),
-                    pointHoverBackgroundColor: mUtil.getColor('accent'),
+                    pointHoverBackgroundColor: mApp.getColor('accent'),
                     pointHoverBorderColor: Chart.helpers.color('#000000').alpha(0.1).rgbString(),
 
                     //fill: 'start',
@@ -467,7 +467,7 @@ var Dashboard = function() {
 
                     pointBackgroundColor: Chart.helpers.color('#ffffff').alpha(0).rgbString(),
                     pointBorderColor: Chart.helpers.color('#ffffff').alpha(0).rgbString(),
-                    pointHoverBackgroundColor: mUtil.getColor('danger'),
+                    pointHoverBackgroundColor: mApp.getColor('danger'),
                     pointHoverBorderColor: Chart.helpers.color('#000000').alpha(0.2).rgbString(),
 
                     //fill: 'start',
@@ -563,11 +563,11 @@ var Dashboard = function() {
                 datasets: [{
                     label: "Sales Stats",
                     backgroundColor: '#d2f5f9', // Put the gradient here as a fill color
-                    borderColor: mUtil.getColor('brand'),
+                    borderColor: mApp.getColor('brand'),
 
                     pointBackgroundColor: Chart.helpers.color('#ffffff').alpha(0).rgbString(),
                     pointBorderColor: Chart.helpers.color('#ffffff').alpha(0).rgbString(),
-                    pointHoverBackgroundColor: mUtil.getColor('danger'),
+                    pointHoverBackgroundColor: mApp.getColor('danger'),
                     pointHoverBorderColor: Chart.helpers.color('#000000').alpha(0.2).rgbString(),
 
                     //fill: 'start',
@@ -683,9 +683,9 @@ var Dashboard = function() {
                 }
             ],
             colors: [
-                mUtil.getColor('accent'),
-                mUtil.getColor('danger'),
-                mUtil.getColor('brand')
+                mApp.getColor('accent'),
+                mApp.getColor('danger'),
+                mApp.getColor('brand')
             ],
         });
     }
@@ -714,9 +714,9 @@ var Dashboard = function() {
             ],
             labelColor: '#a7a7c2',
             colors: [
-                mUtil.getColor('accent'),
-                mUtil.getColor('brand'),
-                mUtil.getColor('danger')
+                mApp.getColor('accent'),
+                mApp.getColor('brand'),
+                mApp.getColor('danger')
             ]
             //formatter: function (x) { return x + "%"}
         });
@@ -734,21 +734,21 @@ var Dashboard = function() {
                     value: 32,
                     className: 'custom',
                     meta: {
-                        color: mUtil.getColor('brand')
+                        color: mApp.getColor('brand')
                     }
                 },
                 {
                     value: 32,
                     className: 'custom',
                     meta: {
-                        color: mUtil.getColor('accent')
+                        color: mApp.getColor('accent')
                     }
                 },
                 {
                     value: 36,
                     className: 'custom',
                     meta: {
-                        color: mUtil.getColor('warning')
+                        color: mApp.getColor('warning')
                     }
                 }
             ],
@@ -826,7 +826,7 @@ var Dashboard = function() {
 
                     pointBackgroundColor: Chart.helpers.color('#000000').alpha(0).rgbString(),
                     pointBorderColor: Chart.helpers.color('#000000').alpha(0).rgbString(),
-                    pointHoverBackgroundColor: mUtil.getColor('light'),
+                    pointHoverBackgroundColor: mApp.getColor('light'),
                     pointHoverBorderColor: Chart.helpers.color('#ffffff').alpha(0.1).rgbString(),
 
                     //fill: 'start',
@@ -916,11 +916,11 @@ var Dashboard = function() {
                 datasets: [{
                     label: "Bandwidth Stats",
                     backgroundColor: gradient,
-                    borderColor: mUtil.getColor('success'),
+                    borderColor: mApp.getColor('success'),
 
                     pointBackgroundColor: Chart.helpers.color('#000000').alpha(0).rgbString(),
                     pointBorderColor: Chart.helpers.color('#000000').alpha(0).rgbString(),
-                    pointHoverBackgroundColor: mUtil.getColor('danger'),
+                    pointHoverBackgroundColor: mApp.getColor('danger'),
                     pointHoverBorderColor: Chart.helpers.color('#000000').alpha(0.1).rgbString(),
 
                     //fill: 'start',
@@ -1010,11 +1010,11 @@ var Dashboard = function() {
                 datasets: [{
                     label: "Bandwidth Stats",
                     backgroundColor: gradient,
-                    borderColor: mUtil.getColor('warning'),
+                    borderColor: mApp.getColor('warning'),
 
                     pointBackgroundColor: Chart.helpers.color('#000000').alpha(0).rgbString(),
                     pointBorderColor: Chart.helpers.color('#000000').alpha(0).rgbString(),
-                    pointHoverBackgroundColor: mUtil.getColor('danger'),
+                    pointHoverBackgroundColor: mApp.getColor('danger'),
                     pointHoverBorderColor: Chart.helpers.color('#000000').alpha(0.1).rgbString(),
 
                     //fill: 'start',
@@ -1103,12 +1103,12 @@ var Dashboard = function() {
                 labels: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October"],
                 datasets: [{
                     label: "AdWord Clicks",
-                    backgroundColor: mUtil.getColor('brand'),
-                    borderColor: mUtil.getColor('brand'),
+                    backgroundColor: mApp.getColor('brand'),
+                    borderColor: mApp.getColor('brand'),
 
                     pointBackgroundColor: Chart.helpers.color('#000000').alpha(0).rgbString(),
                     pointBorderColor: Chart.helpers.color('#000000').alpha(0).rgbString(),
-                    pointHoverBackgroundColor: mUtil.getColor('danger'),
+                    pointHoverBackgroundColor: mApp.getColor('danger'),
                     pointHoverBorderColor: Chart.helpers.color('#000000').alpha(0.1).rgbString(),
                     data: [
                         12, 16, 9, 18, 13, 12, 18, 12, 15, 17
@@ -1116,12 +1116,12 @@ var Dashboard = function() {
                 }, {
                     label: "AdWords Views",
 
-                    backgroundColor: mUtil.getColor('accent'),
-                    borderColor: mUtil.getColor('accent'),
+                    backgroundColor: mApp.getColor('accent'),
+                    borderColor: mApp.getColor('accent'),
 
                     pointBackgroundColor: Chart.helpers.color('#000000').alpha(0).rgbString(),
                     pointBorderColor: Chart.helpers.color('#000000').alpha(0).rgbString(),
-                    pointHoverBackgroundColor: mUtil.getColor('danger'),
+                    pointHoverBackgroundColor: mApp.getColor('danger'),
                     pointHoverBorderColor: Chart.helpers.color('#000000').alpha(0.1).rgbString(),
                     data: [
                         10, 14, 12, 16, 9, 11, 13, 9, 13, 15
@@ -1206,12 +1206,12 @@ var Dashboard = function() {
                 datasets: [{
                     label: "AdWords Views",
 
-                    backgroundColor: mUtil.getColor('accent'),
-                    borderColor: mUtil.getColor('accent'),
+                    backgroundColor: mApp.getColor('accent'),
+                    borderColor: mApp.getColor('accent'),
 
                     pointBackgroundColor: Chart.helpers.color('#000000').alpha(0).rgbString(),
                     pointBorderColor: Chart.helpers.color('#000000').alpha(0).rgbString(),
-                    pointHoverBackgroundColor: mUtil.getColor('danger'),
+                    pointHoverBackgroundColor: mApp.getColor('danger'),
                     pointHoverBorderColor: Chart.helpers.color('#000000').alpha(0.1).rgbString(),
                     data: [
                         10, 14, 12, 16, 9, 11, 13, 9, 13, 15
@@ -1281,10 +1281,10 @@ var Dashboard = function() {
 
     //== Quick Stat Charts
     var quickStats = function() {
-        _initSparklineChart($('#m_chart_quick_stats_1'), [10, 14, 18, 11, 9, 12, 14, 17, 18, 14], mUtil.getColor('brand'), 3);
-        _initSparklineChart($('#m_chart_quick_stats_2'), [11, 12, 18, 13, 11, 12, 15, 13, 19, 15], mUtil.getColor('danger'), 3);
-        _initSparklineChart($('#m_chart_quick_stats_3'), [12, 12, 18, 11, 15, 12, 13, 16, 11, 18], mUtil.getColor('success'), 3);
-        _initSparklineChart($('#m_chart_quick_stats_4'), [11, 9, 13, 18, 13, 15, 14, 13, 18, 15], mUtil.getColor('accent'), 3);
+        _initSparklineChart($('#m_chart_quick_stats_1'), [10, 14, 18, 11, 9, 12, 14, 17, 18, 14], mApp.getColor('brand'), 3);
+        _initSparklineChart($('#m_chart_quick_stats_2'), [11, 12, 18, 13, 11, 12, 15, 13, 19, 15], mApp.getColor('danger'), 3);
+        _initSparklineChart($('#m_chart_quick_stats_3'), [12, 12, 18, 11, 15, 12, 13, 16, 11, 18], mApp.getColor('success'), 3);
+        _initSparklineChart($('#m_chart_quick_stats_4'), [11, 9, 13, 18, 13, 15, 14, 13, 18, 15], mApp.getColor('accent'), 3);
     }
 
     var daterangepickerInit = function() {
@@ -1642,6 +1642,403 @@ var Dashboard = function() {
         });
     }
 
+    var earningsSlide = function() {
+
+        var $owl1 = $('.owl-carousel');
+        var $owl2 = $('#m_widget_body_owlcarousel_items'); 
+
+        $owl1.children().each( function( index ) {
+            $(this).attr( 'data-position', index ); 
+        });
+
+        $owl2.owlCarousel({   
+            items: 1,            
+            animateIn: 'fadeIn(100)',            
+            loop: true,                                              
+        });
+ 
+        $owl1.owlCarousel({
+            center: true,
+            loop: true,
+            items: 2,             
+        });
+         
+        $(document).on('click', '.carousel', function() {
+            $owl1.trigger('to.owl.carousel', $(this).data( 'position' ) );
+        });  
+    }
+
+    var personalIncome = function() {
+        //** Based on Chartist plugin - https://gionkunz.github.io/chartist-js/index.html
+        var quater1Chart = function() {
+            if ($('#m_chart_personal_income_quater_1').length == 0) {
+                return;
+            }
+
+            var chart = new Chartist.Pie('#m_chart_personal_income_quater_1', {
+                series: [{
+                        value: 32,
+                        className: 'custom',
+                        meta: {
+                            color: mApp.getColor('brand')
+                        }
+                    },
+                    {
+                        value: 32,
+                        className: 'custom',
+                        meta: {
+                            color: mApp.getColor('accent')
+                        }
+                    },
+                    {
+                        value: 36,
+                        className: 'custom',
+                        meta: {
+                            color: mApp.getColor('warning')
+                        }
+                    }
+                ],
+                labels: [1, 2, 3]
+            }, {
+                donut: true,
+                donutWidth: 17,
+                showLabel: false
+            });
+
+            chart.on('draw', function(data) {
+                if (data.type === 'slice') {
+                    // Get the total path length in order to use for dash array animation
+                    var pathLength = data.element._node.getTotalLength();
+
+                    // Set a dasharray that matches the path length as prerequisite to animate dashoffset
+                    data.element.attr({
+                        'stroke-dasharray': pathLength + 'px ' + pathLength + 'px'
+                    });
+
+                    // Create animation definition while also assigning an ID to the animation for later sync usage
+                    var animationDefinition = {
+                        'stroke-dashoffset': {
+                            id: 'anim' + data.index,
+                            dur: 1000,
+                            from: -pathLength + 'px',
+                            to: '0px',
+                            easing: Chartist.Svg.Easing.easeOutQuint,
+                            // We need to use `fill: 'freeze'` otherwise our animation will fall back to initial (not visible)
+                            fill: 'freeze',
+                            'stroke': data.meta.color
+                        }
+                    };
+
+                    // If this was not the first slice, we need to time the animation so that it uses the end sync event of the previous animation
+                    if (data.index !== 0) {
+                        animationDefinition['stroke-dashoffset'].begin = 'anim' + (data.index - 1) + '.end';
+                    }
+
+                    // We need to set an initial value before the animation starts as we are not in guided mode which would do that for us
+
+                    data.element.attr({
+                        'stroke-dashoffset': -pathLength + 'px',
+                        'stroke': data.meta.color
+                    });
+
+                    // We can't use guided mode as the animations need to rely on setting begin manually
+                    // See http://gionkunz.github.io/chartist-js/api-documentation.html#chartistsvg-function-animate
+                    data.element.animate(animationDefinition, false);
+                }
+            });
+
+            // For the sake of the example we update the chart every time it's created with a delay of 8 seconds
+            chart.on('created', function() {
+                if (window.__anim21278907124) {
+                    clearTimeout(window.__anim21278907124);
+                    window.__anim21278907124 = null;
+                }
+                window.__anim21278907124 = setTimeout(chart.update.bind(chart), 15000);
+            });
+        };
+
+        var quater2Chart = function() {
+            if ($('#m_chart_personal_income_quater_2').length == 0) {
+                return;
+            }
+
+            var chart = new Chartist.Pie('#m_chart_personal_income_quater_2', {
+                series: [{
+                        value: 22,
+                        className: 'custom',
+                        meta: {
+                            color: mApp.getColor('focus')
+                        }
+                    },
+                    {
+                        value: 44,
+                        className: 'custom',
+                        meta: {
+                            color: mApp.getColor('success')
+                        }
+                    },
+                    {
+                        value: 34,
+                        className: 'custom',
+                        meta: {
+                            color: mApp.getColor('danger')
+                        }
+                    }
+                ],
+                labels: [1, 2, 3]
+            }, {
+                donut: true,
+                donutWidth: 17,
+                showLabel: false
+            });
+
+            chart.on('draw', function(data) {
+                if (data.type === 'slice') {
+                    // Get the total path length in order to use for dash array animation
+                    var pathLength = data.element._node.getTotalLength();
+
+                    // Set a dasharray that matches the path length as prerequisite to animate dashoffset
+                    data.element.attr({
+                        'stroke-dasharray': pathLength + 'px ' + pathLength + 'px'
+                    });
+
+                    // Create animation definition while also assigning an ID to the animation for later sync usage
+                    var animationDefinition = {
+                        'stroke-dashoffset': {
+                            id: 'anim' + data.index,
+                            dur: 1000,
+                            from: -pathLength + 'px',
+                            to: '0px',
+                            easing: Chartist.Svg.Easing.easeOutQuint,
+                            // We need to use `fill: 'freeze'` otherwise our animation will fall back to initial (not visible)
+                            fill: 'freeze',
+                            'stroke': data.meta.color
+                        }
+                    };
+
+                    // If this was not the first slice, we need to time the animation so that it uses the end sync event of the previous animation
+                    if (data.index !== 0) {
+                        animationDefinition['stroke-dashoffset'].begin = 'anim' + (data.index - 1) + '.end';
+                    }
+
+                    // We need to set an initial value before the animation starts as we are not in guided mode which would do that for us
+
+                    data.element.attr({
+                        'stroke-dashoffset': -pathLength + 'px',
+                        'stroke': data.meta.color
+                    });
+
+                    // We can't use guided mode as the animations need to rely on setting begin manually
+                    // See http://gionkunz.github.io/chartist-js/api-documentation.html#chartistsvg-function-animate
+                    data.element.animate(animationDefinition, false);
+                }
+            });
+
+            // For the sake of the example we update the chart every time it's created with a delay of 8 seconds
+            chart.on('created', function() {
+                if (window.__anim212789071241111) {
+                    clearTimeout(window.__anim212789071241111);
+                    window.__anim212789071241111 = null;
+                }
+                window.__anim212789071241111 = setTimeout(chart.update.bind(chart), 15000);
+            });
+        };
+
+        var quater3Chart = function() {
+            if ($('#m_chart_personal_income_quater_3').length == 0) {
+                return;
+            }
+
+            var chart = new Chartist.Pie('#m_chart_personal_income_quater_3', {
+                series: [{
+                        value: 47,
+                        className: 'custom',
+                        meta: {
+                            color: mApp.getColor('info')
+                        }
+                    },
+                    {
+                        value: 55,
+                        className: 'custom',
+                        meta: {
+                            color: mApp.getColor('danger')
+                        }
+                    },
+                    {
+                        value: 27,
+                        className: 'custom',
+                        meta: {
+                            color: mApp.getColor('brand')
+                        }
+                    }
+                ],
+                labels: [1, 2, 3]
+            }, {
+                donut: true,
+                donutWidth: 17,
+                showLabel: false
+            });
+
+            chart.on('draw', function(data) {
+                if (data.type === 'slice') {
+                    // Get the total path length in order to use for dash array animation
+                    var pathLength = data.element._node.getTotalLength();
+
+                    // Set a dasharray that matches the path length as prerequisite to animate dashoffset
+                    data.element.attr({
+                        'stroke-dasharray': pathLength + 'px ' + pathLength + 'px'
+                    });
+
+                    // Create animation definition while also assigning an ID to the animation for later sync usage
+                    var animationDefinition = {
+                        'stroke-dashoffset': {
+                            id: 'anim' + data.index,
+                            dur: 1000,
+                            from: -pathLength + 'px',
+                            to: '0px',
+                            easing: Chartist.Svg.Easing.easeOutQuint,
+                            // We need to use `fill: 'freeze'` otherwise our animation will fall back to initial (not visible)
+                            fill: 'freeze',
+                            'stroke': data.meta.color
+                        }
+                    };
+
+                    // If this was not the first slice, we need to time the animation so that it uses the end sync event of the previous animation
+                    if (data.index !== 0) {
+                        animationDefinition['stroke-dashoffset'].begin = 'anim' + (data.index - 1) + '.end';
+                    }
+
+                    // We need to set an initial value before the animation starts as we are not in guided mode which would do that for us
+
+                    data.element.attr({
+                        'stroke-dashoffset': -pathLength + 'px',
+                        'stroke': data.meta.color
+                    });
+
+                    // We can't use guided mode as the animations need to rely on setting begin manually
+                    // See http://gionkunz.github.io/chartist-js/api-documentation.html#chartistsvg-function-animate
+                    data.element.animate(animationDefinition, false);
+                }
+            });
+
+            // For the sake of the example we update the chart every time it's created with a delay of 8 seconds
+            chart.on('created', function() {
+                if (window.__anim212789071241111) {
+                    clearTimeout(window.__anim212789071241111);
+                    window.__anim212789071241111 = null;
+                }
+                window.__anim212789071241111 = setTimeout(chart.update.bind(chart), 15000);
+            });
+        };
+
+       var quater4Chart = function() {
+            if ($('#m_chart_personal_income_quater_4').length == 0) {
+                return;
+            }
+
+            var chart = new Chartist.Pie('#m_chart_personal_income_quater_4', {
+                series: [{
+                        value: 37,
+                        className: 'custom',
+                        meta: {
+                            color: mApp.getColor('warning')
+                        }
+                    },
+                    {
+                        value: 65,
+                        className: 'custom',
+                        meta: {
+                            color: mApp.getColor('primary')
+                        }
+                    },
+                    {
+                        value: 33,
+                        className: 'custom',
+                        meta: {
+                            color: mApp.getColor('danger')
+                        }
+                    }
+                ],
+                labels: [1, 2, 3]
+            }, {
+                donut: true,
+                donutWidth: 17,
+                showLabel: false
+            });
+
+            chart.on('draw', function(data) {
+                if (data.type === 'slice') {
+                    // Get the total path length in order to use for dash array animation
+                    var pathLength = data.element._node.getTotalLength();
+
+                    // Set a dasharray that matches the path length as prerequisite to animate dashoffset
+                    data.element.attr({
+                        'stroke-dasharray': pathLength + 'px ' + pathLength + 'px'
+                    });
+
+                    // Create animation definition while also assigning an ID to the animation for later sync usage
+                    var animationDefinition = {
+                        'stroke-dashoffset': {
+                            id: 'anim' + data.index,
+                            dur: 1000,
+                            from: -pathLength + 'px',
+                            to: '0px',
+                            easing: Chartist.Svg.Easing.easeOutQuint,
+                            // We need to use `fill: 'freeze'` otherwise our animation will fall back to initial (not visible)
+                            fill: 'freeze',
+                            'stroke': data.meta.color
+                        }
+                    };
+
+                    // If this was not the first slice, we need to time the animation so that it uses the end sync event of the previous animation
+                    if (data.index !== 0) {
+                        animationDefinition['stroke-dashoffset'].begin = 'anim' + (data.index - 1) + '.end';
+                    }
+
+                    // We need to set an initial value before the animation starts as we are not in guided mode which would do that for us
+
+                    data.element.attr({
+                        'stroke-dashoffset': -pathLength + 'px',
+                        'stroke': data.meta.color
+                    });
+
+                    // We can't use guided mode as the animations need to rely on setting begin manually
+                    // See http://gionkunz.github.io/chartist-js/api-documentation.html#chartistsvg-function-animate
+                    data.element.animate(animationDefinition, false);
+                }
+            });
+
+            // For the sake of the example we update the chart every time it's created with a delay of 8 seconds
+            chart.on('created', function() {
+                if (window.__anim212789071241111) {
+                    clearTimeout(window.__anim212789071241111);
+                    window.__anim212789071241111 = null;
+                }
+                window.__anim212789071241111 = setTimeout(chart.update.bind(chart), 15000);
+            });
+        };
+
+        quater1Chart();
+
+	    $( document ).find( 'a[data-toggle="pill"]' ).on( 'shown.bs.tab', function( e ) {
+		    var target = $( e.target ).attr( 'href' );
+		    switch ( target ) {
+			    case '#m_personal_income_quater_1':
+				    quater1Chart();
+				    break;
+			    case '#m_personal_income_quater_2':
+				    quater2Chart();
+				    break;
+                case '#m_personal_income_quater_3':
+                    quater3Chart();
+                    break;  
+                case '#m_personal_income_quater_4':
+                    quater4Chart();
+                    break;       
+		    }
+	    } );
+    }
+
     return {
         //== Init demos
         init: function() {
@@ -1654,7 +2051,6 @@ var Dashboard = function() {
             trendsStats();
             trendsStats2();
             latestTrendsMap();
-            revenueChange();
             supportTickets();
             supportTickets2();
             activitiesChart();
@@ -1663,6 +2059,7 @@ var Dashboard = function() {
             adWordsStat();
             financeSummary();
             quickStats();
+            personalIncome();
 
             // init daterangepicker
             daterangepickerInit();
@@ -1672,6 +2069,9 @@ var Dashboard = function() {
 
             // calendar
             calendarInit();
+
+            // earnings slide
+            earningsSlide();
         }
     };
 }();

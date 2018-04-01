@@ -114,7 +114,7 @@ body {
 		// fixed header
 		.m-header--fixed-mobile & {
 			@include transition(array-get($m-config-header, header, transition));  
-			padding-top: array-get($m-config-header, header, height, mobile, default);   
+			padding-top: array-get($m-config-header, header, height, mobile, default) !important;   
 		}
 
 		// fixed and minimized header

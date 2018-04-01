@@ -38,6 +38,11 @@ var DefaultDatatableDemo = function () {
 				input: $('#generalSearch')
 			},
 
+			rows: {
+				// auto hide columns, if rows overflow
+				autoHide: true,
+			},
+
 			columns: [{
 				field: "RecordID",
 				title: "#",
@@ -92,7 +97,6 @@ var DefaultDatatableDemo = function () {
 			}, {
 				field: "Website",
 				title: "Website",
-				width: 200
 			}, {
 				field: "Currency",
 				title: "Currency",

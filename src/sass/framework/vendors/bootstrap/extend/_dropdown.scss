@@ -76,6 +76,16 @@
         }
     }
 
+    //== Dropup 
+    .btn-group.dropup {
+        .nav-link.dropdown-toggle,
+        .btn.dropdown-toggle {
+            &:after {
+                @include m-generate-arrow-icon(up, true);  
+            }
+        }
+    }
+
     //== Dropleft 
     .btn-group.dropleft {
         .nav-link.dropdown-toggle,

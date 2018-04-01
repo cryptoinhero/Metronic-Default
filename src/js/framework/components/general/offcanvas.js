@@ -1,234 +1,263 @@
-(function($) {
-    // plugin setup
-    $.fn.mOffcanvas = function(options) {
-        // main object
-        var offcanvas = this;
-        var element = $(this);
+var mOffcanvas = function(elementId, options) {
+    //== Main object
+    var the = this;
+    var init = false;
 
-        /********************
-         ** PRIVATE METHODS
-         ********************/
-        var Plugin = {
-            /**
-             * Run
-             */
-            run: function (options) {
-                if (!element.data('offcanvas')) {                      
-                    // create instance
-                    Plugin.init(options);
-                    Plugin.build();
-                    
-                    // assign instance to the element                    
-                    element.data('offcanvas', offcanvas);
-                } else {
-                    // get instance from the element
-                    offcanvas = element.data('offcanvas');
-                }               
+    //== Get element object
+    var element = mUtil.get(elementId);
+    var body = mUtil.get('body');
 
-                return offcanvas;
-            },
+    if (!element) {
+        return;
+    }
 
-            /**
-             * Handles suboffcanvas click toggle
-             */
-            init: function(options) {
-                offcanvas.events = [];
+    //== Default options
+    var defaultOptions = {};
 
-                // merge default and user defined options
-                offcanvas.options = $.extend(true, {}, $.fn.mOffcanvas.defaults, options);
+    ////////////////////////////
+    // ** Private Methods  ** //
+    ////////////////////////////
 
-                offcanvas.overlay;
+    var Plugin = {
+        /**
+         * Run plugin
+         * @returns {moffcanvas}
+         */
+        construct: function(options) {
+            if (mUtil.data(element).has('offcanvas')) {
+                the = mUtil.data(element).get('offcanvas');
+            } else {
+                // reset offcanvas
+                Plugin.init(options);
                 
-                offcanvas.classBase = offcanvas.options.class;
-                offcanvas.classShown = offcanvas.classBase + '--on';
-                offcanvas.classOverlay = offcanvas.classBase + '-overlay';
-                
-                offcanvas.state = element.hasClass(offcanvas.classShown) ? 'shown' : 'hidden';
-                offcanvas.close = offcanvas.options.close;
+                // build offcanvas
+                Plugin.build();
 
-                if (offcanvas.options.toggle && offcanvas.options.toggle.target) {
-                    offcanvas.toggleTarget = offcanvas.options.toggle.target;
-                    offcanvas.toggleState = offcanvas.options.toggle.state;
-                } else {
-                    offcanvas.toggleTarget = offcanvas.options.toggle; 
-                    offcanvas.toggleState = '';
-                }
-            },
+                mUtil.data(element).set('offcanvas', the);
+            }
 
-            /**
-             * Setup offcanvas
-             */
-            build: function() {
-                // offcanvas toggle
-                $(offcanvas.toggleTarget).on('click', Plugin.toggle);
+            return the;
+        },
 
-                if (offcanvas.close) {
-                    $(offcanvas.close).on('click', Plugin.hide);
-                }
-            },
+        /**
+         * Handles suboffcanvas click toggle
+         * @returns {moffcanvas}
+         */
+        init: function(options) {
+            the.events = [];
 
-            /**
-             * sync 
-             */
-            sync: function () {
-                $(element).data('offcanvas', offcanvas);
-            }, 
+            // merge default and user defined options
+            the.options = mUtil.deepExtend({}, defaultOptions, options);
+            the.overlay;
 
-            /**
-             * Handles offcanvas click toggle
-             */
-            toggle: function() {
-                var el = $(this);
+            the.classBase = the.options.baseClass;
+            the.classShown = the.classBase + '--on';
+            the.classOverlay = the.classBase + '-overlay';
 
-                if (offcanvas.state == 'shown') {
-                    Plugin.hide(el);
-                } else {
-                    Plugin.show(el);
-                }
-            },
+            the.state = mUtil.hasClass(element, the.classShown) ? 'shown' : 'hidden';
+        },
 
-            /**
-             * Handles offcanvas click toggle
-             */
-            show: function(el) {
-                if (offcanvas.state == 'shown') {
-                    return;
-                }
-
-                var target = el ? $(el) : $(offcanvas.toggleTarget);
-
-                Plugin.eventTrigger('beforeShow');
-
-                if (offcanvas.toggleState != '') {
-                    target.addClass(offcanvas.toggleState);
-                }
-                
-                $('body').addClass(offcanvas.classShown);
-                element.addClass(offcanvas.classShown);
-
-                offcanvas.state = 'shown';
-
-                if (offcanvas.options.overlay) {
-                    var overlay = $('<div class="' + offcanvas.classOverlay + '"></div>');                
-                    element.after(overlay);
-                    offcanvas.overlay = overlay;
-                    offcanvas.overlay.on('click', function(e) {
-                        e.stopPropagation();
-                        e.preventDefault();
-                        Plugin.hide();
-                    });
+        build: function() {
+            //== offcanvas toggle
+            if (the.options.toggleBy) {
+                if (typeof the.options.toggleBy === 'string') { 
+                    mUtil.addEvent( the.options.toggleBy, 'click', Plugin.toggle); 
+                } else if (the.options.toggleBy && the.options.toggleBy[0] && the.options.toggleBy[0].target) {
+                    for (var i in the.options.toggleBy) { 
+                        mUtil.addEvent( the.options.toggleBy[i].target, 'click', Plugin.toggle); 
+                    }
+                } else if (the.options.toggleBy && the.options.toggleBy.target) {
+                    mUtil.addEvent( the.options.toggleBy.target, 'click', Plugin.toggle); 
                 } 
+            }
 
-                Plugin.eventTrigger('afterShow');
+            //== offcanvas close
+            var closeBy = mUtil.get(the.options.closeBy);
+            if (closeBy) {
+                mUtil.addEvent(closeBy, 'click', Plugin.hide);
+            }
+        },
 
-                return offcanvas;
-            },
 
-            /**
-             * Handles offcanvas click toggle
-             */
-            hide: function(el) {
-                if (offcanvas.state == 'hidden') {
-                    return;
+        /**
+         * Handles offcanvas toggle
+         */
+        toggle: function() {;
+            Plugin.eventTrigger('toggle'); 
+
+            if (the.state == 'shown') {
+                Plugin.hide(this);
+            } else {
+                Plugin.show(this);
+            }
+        },
+
+        /**
+         * Handles offcanvas show
+         */
+        show: function(target) {
+            if (the.state == 'shown') {
+                return;
+            }
+
+            Plugin.eventTrigger('beforeShow');
+
+            Plugin.togglerClass(target, 'show');
+
+            //== Offcanvas panel
+            mUtil.addClass(body, the.classShown);
+            mUtil.addClass(element, the.classShown);
+
+            the.state = 'shown';
+
+            if (the.options.overlay) {
+                the.overlay = mUtil.insertAfter(document.createElement('DIV') , element );
+                mUtil.addClass(the.overlay, the.classOverlay);
+                mUtil.addEvent(the.overlay, 'click', function(e) {
+                    e.stopPropagation();
+                    e.preventDefault();
+                    Plugin.hide(target);       
+                });
+            }
+
+            Plugin.eventTrigger('afterShow');
+        },
+
+        /**
+         * Handles offcanvas hide
+         */
+        hide: function(target) {
+            if (the.state == 'hidden') {
+                return;
+            }
+
+            Plugin.eventTrigger('beforeHide');
+
+            Plugin.togglerClass(target, 'hide');
+
+            mUtil.removeClass(body, the.classShown);
+            mUtil.removeClass(element, the.classShown);
+
+            the.state = 'hidden';
+
+            if (the.options.overlay && the.overlay) {
+                mUtil.remove(the.overlay);
+            }
+
+            Plugin.eventTrigger('afterHide');
+        },
+
+        /**
+         * Handles toggler class
+         */
+        togglerClass: function(target, mode) {
+            //== Toggler
+            var id = mUtil.attr(target, 'id');
+            var toggleBy;
+
+            if (the.options.toggleBy && the.options.toggleBy[0] && the.options.toggleBy[0].target) {
+                for (var i in the.options.toggleBy) {
+                    if (the.options.toggleBy[i].target === id) {
+                        toggleBy = the.options.toggleBy[i];
+                    }        
+                }
+            } else if (the.options.toggleBy && the.options.toggleBy.target) {
+                toggleBy = the.options.toggleBy;
+            }
+
+            if (toggleBy) {                
+                var el = mUtil.get(toggleBy.target);
+                
+                if (mode === 'show') {
+                    mUtil.addClass(el, toggleBy.state);
                 }
 
-                var target = el ? $(el) : $(offcanvas.toggleTarget);
-                                
-                Plugin.eventTrigger('beforeHide');
-
-                if (offcanvas.toggleState != '') {
-                    target.removeClass(offcanvas.toggleState);
+                if (mode === 'hide') {
+                    mUtil.removeClass(el, toggleBy.state);
                 }
+            }
+        },
 
-                $('body').removeClass(offcanvas.classShown)
-                element.removeClass(offcanvas.classShown);
-
-                offcanvas.state = 'hidden';
-
-                if (offcanvas.options.overlay) {
-                    offcanvas.overlay.remove();
-                } 
-
-                Plugin.eventTrigger('afterHide');
-
-                return offcanvas;
-            },
-
-            /**
-             * Trigger events
-             */
-            eventTrigger: function(name) {
-                for (i = 0; i < offcanvas.events.length; i++) {
-                    var event = offcanvas.events[i];
-                    if (event.name == name) {
-                        if (event.one == true) {
-                            if (event.fired == false) {
-                                offcanvas.events[i].fired = true;
-                                return event.handler.call(this, offcanvas);
-                            }
-                        } else {
-                            return  event.handler.call(this, offcanvas);
+        /**
+         * Trigger events
+         */
+        eventTrigger: function(name, args) {
+            for (var i = 0; i < the.events.length; i++) {
+                var event = the.events[i];
+                if (event.name == name) {
+                    if (event.one == true) {
+                        if (event.fired == false) {
+                            the.events[i].fired = true;
+                            event.handler.call(this, the, args);
                         }
+                    } else {
+                        event.handler.call(this, the, args);
                     }
                 }
-            },
-
-            addEvent: function(name, handler, one) {
-                offcanvas.events.push({
-                    name: name,
-                    handler: handler,
-                    one: one,
-                    fired: false
-                });
-
-                Plugin.sync();
             }
-        };
+        },
 
-        // main variables
-        var the = this;
-        
-        // init plugin
-        Plugin.run.apply(this, [options]);
-
-        /********************
-         ** PUBLIC API METHODS
-         ********************/
-
-        /**
-         * Hide 
-         */
-        offcanvas.hide =  function () {
-            return Plugin.hide();
-        };
-
-        /**
-         * Show 
-         */
-        offcanvas.show =  function () {
-            return Plugin.show();
-        };
-
-        /**
-         * Get suboffcanvas mode
-         */
-        offcanvas.on =  function (name, handler) {
-            return Plugin.addEvent(name, handler);
-        };
-
-        /**
-         * Set offcanvas content
-         * @returns {mOffcanvas}
-         */
-        offcanvas.one =  function (name, handler) {
-            return Plugin.addEvent(name, handler, true);
-        };   
-
-        return offcanvas;
+        addEvent: function(name, handler, one) {
+            the.events.push({
+                name: name,
+                handler: handler,
+                one: one,
+                fired: false
+            });
+        }
     };
 
-    // default options
-    $.fn.mOffcanvas.defaults = {
-        
-    }; 
-}(jQuery));
+    //////////////////////////
+    // ** Public Methods ** //
+    //////////////////////////
+
+    /**
+     * Set default options 
+     */
+
+    the.setDefaults = function(options) {
+        defaultOptions = options;
+    };
+
+    /**
+     * Hide 
+     */
+    the.hide = function() {
+        return Plugin.hide();
+    };
+
+    /**
+     * Show 
+     */
+    the.show = function() {
+        return Plugin.show();
+    };
+
+    /**
+     * Get suboffcanvas mode
+     */
+    the.on = function(name, handler) {
+        return Plugin.addEvent(name, handler);
+    };
+
+    /**
+     * Set offcanvas content
+     * @returns {mOffcanvas}
+     */
+    the.one = function(name, handler) {
+        return Plugin.addEvent(name, handler, true);
+    };
+
+    ///////////////////////////////
+    // ** Plugin Construction ** //
+    ///////////////////////////////
+
+    //== Run plugin
+    Plugin.construct.apply(the, [options]);
+
+    //== Init done
+    init = true;
+
+    // Return plugin instance
+    return the;
+};

@@ -133,7 +133,7 @@ body {
 
 		//== Fixed header mode
 		.m-header--fixed-mobile & { 
-			margin-top: array-get($m-config-header, header, fixed, height, default, mobile);  
+			margin-top: array-get($m-config-header, header, fixed, height, default, mobile) !important;  
 		}
 	}
 

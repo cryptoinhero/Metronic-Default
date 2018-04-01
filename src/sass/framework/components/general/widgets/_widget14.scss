@@ -6,6 +6,11 @@
 @mixin m-build-component--widget14-base() {
     .m-widget14 {        
         padding: 2.2rem;
+
+        &.m-widget14--no-padding {
+            padding: 0;
+        }
+
         // widget header
         .m-widget14__header {
             padding: 1.1rem 0;

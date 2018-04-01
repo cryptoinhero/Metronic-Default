@@ -14,6 +14,7 @@
 	// item link and heading
 	> .m-menu__heading,
 	> .m-menu__link {
+		cursor: pointer;
 		height: array-get($item, link, self, height);
 
 		// menu item link's text part
@@ -433,7 +434,7 @@
 				padding: 0;
 				width: 100%;
 				margin: 0;
-				list-style: none;
+				list-style: none !important;
 			}
 
 			// general submenu
@@ -850,7 +851,7 @@
 	.#{array-get($base-config, parent-class)}--minimize .#{array-get($base-config, class)},
 	.#{array-get($base-config, class)}.#{array-get($base-config, class)}--dropdown {
 		.m-menu__nav {
-			.m-menu__item:not([data-menu-submenu-mode='accordion']) {
+			.m-menu__item:not([m-menu-submenu-mode='accordion']) {
 				// set proper position for all arrow icons in dropdown menu mode
 				> .m-menu__link {
 					> .m-menu__ver-arrow {
@@ -987,7 +988,7 @@
 				}					
 			}
 
-			> .m-menu__item:not([data-menu-submenu-mode='accordion']) {
+			> .m-menu__item:not([m-menu-submenu-mode='accordion']) {
 				&.m-menu__item--hover {
 					> .m-menu__submenu {
 						margin-left: $m-aside-left-width;
@@ -1059,7 +1060,7 @@
 	.#{array-get($base-config, class)}.#{array-get($base-config, class)}--dropdown.#{array-get($base-config, class)}--submenu-skin-#{$skin} {
 		.m-menu__nav {
 			// dropdown items
-			.m-menu__item:not([data-menu-submenu-mode='accordion']) {
+			.m-menu__item:not([m-menu-submenu-mode='accordion']) {
 				&.m-menu__item--hover {
 					> .m-menu__submenu {
 						.m-menu__subnav {

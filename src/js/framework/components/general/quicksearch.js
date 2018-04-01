@@ -1,221 +1,337 @@
-(function($) {
-    // Plugin function
-    $.fn.mQuicksearch = function(options) {
+// plugin setup
+var mQuicksearch = function(elementId, options) {
+    //== Main object
+    var the = this;
+    var init = false;
 
-        // Plugin scope variables
-        var qs = this;
-        var element = $(this);
+    //== Get element object
+    var element = mUtil.get(elementId);
+    var body = mUtil.get('body');  
+
+    if (!element) {
+        return;
+    }
+
+    //== Default options
+    var defaultOptions = {
+        mode: 'default', //'default/dropdown'
+        minLength: 1,
+        maxHeight: 300,
+        requestTimeout: 200, // ajax request fire timeout in milliseconds 
+        inputTarget: 'm_quicksearch_input',
+        iconCloseTarget: 'm_quicksearch_close',
+        iconCancelTarget: 'm_quicksearch_cancel',
+        iconSearchTarget: 'm_quicksearch_search',
         
-        // Plugin class        
-        var Plugin = {
-            /**
-             * Run plugin 
-             */
-            run: function(options) {
-                if (!element.data('qs')) {
-                    // init plugin
-                    Plugin.init(options);
-                    // build dom
-                    Plugin.build();                   
-                    // store the instance in the element's data
-                    element.data('qs', qs);
-                } else {
-                    // retrieve the instance fro the element's data
-                    qs = element.data('qs'); 
-                }
+        spinnerClass: 'm-loader m-loader--skin-light m-loader--right',
+        hasResultClass: 'm-list-search--has-result',
+        
+        templates: {
+            error: '<div class="m-search-results m-search-results--skin-light"><span class="m-search-result__message">{{message}}</div></div>'
+        }
+    };
 
-                return qs;
-            },
+    ////////////////////////////
+    // ** Private Methods  ** //
+    ////////////////////////////
 
-            /**
-             * Init plugin
-             */
-            init: function(options) {
-                // merge default and user defined options
-                qs.options = $.extend(true, {}, $.fn.mQuicksearch.defaults, options);
+    var Plugin = {
+        /**
+         * Construct
+         */
 
-                // form
-                qs.form = element.find('form');
+        construct: function(options) {
+            if (mUtil.data(element).has('quicksearch')) {
+                the = mUtil.data(element).get('quicksearch');
+            } else {
+                // reset menu
+                Plugin.init(options);
 
-                // input element
-                qs.input = $(qs.options.input);
+                // build menu
+                Plugin.build();
 
-                 // close icon
-                qs.iconClose = $(qs.options.iconClose);
-
-                if (qs.options.type == 'default') {
-                    // search icon
-                    qs.iconSearch = $(qs.options.iconSearch);
-                        
-                    // cancel icon
-                    qs.iconCancel = $(qs.options.iconCancel);
-                }               
-
-                // dropdown
-                qs.dropdown = element.mDropdown({mobileOverlay: false});
-
-                // cancel search timeout
-                qs.cancelTimeout;
-
-                // ajax processing state
-                qs.processing = false;
-            }, 
-
-            /**
-             * Build plugin
-             */
-            build: function() {
-                // attach input keyup handler
-                qs.input.keyup(Plugin.handleSearch);
-                
-                if (qs.options.type == 'default') {
-                    qs.input.focus(Plugin.showDropdown);
-                    
-                    qs.iconCancel.click(Plugin.handleCancel);
-
-                    qs.iconSearch.click(function() {
-                        if (mUtil.isInResponsiveRange('tablet-and-mobile')) {
-                            $('body').addClass('m-header-search--mobile-expanded');
-                            qs.input.focus();
-                        }
-                    });
-
-                    qs.iconClose.click(function() {
-                        if (mUtil.isInResponsiveRange('tablet-and-mobile')) {
-                            $('body').removeClass('m-header-search--mobile-expanded');
-                            Plugin.closeDropdown();
-                        }
-                    });
-
-                } else if (qs.options.type == 'dropdown') {
-                    qs.dropdown.on('afterShow', function() {
-                        qs.input.focus();
-                    });
-                    qs.iconClose.click(Plugin.closeDropdown);
-                }               
-            },
-
-            /**
-             * Search handler
-             */ 
-            handleSearch: function(e) { 
-                var query = qs.input.val();
-
-                if (query.length === 0) {
-                    qs.dropdown.hide();
-                    Plugin.handleCancelIconVisibility('on');
-                    Plugin.closeDropdown();
-                    element.removeClass(qs.options.hasResultClass);
-                }
-
-                if (query.length < qs.options.minLength || qs.processing == true) {
-                    return;
-                }
-
-                qs.processing = true;
-                qs.form.addClass(qs.options.spinner);
-                Plugin.handleCancelIconVisibility('off');
-                
-                $.ajax({
-                    url: qs.options.source,
-                    data: {query: query},
-                    dataType: 'html',
-                    success: function(res) {
-                        qs.processing = false;
-                        qs.form.removeClass(qs.options.spinner);
-                        Plugin.handleCancelIconVisibility('on');
-                        qs.dropdown.setContent(res).show();
-                        element.addClass(qs.options.hasResultClass);    
-                    },
-                    error: function(res) {
-                        qs.processing = false;
-                        qs.form.removeClass(qs.options.spinner);
-                        Plugin.handleCancelIconVisibility('on');
-                        qs.dropdown.setContent(qs.options.templates.error.apply(qs, res)).show();  
-                        element.addClass(qs.options.hasResultClass);   
-                    }
-                });
-            }, 
-
-            /**
-             * Handle cancel icon visibility
-             */ 
-            handleCancelIconVisibility: function(status) {
-                if (qs.options.type == 'dropdown') {
-                    //return;
-                }
-
-                if (status == 'on') {
-                    if (qs.input.val().length === 0) {                       
-                        if (qs.iconCancel) qs.iconCancel.css('visibility', 'hidden');
-                        if (qs.iconClose) qs.iconClose.css('visibility', 'hidden');
-                    } else {
-                        clearTimeout(qs.cancelTimeout);
-                        qs.cancelTimeout = setTimeout(function() {
-                            if (qs.iconCancel) qs.iconCancel.css('visibility', 'visible');
-                            if (qs.iconClose) qs.iconClose.css('visibility', 'visible');
-                        }, 500);                        
-                    }
-                } else {
-                    if (qs.iconCancel) qs.iconCancel.css('visibility', 'hidden');
-                    if (qs.iconClose) qs.iconClose.css('visibility', 'hidden');
-                }
-            },
-
-            /**
-             * Cancel handler
-             */ 
-            handleCancel: function(e) {
-                qs.input.val('');
-                qs.iconCancel.css('visibility', 'hidden');
-                element.removeClass(qs.options.hasResultClass);   
-                //qs.input.focus();
-
-                Plugin.closeDropdown();
-            },
-
-            /**
-             * Cancel handler
-             */ 
-            closeDropdown: function() {
-                qs.dropdown.hide();
-            },
-
-            /**
-             * Show dropdown
-             */ 
-            showDropdown: function(e) { 
-                if (qs.dropdown.isShown() == false && qs.input.val().length > qs.options.minLength && qs.processing == false) {
-                    qs.dropdown.show();
-                    e.preventDefault();
-                    e.stopPropagation();
-                }
+                mUtil.data(element).set('quicksearch', the);
             }
-        };
 
-        // Run plugin
-        Plugin.run.apply(qs, [options]);
+            return the;
+        },
 
-        //////////////////////
-        // ** Public API ** //
-        //////////////////////
+        init: function(options) {
+            the.element = element;
+            the.events = [];
+
+            // merge default and user defined options
+            the.options = mUtil.deepExtend({}, defaultOptions, options);
+
+            // search query
+            the.query = '';
+
+            // form
+            the.form = mUtil.find(element, 'form');
+
+            // input element
+            the.input = mUtil.get(the.options.inputTarget);
+
+            // close icon
+            the.iconClose = mUtil.get(the.options.iconCloseTarget);
+
+            if (the.options.mode == 'default') {
+                // search icon
+                the.iconSearch = mUtil.get(the.options.iconSearchTarget);
+
+                // cancel icon
+                the.iconCancel = mUtil.get(the.options.iconCancelTarget);
+            }
+
+            // dropdown
+            the.dropdown = new mDropdown(element, {
+                mobileOverlay: false
+            });
+
+            // cancel search timeout
+            the.cancelTimeout;
+
+            // ajax processing state
+            the.processing = false;
+
+            // ajax request fire timeout
+            the.requestTimeout = false;
+        },
 
         /**
-         * Public method
-         * @returns {mQuicksearch}
+         * Build plugin
          */
-        qs.test = function(time) {
-        	//Plugin.method(time);
-        };
+        build: function() {
+            // attach input keyup handler
+            mUtil.addEvent(the.input, 'keyup', Plugin.search);
 
-        // Return plugin object
-        return qs;
+            if (the.options.mode == 'default') {
+                mUtil.addEvent(the.input, 'focus', Plugin.showDropdown);
+                mUtil.addEvent(the.iconCancel, 'click', Plugin.handleCancel);
+
+                mUtil.addEvent(the.iconSearch, 'click', function() {
+                    if (mUtil.isInResponsiveRange('tablet-and-mobile')) {
+                        mUtil.addClass(body, 'm-header-search--mobile-expanded');
+                        the.input.focus();
+                    }
+                });
+
+                mUtil.addEvent(the.iconClose, 'click', function() {
+                    if (mUtil.isInResponsiveRange('tablet-and-mobile')) {
+                        mUtil.removeClass(body, 'm-header-search--mobile-expanded');
+                        Plugin.closeDropdown();
+                    }
+                });
+            } else if (the.options.mode == 'dropdown') {
+                the.dropdown.on('afterShow', function() {
+                    the.input.focus();
+                });
+
+                mUtil.addEvent(the.iconClose, 'click', Plugin.closeDropdown);
+            }
+        },
+
+        showProgress: function() {
+            the.processing = true;
+            mUtil.addClass(the.form, the.options.spinnerClass);
+            Plugin.handleCancelIconVisibility('off');
+
+            return the;
+        },
+
+        hideProgress: function() {
+            the.processing = false;
+            mUtil.removeClass(the.form, the.options.spinnerClass);
+            Plugin.handleCancelIconVisibility('on');
+            mUtil.addClass(element, the.options.hasResultClass);
+
+            return the;
+        },
+
+        /**
+         * Search handler
+         */
+        search: function(e) {
+            the.query = the.input.value;
+
+            if (the.query.length === 0) {
+                Plugin.handleCancelIconVisibility('on');
+                mUtil.removeClass(element, the.options.hasResultClass);
+                mUtil.removeClass(the.form, the.options.spinnerClass);
+            }
+
+            if (the.query.length < the.options.minLength || the.processing == true) {
+                return;
+            }
+
+            if (the.requestTimeout) {
+                clearTimeout(the.requestTimeout);
+            }
+
+            the.requestTimeout = false;
+
+            the.requestTimeout = setTimeout(function() {
+                Plugin.eventTrigger('search');
+            }, the.options.requestTimeout);            
+
+            return the;
+        },
+
+        /**
+         * Handle cancel icon visibility
+         */
+        handleCancelIconVisibility: function(status) {
+            if (status == 'on') {
+                if (the.input.value.length === 0) {
+                    if (the.iconCancel) mUtil.css(the.iconCancel, 'visibility', 'hidden');
+                    if (the.iconClose) mUtil.css(the.iconClose, 'visibility', 'visible');
+                } else {
+                    clearTimeout(the.cancelTimeout);
+                    the.cancelTimeout = setTimeout(function() {
+                        if (the.iconCancel) mUtil.css(the.iconCancel, 'visibility', 'visible');
+                        if (the.iconClose) mUtil.css(the.iconClose, 'visibility', 'visible');
+                    }, 500);
+                }
+            } else {
+                if (the.iconCancel) mUtil.css(the.iconCancel, 'visibility', 'hidden');
+                if (the.iconClose) mUtil.css(the.iconClose, 'visibility', 'hidden');
+            }
+        },
+
+        /**
+         * Cancel handler
+         */
+        handleCancel: function(e) {
+            the.input.value = '';
+            mUtil.css(the.iconCancel, 'visibility', 'hidden');
+            mUtil.removeClass(element, the.options.hasResultClass);
+
+            Plugin.closeDropdown();
+        },
+
+        /**
+         * Cancel handler
+         */
+        closeDropdown: function() {
+            the.dropdown.hide();
+        },
+
+        /**
+         * Show dropdown
+         */
+        showDropdown: function(e) {
+            if (the.dropdown.isShown() == false && the.input.value.length > the.options.minLength && the.processing == false) {
+                console.log('show!!!');
+                the.dropdown.show();
+                if (e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                }                
+            }
+        },
+
+        /**
+         * Trigger events
+         */
+        eventTrigger: function(name) {
+            //mUtil.triggerCustomEvent(name);
+            for (i = 0; i < the.events.length; i++) {
+                var event = the.events[i];
+                if (event.name == name) {
+                    if (event.one == true) {
+                        if (event.fired == false) {
+                            the.events[i].fired = true;
+                            event.handler.call(this, the);
+                        }
+                    } else {
+                        event.handler.call(this, the);
+                    }
+                }
+            }
+        },
+
+        addEvent: function(name, handler, one) {
+            the.events.push({
+                name: name,
+                handler: handler,
+                one: one,
+                fired: false
+            });
+
+            return the;
+        }
     };
 
-    // Plugin default options
-    $.fn.mQuicksearch.defaults = {
-    	minLength: 1,
-        maxHeight: 300,
+    //////////////////////////
+    // ** Public Methods ** //
+    //////////////////////////
+
+    /**
+     * Set default options 
+     */
+
+    the.setDefaults = function(options) {
+        defaultOptions = options;
     };
 
-}(jQuery));
+    /**
+     * quicksearch off 
+     */
+    the.search = function() {
+        return Plugin.handleSearch();
+    };
+
+    the.showResult = function(res) {
+        the.dropdown.setContent(res);
+        Plugin.showDropdown();
+
+        return the;
+    };
+
+    the.showError = function(text) {
+        var msg = the.options.templates.error.replace('{{message}}', text);
+        the.dropdown.setContent(msg);
+        Plugin.showDropdown();
+
+        return the;
+    };
+
+    /**
+     *  
+     */
+    the.showProgress = function() {
+        return Plugin.showProgress();
+    };
+
+    the.hideProgress = function() {
+        return Plugin.hideProgress();
+    };
+
+    /**
+     * quicksearch off 
+     */
+    the.search = function() {
+        return Plugin.search();
+    };
+
+    /**
+     * Attach event
+     * @returns {mQuicksearch}
+     */
+    the.on = function(name, handler) {
+        return Plugin.addEvent(name, handler);
+    };
+
+    /**
+     * Attach event that will be fired once
+     * @returns {mQuicksearch}
+     */
+    the.one = function(name, handler) {
+        return Plugin.addEvent(name, handler, true);
+    };
+
+    //== Construct plugin
+    Plugin.construct.apply(the, [options]);
+
+    return the;
+};

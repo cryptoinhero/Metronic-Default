@@ -10,7 +10,7 @@ body {
 .m-page {		
 	//== Page loading
 	.m-page--loading-enabled & {
-		@include animation(m-animate-fade-in .5s both);
+		@include animation(m-animate-fade-in .5s);
 	}	
 
 	.m-page--loading & {

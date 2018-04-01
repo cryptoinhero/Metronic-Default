@@ -61,7 +61,8 @@ $m--nav: (
 			self: (
 				padding: 0 25px,
 				margin: (
-					default: 20px 0 10px 0,
+					separator: 20px,
+					default: 25px 0 0 0,
 					hover-bg: 20px 30px
 				)
 			)

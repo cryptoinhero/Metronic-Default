@@ -4,6 +4,20 @@
 
 var mApp = function() {
 
+    /** @type {object} colors State colors **/
+    var colors = {
+        brand:      '#716aca',
+        metal:      '#c4c5d6',
+        light:      '#ffffff',
+        accent:     '#00c5dc',
+        primary:    '#5867dd',
+        success:    '#34bfa3',
+        info:       '#36a3f7',
+        warning:    '#ffb822',
+        danger:     '#f4516c',
+        focus:      '#9816f4'
+    }
+
     /**
     * Initializes bootstrap tooltip
     */
@@ -75,7 +89,8 @@ var mApp = function() {
     */
     var initPortlet = function(el, options) {
         // init portlet tools
-        el.mPortlet(options);
+        var el = $(el);
+        var portlet = new mPortlet(el[0], options);
     }
 
     /**
@@ -83,7 +98,7 @@ var mApp = function() {
     */
     var initPortlets = function() {
         // init portlet tools
-        $('[data-portlet="true"]').each(function() {
+        $('[m-portlet="true"]').each(function() {
             var el = $(this);
 
             if ( el.data('portlet-initialized') !== true ) {
@@ -169,13 +184,6 @@ var mApp = function() {
         });
     }
 
-    /**
-    * Initializes bootstrap collapse for Metronic's accordion feature
-    */
-    var initAccordions = function(el) {
-       
-    }
-
 	var hideTouchWarning = function() {
 		jQuery.event.special.touchstart = {
 			setup: function(_, ns, handle) {
@@ -213,7 +221,10 @@ var mApp = function() {
         /**
         * Main class initializer
         */
-        init: function() {
+        init: function(options) {
+            if (options && options.colors) {
+                colors = options.colors;
+            }
             mApp.initComponents();
         },
 
@@ -228,7 +239,6 @@ var mApp = function() {
             initAlerts();
             initPortlets();
             initFileInput();
-            initAccordions();
             initCustomTabs();
         },
 
@@ -471,7 +481,14 @@ var mApp = function() {
                 var classes = 'm-blockui ' + (options.shadow === false ? 'm-blockui-no-shadow' : '');
 
                 html = '<div class="' + classes + '"><span>' + options.message + '</span><span>' + loading + '</span></div>';
-                options.width = mUtil.realWidth(html) + 10;
+
+                var el = document.createElement('div');
+                mUtil.get('body').prepend(el);
+                mUtil.addClass(el, classes);
+                el.innerHTML = '<span>' + options.message + '</span><span>' + loading + '</span>';
+                options.width = mUtil.actualWidth(el) + 10;
+                mUtil.remove(el);
+
                 if (target == 'body') {
                     html = '<div class="' + classes + '" style="margin-left:-'+ (options.width / 2) +'px;"><span>' + options.message + '</span><span>' + loading + '</span></div>';
                 }
@@ -564,11 +581,20 @@ var mApp = function() {
         */
         unprogress: function(target) {
             $(target).removeClass($(target).data('progress-classes'));
+        },
+
+        /**
+        * Gets state color's hex code by color name
+        * @param {string} name Color name
+        * @returns {string}  
+        */
+        getColor: function(name) {
+            return colors[name];
         }
     };
 }();
 
 //== Initialize mApp class on document ready
 $(document).ready(function() {
-    mApp.init();
+    mApp.init({});
 });

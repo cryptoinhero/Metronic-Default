@@ -36,6 +36,10 @@
     	&.bs-tooltip-auto[x-placement^="right"] .arrow::before {
     		right: -1px;
     	}
+
+        &.m-tooltip--portlet {
+            @include opacity(1);
+        }
     }
 }
 

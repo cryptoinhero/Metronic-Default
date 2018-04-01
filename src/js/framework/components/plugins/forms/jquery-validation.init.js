@@ -29,9 +29,6 @@ jQuery.validator.setDefaults({
 
     highlight: function(element) { // hightlight error inputs
         var group = $(element).closest('.m-form__group-sub').length > 0  ? $(element).closest('.m-form__group-sub') : $(element).closest('.m-form__group');
-
-        console.log('add' + group.attr('class'));
-
         group.addClass('has-danger'); // set error class to the control groupx
     },
 

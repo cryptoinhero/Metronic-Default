@@ -120,6 +120,10 @@
 				text-align: center;
 				float: none;
 				margin: 0 auto;
+
+				.m-nav__item {
+    				padding: 0 0 0 5px;
+    			}
 			}
 		}
     }

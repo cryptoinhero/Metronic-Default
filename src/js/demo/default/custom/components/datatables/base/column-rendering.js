@@ -183,25 +183,13 @@ var DatatableColumnRenderingDemo = function() {
         }],
     });
 
-    var query = datatable.getDataSourceQuery();
+	  $('#m_form_status').on('change', function() {
+		  datatable.search($(this).val(), 'Status');
+	  });
 
-    $('#m_form_status').on('change', function() {
-      // shortcode to datatable.getDataSourceParam('query');
-      var query = datatable.getDataSourceQuery();
-      query.Status = $(this).val().toLowerCase();
-      // shortcode to datatable.setDataSourceParam('query', query);
-      datatable.setDataSourceQuery(query);
-      datatable.load();
-    }).val(typeof query.Status !== 'undefined' ? query.Status : '');
-
-    $('#m_form_type').on('change', function() {
-      // shortcode to datatable.getDataSourceParam('query');
-      var query = datatable.getDataSourceQuery();
-      query.Type = $(this).val().toLowerCase();
-      // shortcode to datatable.setDataSourceParam('query', query);
-      datatable.setDataSourceQuery(query);
-      datatable.load();
-    }).val(typeof query.Type !== 'undefined' ? query.Type : '');
+	  $('#m_form_type').on('change', function() {
+		  datatable.search($(this).val(), 'Type');
+	  });
 
     $('#m_form_status, #m_form_type').selectpicker();
   };

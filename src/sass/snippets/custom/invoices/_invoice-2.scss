@@ -228,7 +228,7 @@
 			        	padding: 3rem 0 4rem 0;
 
 			        	.m-invoice__table { 
-			        		
+
 				        	&.m-invoice__table--centered {
 				        		width: 100%;        		
 				        	}		        	 
@@ -328,8 +328,8 @@
 		        }
 
 		        .m-invoice__footer {
-		        	margin-top: 9rem; 
-		        	padding: 5rem 2rem 7rem 2rem;
+		        	margin-top: 4rem; 
+		        	padding: 3rem 2rem 4rem 2rem;
 
 		        	.m-invoice__table {
 			        	&.m-invoice__table--centered {			        		 
@@ -352,11 +352,11 @@
 				        	tbody {
 				        		tr {
 				        			td {				        				
-				        				vertical-align: top;
+				        				vertical-align: top;				        				 
 
 				        				&:not(:first-child) {
 				        					padding-left: 2rem;	 
-				        					vertical-align: top;			        					     					 
+				        					vertical-align: top;				        					 		        					     					 
 				        				}				        				
 				        			}			        			 
 				        		}

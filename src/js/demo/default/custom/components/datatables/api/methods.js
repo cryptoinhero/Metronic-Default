@@ -111,7 +111,7 @@ var DefaultDatatableDemo = function() {
 					title: 'Actions',
 					sortable: false,
 					overflow: 'visible',
-					template: function (row, index, datatable) {
+					template: function(row, index, datatable) {
 						var dropup = (datatable.getPageSize() - index) <= 4 ? 'dropup' : '';
 						return '\
 						<div class="dropdown ' + dropup + '">\
@@ -154,9 +154,12 @@ var DefaultDatatableDemo = function() {
 			$('.m_datatable').mDatatable('reload');
 		});
 
-		$('#m_datatable_sort').on('click', function() {
-			// datatable.sort('ShipCity');
-			$('.m_datatable').mDatatable('sort', 'ShipCity');
+		$('#m_datatable_sort_asc').on('click', function() {
+			datatable.sort('ShipCity', 'asc');
+		});
+
+		$('#m_datatable_sort_desc').on('click', function() {
+			datatable.sort('ShipCity', 'desc');
 		});
 
 		// get checked record and get value by column name

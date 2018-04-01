@@ -82,9 +82,8 @@
                 padding: $m-alert-icon-padding-y $m-alert-icon-padding-x $m-alert-icon-padding-y 1.25rem;
 
                 .close {
-                    padding-bottom: 0;
-                    padding-top: 0.35rem;
-                    top: 0;
+                    padding-top: 0;
+                    top: 0.65rem;
                 }
             }
 
@@ -99,7 +98,16 @@
                         margin-top: -6px;  
                         right: -6px;
                         @include m--build-classic-arrow(left, 6px); 
-                    }                   
+                    }       
+                }
+
+                .m-alert__close {
+                    padding-top: 0;
+
+                    .close {
+                        padding-top: 0;
+                        top: 0.75rem;
+                    }
                 }
 
                 .m-alert__text {

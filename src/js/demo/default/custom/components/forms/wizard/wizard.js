@@ -9,7 +9,7 @@ var WizardDemo = function () {
     //== Private functions
     var initWizard = function () {
         //== Initialize form wizard
-        wizard = wizardEl.mWizard({
+        wizard = new mWizard('m_wizard', {
             startStep: 1
         });
 

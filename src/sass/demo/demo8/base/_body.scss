@@ -23,6 +23,7 @@ body {
 
 	//== Fix fluid flex box item hor overflow issue
 	.m-wrapper {
+		overflow: hidden;
 		width: 100%;
 		background: array-get($m-config-base, body, wrapper, bg-color );
 	}
